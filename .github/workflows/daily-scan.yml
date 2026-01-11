@@ -2,8 +2,8 @@ name: Daily Domain Scan
 
 on:
   schedule:
-    # Run at 04:15 UTC (right after domains release at 04:00 UTC)
-    - cron: '15 4 * * *'
+    # Run at 07:00 UTC daily to check domains dropping tomorrow at 04:00 UTC
+    - cron: '0 7 * * *'
 
   # Allow manual trigger for testing
   workflow_dispatch:
