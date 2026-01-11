@@ -42,23 +42,19 @@ jobs:
             python src/main.py
           fi
 
-      - name: Check for new reports
-        id: check_reports
-        run: |
-          if git diff --quiet reports/; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-          fi
-
       - name: Commit and push reports
-        if: steps.check_reports.outputs.has_changes == 'true' && inputs.dry_run != 'true'
+        if: inputs.dry_run != 'true'
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add reports/
-          git commit -m "Daily domain report $(date -u +%Y-%m-%d)"
-          git push
+          # Only commit if there are staged changes
+          if git diff --staged --quiet; then
+            echo "No new reports to commit"
+          else
+            git commit -m "Daily domain report $(date -u +%Y-%m-%d)"
+            git push
+          fi
 
       - name: Upload report artifacts
         if: inputs.dry_run != 'true'
