@@ -59,18 +59,13 @@ def check_availability_batch(domains: list[dict]) -> list[dict]:
         domains: List of domain dicts with 'name' field
 
     Returns:
-        List of available domains with 'available' field added
+        List of all domains with 'available' field added
     """
-    available = []
-
     for domain in domains:
         domain_name = domain["name"]
         domain["available"] = is_available(domain_name)
 
-        if domain["available"]:
-            available.append(domain)
-
-    return available
+    return domains
 
 
 if __name__ == "__main__":

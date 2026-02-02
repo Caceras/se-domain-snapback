@@ -72,11 +72,8 @@ def main(
         print()
         print("Step 2: Checking domain availability via DNS...")
         domains = check_availability_batch(domains)
-        print(f"  {len(domains)} domains are available/not yet registered")
-
-        if not domains:
-            print("  All domains have been registered. Exiting.")
-            return
+        available_count = sum(1 for d in domains if d.get("available"))
+        print(f"  Checked {len(domains)} domains ({available_count} appear available)")
     else:
         # Mark all as available if not checking (future drops aren't registered yet)
         for d in domains:
