@@ -21,12 +21,13 @@ from config import REPORT_DIR
 
 app = Flask(__name__)
 
-# Store scan status
+# Store scan status with thread safety
 scan_status = {
     "running": False,
     "message": "",
     "last_scan": None
 }
+scan_status_lock = threading.Lock()
 
 
 def get_available_reports():
@@ -113,8 +114,9 @@ def start_scan():
     """Start a new scan."""
     global scan_status
     
-    if scan_status["running"]:
-        return jsonify({"error": "Scan already running"}), 400
+    with scan_status_lock:
+        if scan_status["running"]:
+            return jsonify({"error": "Scan already running"}), 400
     
     # Get parameters from request
     data = request.get_json() or {}
@@ -123,8 +125,9 @@ def start_scan():
     def run_scan_thread():
         global scan_status
         try:
-            scan_status["running"] = True
-            scan_status["message"] = f"Scanning domains for {target_date or 'tomorrow'}..."
+            with scan_status_lock:
+                scan_status["running"] = True
+                scan_status["message"] = f"Scanning domains for {target_date or 'tomorrow'}..."
             
             # Run the scanner
             run_scanner(
@@ -135,25 +138,33 @@ def start_scan():
                 dry_run=False
             )
             
-            scan_status["message"] = "Scan completed successfully"
-            scan_status["last_scan"] = datetime.now(timezone.utc).isoformat()
+            with scan_status_lock:
+                scan_status["message"] = "Scan completed successfully"
+                scan_status["last_scan"] = datetime.now(timezone.utc).isoformat()
         except Exception as e:
-            scan_status["message"] = f"Scan failed: {str(e)}"
+            with scan_status_lock:
+                scan_status["message"] = f"Scan failed: {str(e)}"
         finally:
-            scan_status["running"] = False
+            with scan_status_lock:
+                scan_status["running"] = False
     
     # Start scan in background thread
     thread = threading.Thread(target=run_scan_thread)
     thread.daemon = True
     thread.start()
     
-    return jsonify({"message": "Scan started", "status": scan_status})
+    with scan_status_lock:
+        status_copy = scan_status.copy()
+    
+    return jsonify({"message": "Scan started", "status": status_copy})
 
 
 @app.route('/api/scan/status')
 def scan_status_api():
     """Get current scan status."""
-    return jsonify(scan_status)
+    with scan_status_lock:
+        status_copy = scan_status.copy()
+    return jsonify(status_copy)
 
 
 if __name__ == '__main__':
