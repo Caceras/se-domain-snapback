@@ -133,7 +133,12 @@
     
     // Export functions
     function exportCSV() {
-        window.location.href = '/api/report/{{ report_date }}/csv';
+        const a = document.createElement('a');
+        a.href = '/api/report/{{ report_date }}/csv';
+        a.download = '{{ report_date }}.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     }
     
     function exportJSON() {
@@ -149,10 +154,8 @@
                 try {
                     a.click();
                 } finally {
-                    setTimeout(() => {
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(url);
-                    }, 100);
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
                 }
             });
     }
