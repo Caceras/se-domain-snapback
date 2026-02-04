@@ -9,8 +9,8 @@ import json
 import os
 import sys
 from pathlib import Path
-from datetime import datetime, timezone, timedelta
-from flask import Flask, render_template, jsonify, request, redirect, url_for
+from datetime import datetime, timezone
+from flask import Flask, render_template, jsonify, request, send_file
 import threading
 
 # Add the project root to Python path
@@ -97,6 +97,15 @@ def api_report(date):
     if report_data:
         return jsonify(report_data)
     return jsonify({"error": "Report not found"}), 404
+
+
+@app.route('/api/report/<date>/csv')
+def api_report_csv(date):
+    """API endpoint to download a report as CSV."""
+    csv_path = REPORT_DIR / f"{date}.csv"
+    if csv_path.exists():
+        return send_file(csv_path, as_attachment=True, download_name=f"{date}.csv")
+    return jsonify({"error": "CSV report not found"}), 404
 
 
 @app.route('/api/scan/start', methods=['POST'])
