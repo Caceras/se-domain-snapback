@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="status-banner" class="status-banner status-idle">
+    ✓ System ready
+</div>
+
+{% if latest_data %}
+<div class="stats">
+    <div class="stat-card">
+        <div class="stat-value">{{ latest_data.total_domains }}</div>
+        <div class="stat-label">Valuable Domains Found</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ reports|length }}</div>
+        <div class="stat-label">Historical Reports</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ latest_data.domains|selectattr('indexed')|list|length }}</div>
+        <div class="stat-label">Indexed Domains</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Latest Scan Results ({{ reports[0].date if reports else 'N/A' }})</h2>
+    
+    <button id="scan-btn" class="btn" onclick="startScan()">🔄 Run New Scan</button>
+    
+    {% if latest_data.domains %}
+    <table>
+        <thead>
+            <tr>
+                <th>Domain</th>
+                <th>TLD</th>
+                <th>Release Date</th>
+                <th>Indexed Pages</th>
+                <th>Source</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for domain in latest_data.domains[:50] %}
+            <tr>
+                <td><strong>{{ domain.domain }}</strong></td>
+                <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
+                <td>{{ domain.release_date }}</td>
+                <td>
+                    {% if domain.estimated_pages %}
+                        <strong>{{ domain.estimated_pages }}</strong>
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+                <td>{{ domain.index_source }}</td>
+                <td>
+                    {% if domain.indexed %}
+                        <span class="badge badge-success">Indexed</span>
+                    {% else %}
+                        <span class="badge badge-warning">Not Indexed</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% if latest_data.domains|length > 50 %}
+    <p style="margin-top: 1rem; color: #666;">
+        Showing top 50 of {{ latest_data.domains|length }} domains. 
+        <a href="/report/{{ reports[0].date }}">View full report</a>
+    </p>
+    {% endif %}
+    {% else %}
+    <div class="empty-state">
+        <p>No domains found in the latest scan.</p>
+    </div>
+    {% endif %}
+</div>
+{% else %}
+<div class="card">
+    <h2>No Reports Available</h2>
+    <div class="empty-state">
+        <p>No scan results found. Run your first scan to get started!</p>
+        <button id="scan-btn" class="btn" onclick="startScan()">🔄 Run First Scan</button>
+    </div>
+</div>
+{% endif %}
+
+{% if reports %}
+<div class="card">
+    <h2>Historical Reports</h2>
+    <ul class="report-list">
+        {% for report in reports %}
+        <li>
+            <a href="/report/{{ report.date }}">📄 {{ report.date }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endblock %}

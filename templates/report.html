@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}Report: {{ report_date }} - SE/NU Domain Snapback Scanner{% endblock %}
+
+{% block content %}
+<div id="status-banner" class="status-banner status-idle">
+    ✓ System ready
+</div>
+
+<div class="card">
+    <h2>Domain Report: {{ report_date }}</h2>
+    <p style="color: #666; margin-bottom: 1rem;">
+        Generated at: {{ report_data.generated_at }}
+    </p>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-value">{{ report_data.total_domains }}</div>
+            <div class="stat-label">Total Domains</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">{{ report_data.domains|selectattr('indexed')|list|length }}</div>
+            <div class="stat-label">Indexed Domains</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">{{ report_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</div>
+            <div class="stat-label">.se Domains</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">{{ report_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</div>
+            <div class="stat-label">.nu Domains</div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+        <button class="btn" onclick="exportCSV()">📥 Export as CSV</button>
+        <button class="btn" onclick="exportJSON()">📥 Export as JSON</button>
+    </div>
+    
+    <input type="text" id="search" placeholder="Search domains..." 
+           style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 1rem;">
+    
+    <table id="domains-table">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)" onkeypress="if(event.key==='Enter')sortTable(0)" tabindex="0" role="button" style="cursor: pointer;">Domain ⇅</th>
+                <th onclick="sortTable(1)" onkeypress="if(event.key==='Enter')sortTable(1)" tabindex="0" role="button" style="cursor: pointer;">TLD ⇅</th>
+                <th onclick="sortTable(2)" onkeypress="if(event.key==='Enter')sortTable(2)" tabindex="0" role="button" style="cursor: pointer;">Release Date ⇅</th>
+                <th onclick="sortTable(3)" onkeypress="if(event.key==='Enter')sortTable(3)" tabindex="0" role="button" style="cursor: pointer;">Indexed Pages ⇅</th>
+                <th onclick="sortTable(4)" onkeypress="if(event.key==='Enter')sortTable(4)" tabindex="0" role="button" style="cursor: pointer;">Source ⇅</th>
+                <th onclick="sortTable(5)" onkeypress="if(event.key==='Enter')sortTable(5)" tabindex="0" role="button" style="cursor: pointer;">Status ⇅</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for domain in report_data.domains %}
+            <tr>
+                <td><strong>{{ domain.domain }}</strong></td>
+                <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
+                <td>{{ domain.release_date }}</td>
+                <td>
+                    {% if domain.estimated_pages %}
+                        <strong>{{ domain.estimated_pages }}</strong>
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+                <td>{{ domain.index_source }}</td>
+                <td>
+                    {% if domain.indexed %}
+                        <span class="badge badge-success">Indexed</span>
+                    {% else %}
+                        <span class="badge badge-warning">Not Indexed</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="card">
+    <h2>Other Reports</h2>
+    <ul class="report-list">
+        {% for report in reports %}
+        <li>
+            <a href="/report/{{ report.date }}" 
+               {% if report.date == report_date %}style="font-weight: bold;"{% endif %}>
+                📄 {{ report.date }}
+                {% if report.date == report_date %}(current){% endif %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+    // Search functionality
+    document.getElementById('search').addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const rows = document.querySelectorAll('#domains-table tbody tr');
+        
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(searchTerm) ? '' : 'none';
+        });
+    });
+    
+    // Sort table
+    function sortTable(columnIndex) {
+        const table = document.getElementById('domains-table');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        
+        rows.sort((a, b) => {
+            const aText = a.cells[columnIndex].textContent.trim();
+            const bText = b.cells[columnIndex].textContent.trim();
+            
+            // Try to parse as numbers
+            const aNum = parseFloat(aText);
+            const bNum = parseFloat(bText);
+            
+            if (!isNaN(aNum) && !isNaN(bNum)) {
+                return bNum - aNum; // Descending for numbers
+            }
+            
+            return aText.localeCompare(bText);
+        });
+        
+        rows.forEach(row => tbody.appendChild(row));
+    }
+    
+    // Export functions
+    function exportCSV() {
+        const a = document.createElement('a');
+        a.href = '/api/report/{{ report_date }}/csv';
+        a.download = '{{ report_date }}.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+    
+    function exportJSON() {
+        fetch('/api/report/{{ report_date }}')
+            .then(r => r.json())
+            .then(data => {
+                const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '{{ report_date }}.json';
+                document.body.appendChild(a);
+                try {
+                    a.click();
+                } finally {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }
+            });
+    }
+</script>
+{% endblock %}
