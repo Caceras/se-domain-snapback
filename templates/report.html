@@ -146,9 +146,14 @@
                 a.href = url;
                 a.download = '{{ report_date }}.json';
                 document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+                try {
+                    a.click();
+                } finally {
+                    setTimeout(() => {
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }, 100);
+                }
             });
     }
 </script>
