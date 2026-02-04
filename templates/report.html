@@ -145,7 +145,10 @@
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = '{{ report_date }}.json';
+                document.body.appendChild(a);
                 a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
             });
     }
 </script>
