@@ -2,11 +2,14 @@
 
 Automated daily scanner to find valuable .se and .nu domains that will drop soon and may be available for registration.
 
+🌐 **[View Live Results on GitHub Pages](https://caceras.github.io/se-domain-snapback/)**
+
 ## Features
 
 - **Automated Scanning**: Daily scans of domains dropping in Swedish TLDs (.se and .nu)
 - **Search Engine Verification**: Checks Google/Bing to identify domains with indexed pages (indicating past traffic/value)
 - **DNS Availability Check**: Verifies if domains are already available for registration
+- **GitHub Pages**: Published static site with daily updates showing latest scan results
 - **Web UI**: Beautiful web interface to view scan results and trigger manual scans
 - **Historical Reports**: Tracks all scan results with CSV and JSON exports
 - **GitHub Actions Integration**: Automated daily execution at 07:00 UTC
@@ -83,6 +86,21 @@ The scanner runs automatically via GitHub Actions:
 - **Schedule**: Daily at 07:00 UTC (21 hours before domains drop at 04:00 UTC)
 - **Manual Trigger**: Use the "Run workflow" button in the Actions tab
 - **Auto-commit**: Reports are automatically committed to the repository
+
+## GitHub Pages
+
+The results are automatically published to GitHub Pages:
+
+- **Live Site**: https://caceras.github.io/se-domain-snapback/
+- **Updates**: Site rebuilds automatically after each daily scan
+- **Build Script**: `build_static_site.py` generates static HTML from JSON reports
+- **Deployment**: `.github/workflows/deploy-pages.yml` handles the deployment
+
+The static site includes:
+- Latest scan results with statistics
+- Sortable table of valuable domains
+- Historical reports archive
+- Download links for CSV and JSON data
 
 ## Output Format
 

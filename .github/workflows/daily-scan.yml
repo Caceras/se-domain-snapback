@@ -42,12 +42,16 @@ jobs:
             python src/main.py
           fi
 
+      - name: Build static site for GitHub Pages
+        if: inputs.dry_run != 'true'
+        run: python build_static_site.py
+
       - name: Commit and push reports
         if: inputs.dry_run != 'true'
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add reports/
+          git add reports/ docs/
           # Only commit if there are staged changes
           if git diff --staged --quiet; then
             echo "No new reports to commit"
