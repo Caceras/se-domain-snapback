@@ -1,0 +1,21 @@
+{
+  "name": "SE/NU Domain Snapback Scanner",
+  "short_name": "DomainScan",
+  "description": "Find valuable expiring .se and .nu domains before they become available for registration.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f5f7fa",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "business"],
+  "lang": "en",
+  "dir": "ltr"
+}
