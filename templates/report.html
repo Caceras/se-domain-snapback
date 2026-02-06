@@ -4,12 +4,35 @@
 
 {% block content %}
 <div id="status-banner" class="status-banner status-idle">
-    ✓ System ready
+    <span>&#10003;</span> System ready
+</div>
+
+{# Determine previous and next report dates #}
+{% set report_dates = reports|map(attribute='date')|list %}
+{% set current_idx = report_dates.index(report_date) if report_date in report_dates else -1 %}
+{% set prev_date = report_dates[current_idx - 1] if current_idx > 0 else None %}
+{% set next_date = report_dates[current_idx + 1] if current_idx >= 0 and current_idx < report_dates|length - 1 else None %}
+
+{# Navigation between reports #}
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+    {% if next_date %}
+    <a href="/report/{{ next_date }}" class="btn btn-secondary">&larr; {{ next_date }}</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+    
+    <a href="/" class="btn btn-secondary">Back to Latest</a>
+
+    {% if prev_date %}
+    <a href="/report/{{ prev_date }}" class="btn btn-secondary">{{ prev_date }} &rarr;</a>
+    {% else %}
+    <span></span>
+    {% endif %}
 </div>
 
 <div class="card">
-    <h2>Domain Report: {{ report_date }}</h2>
-    <p style="color: #666; margin-bottom: 1rem;">
+    <h2><span class="icon">&#128202;</span> Domain Report: {{ report_date }}</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
         Generated at: {{ report_data.generated_at }}
     </p>
     
@@ -32,61 +55,91 @@
         </div>
     </div>
     
-    <div style="margin-bottom: 1rem;">
-        <button class="btn" onclick="exportCSV()">📥 Export as CSV</button>
-        <button class="btn" onclick="exportJSON()">📥 Export as JSON</button>
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <div class="search-box">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="search" placeholder="Search domains..." aria-label="Search domains">
+                <button class="clear-btn" id="clear-search" onclick="clearSearch()" aria-label="Clear search">&#10005;</button>
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <div class="filter-bar">
+                <label>Filter:</label>
+                <button class="chip active" onclick="filterTLD('all', this)" data-filter="all">
+                    All <span class="count">{{ report_data.domains|length }}</span>
+                </button>
+                <button class="chip" onclick="filterTLD('se', this)" data-filter="se">
+                    .se <span class="count">{{ report_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</span>
+                </button>
+                <button class="chip" onclick="filterTLD('nu', this)" data-filter="nu">
+                    .nu <span class="count">{{ report_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</span>
+                </button>
+                <button class="chip" onclick="filterTLD('indexed', this)" data-filter="indexed">
+                    Indexed <span class="count">{{ report_data.domains|selectattr('indexed')|list|length }}</span>
+                </button>
+            </div>
+        </div>
     </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+        <button class="btn btn-secondary" onclick="exportCSV()">Export CSV</button>
+        <button class="btn btn-secondary" onclick="exportJSON()">Export JSON</button>
+    </div>
+
+    <div class="result-count" id="result-count">Showing {{ report_data.domains|length }} domains</div>
     
-    <input type="text" id="search" placeholder="Search domains..." 
-           style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 1rem;">
-    
-    <table id="domains-table">
-        <thead>
-            <tr>
-                <th onclick="sortTable(0)" onkeypress="if(event.key==='Enter')sortTable(0)" tabindex="0" role="button" style="cursor: pointer;">Domain ⇅</th>
-                <th onclick="sortTable(1)" onkeypress="if(event.key==='Enter')sortTable(1)" tabindex="0" role="button" style="cursor: pointer;">TLD ⇅</th>
-                <th onclick="sortTable(2)" onkeypress="if(event.key==='Enter')sortTable(2)" tabindex="0" role="button" style="cursor: pointer;">Release Date ⇅</th>
-                <th onclick="sortTable(3)" onkeypress="if(event.key==='Enter')sortTable(3)" tabindex="0" role="button" style="cursor: pointer;">Indexed Pages ⇅</th>
-                <th onclick="sortTable(4)" onkeypress="if(event.key==='Enter')sortTable(4)" tabindex="0" role="button" style="cursor: pointer;">Source ⇅</th>
-                <th onclick="sortTable(5)" onkeypress="if(event.key==='Enter')sortTable(5)" tabindex="0" role="button" style="cursor: pointer;">Status ⇅</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for domain in report_data.domains %}
-            <tr>
-                <td><strong>{{ domain.domain }}</strong></td>
-                <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
-                <td>{{ domain.release_date }}</td>
-                <td>
-                    {% if domain.estimated_pages %}
-                        <strong>{{ domain.estimated_pages }}</strong>
-                    {% else %}
-                        -
-                    {% endif %}
-                </td>
-                <td>{{ domain.index_source }}</td>
-                <td>
-                    {% if domain.indexed %}
-                        <span class="badge badge-success">Indexed</span>
-                    {% else %}
-                        <span class="badge badge-warning">Not Indexed</span>
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-wrapper">
+        <table id="domains-table">
+            <thead>
+                <tr>
+                    <th class="sortable" onclick="sortTable(0)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(0)">Domain <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(1)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(1)">TLD <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Release Date <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(3)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(3)">Indexed Pages <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(4)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(4)">Source <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(5)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(5)">Status <span class="sort-icon">&#8693;</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for domain in report_data.domains %}
+                <tr data-tld="{{ domain.tld }}" data-indexed="{{ 'true' if domain.indexed else 'false' }}">
+                    <td><strong>{{ domain.domain }}</strong></td>
+                    <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
+                    <td>{{ domain.release_date }}</td>
+                    <td>
+                        {% if domain.estimated_pages %}
+                            <strong>{{ domain.estimated_pages }}</strong>
+                        {% else %}
+                            <span style="color: var(--text-muted);">-</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ domain.index_source }}</td>
+                    <td>
+                        {% if domain.indexed %}
+                            <span class="badge badge-success">Indexed</span>
+                        {% else %}
+                            <span class="badge badge-warning">Not Indexed</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="card">
-    <h2>Other Reports</h2>
+    <h2><span class="icon">&#128197;</span> Other Reports</h2>
     <ul class="report-list">
         {% for report in reports %}
         <li>
             <a href="/report/{{ report.date }}" 
-               {% if report.date == report_date %}style="font-weight: bold;"{% endif %}>
-                📄 {{ report.date }}
-                {% if report.date == report_date %}(current){% endif %}
+               {% if report.date == report_date %}style="font-weight: bold; background: var(--accent-light);"{% endif %}>
+                <span class="report-date">{{ report.date }}</span>
+                {% if report.date == report_date %}
+                <span class="badge badge-info">Current</span>
+                {% endif %}
             </a>
         </li>
         {% endfor %}
@@ -96,41 +149,118 @@
 
 {% block extra_script %}
 <script>
-    // Search functionality
-    document.getElementById('search').addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const rows = document.querySelectorAll('#domains-table tbody tr');
-        
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(searchTerm) ? '' : 'none';
+    let activeFilter = 'all';
+    let currentSort = { col: -1, asc: true };
+
+    // Search
+    const searchInput = document.getElementById('search');
+    const clearBtn = document.getElementById('clear-search');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            clearBtn.classList.toggle('visible', term.length > 0);
+            applyFilters();
         });
-    });
-    
-    // Sort table
+    }
+
+    function clearSearch() {
+        if (searchInput) {
+            searchInput.value = '';
+            clearBtn.classList.remove('visible');
+            applyFilters();
+            searchInput.focus();
+        }
+    }
+
+    // TLD Filter
+    function filterTLD(tld, el) {
+        activeFilter = tld;
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        el.classList.add('active');
+        applyFilters();
+    }
+
+    function applyFilters() {
+        const table = document.getElementById('domains-table');
+        if (!table) return;
+
+        const rows = table.querySelectorAll('tbody tr');
+        const term = searchInput ? searchInput.value.toLowerCase() : '';
+        let visibleCount = 0;
+
+        rows.forEach(row => {
+            const tld = row.getAttribute('data-tld');
+            const indexed = row.getAttribute('data-indexed');
+            const text = row.textContent.toLowerCase();
+
+            let matchesFilter;
+            if (activeFilter === 'all') {
+                matchesFilter = true;
+            } else if (activeFilter === 'indexed') {
+                matchesFilter = indexed === 'true';
+            } else {
+                matchesFilter = tld === activeFilter;
+            }
+
+            const matchesSearch = !term || text.includes(term);
+            const visible = matchesFilter && matchesSearch;
+            row.style.display = visible ? '' : 'none';
+            if (visible) visibleCount++;
+        });
+
+        const countEl = document.getElementById('result-count');
+        if (countEl) {
+            countEl.textContent = 'Showing ' + visibleCount + ' domains';
+        }
+    }
+
+    // Sort
     function sortTable(columnIndex) {
         const table = document.getElementById('domains-table');
+        if (!table) return;
+
         const tbody = table.querySelector('tbody');
         const rows = Array.from(tbody.querySelectorAll('tr'));
-        
+        const headers = table.querySelectorAll('th');
+
+        if (currentSort.col === columnIndex) {
+            currentSort.asc = !currentSort.asc;
+        } else {
+            currentSort.col = columnIndex;
+            currentSort.asc = true;
+        }
+
+        headers.forEach((h, i) => {
+            h.classList.toggle('sorted', i === columnIndex);
+            const icon = h.querySelector('.sort-icon');
+            if (icon) {
+                if (i === columnIndex) {
+                    icon.innerHTML = currentSort.asc ? '&#8593;' : '&#8595;';
+                } else {
+                    icon.innerHTML = '&#8693;';
+                }
+            }
+        });
+
         rows.sort((a, b) => {
             const aText = a.cells[columnIndex].textContent.trim();
             const bText = b.cells[columnIndex].textContent.trim();
-            
-            // Try to parse as numbers
             const aNum = parseFloat(aText);
             const bNum = parseFloat(bText);
-            
+
+            let result;
             if (!isNaN(aNum) && !isNaN(bNum)) {
-                return bNum - aNum; // Descending for numbers
+                result = aNum - bNum;
+            } else {
+                result = aText.localeCompare(bText);
             }
-            
-            return aText.localeCompare(bText);
+            return currentSort.asc ? result : -result;
         });
-        
+
         rows.forEach(row => tbody.appendChild(row));
     }
-    
+
     // Export functions
     function exportCSV() {
         const a = document.createElement('a');
