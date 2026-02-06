@@ -1,77 +1,130 @@
 {% extends "base.html" %}
 
+{% block meta_description %}Today's scan found {{ latest_data.total_domains if latest_data else 0 }} valuable expiring .se and .nu domains. Daily updated domain snapback scanner with index status.{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SE/NU Domain Snapback Scanner",
+    "description": "Daily scanner for valuable expiring .se and .nu domains.",
+    "url": "/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+{% if latest_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "SE/NU Expiring Domain Report - {{ reports[0].date if reports else 'latest' }}",
+    "description": "{{ latest_data.total_domains }} valuable expiring .se and .nu domains found on {{ reports[0].date if reports else 'latest scan' }}.",
+    "temporalCoverage": "{{ reports[0].date if reports else '' }}",
+    "distribution": [
+        { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "/api/report/{{ reports[0].date if reports else '' }}" },
+        { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "/api/report/{{ reports[0].date if reports else '' }}/csv" }
+    ],
+    "creator": { "@type": "Organization", "name": "SE Domain Snapback Scanner" }
+}
+</script>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 <div id="status-banner" class="status-banner status-idle">
-    ✓ System ready
+    <span>&#10003;</span> System ready
 </div>
 
 {% if latest_data %}
 <div class="stats">
     <div class="stat-card">
         <div class="stat-value">{{ latest_data.total_domains }}</div>
-        <div class="stat-label">Valuable Domains Found</div>
+        <div class="stat-label">Domains Found</div>
     </div>
     <div class="stat-card">
         <div class="stat-value">{{ reports|length }}</div>
-        <div class="stat-label">Historical Reports</div>
+        <div class="stat-label">Reports</div>
     </div>
     <div class="stat-card">
         <div class="stat-value">{{ latest_data.domains|selectattr('indexed')|list|length }}</div>
-        <div class="stat-label">Indexed Domains</div>
+        <div class="stat-label">Indexed</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ latest_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</div>
+        <div class="stat-label">.se Domains</div>
     </div>
 </div>
 
 <div class="card">
-    <h2>Latest Scan Results ({{ reports[0].date if reports else 'N/A' }})</h2>
-    
-    <button id="scan-btn" class="btn" onclick="startScan()">🔄 Run New Scan</button>
-    
+    <h2><span class="icon">&#128202;</span> Latest Results ({{ reports[0].date if reports else 'N/A' }})</h2>
+
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <button id="scan-btn" class="btn" onclick="startScan()">Run New Scan</button>
+            {% if reports %}
+            <a href="/report/{{ reports[0].date }}" class="btn btn-secondary">Full Report</a>
+            {% endif %}
+        </div>
+    </div>
+
     {% if latest_data.domains %}
-    <table>
-        <thead>
-            <tr>
-                <th>Domain</th>
-                <th>TLD</th>
-                <th>Release Date</th>
-                <th>Indexed Pages</th>
-                <th>Source</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for domain in latest_data.domains[:50] %}
-            <tr>
-                <td><strong>{{ domain.domain }}</strong></td>
-                <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
-                <td>{{ domain.release_date }}</td>
-                <td>
-                    {% if domain.estimated_pages %}
-                        <strong>{{ domain.estimated_pages }}</strong>
-                    {% else %}
-                        -
-                    {% endif %}
-                </td>
-                <td>{{ domain.index_source }}</td>
-                <td>
-                    {% if domain.indexed %}
-                        <span class="badge badge-success">Indexed</span>
-                    {% else %}
-                        <span class="badge badge-warning">Not Indexed</span>
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <div class="search-box">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="search" placeholder="Search domains..." aria-label="Search domains">
+                <button class="clear-btn" id="clear-search" onclick="clearSearch()" aria-label="Clear search">&#10005;</button>
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <div class="filter-bar">
+                <button class="chip active" onclick="filterTLD('all', this)">All <span class="count">{{ latest_data.domains|length }}</span></button>
+                <button class="chip" onclick="filterTLD('se', this)">.se <span class="count">{{ latest_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</span></button>
+                <button class="chip" onclick="filterTLD('nu', this)">.nu <span class="count">{{ latest_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-count" id="result-count">Showing {{ [latest_data.domains|length, 50]|min }} of {{ latest_data.domains|length }}</div>
+
+    <div class="table-wrapper">
+        <table id="domains-table">
+            <thead>
+                <tr>
+                    <th class="sortable" onclick="sortTable(0)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(0)">Domain <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(1)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(1)">TLD <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Date <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(3)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(3)">Pages <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(4)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(4)">Source <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(5)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(5)">Status <span class="sort-icon">&#8693;</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for domain in latest_data.domains[:50] %}
+                <tr data-tld="{{ domain.tld }}">
+                    <td><strong>{{ domain.domain }}</strong></td>
+                    <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
+                    <td>{{ domain.release_date }}</td>
+                    <td>{% if domain.estimated_pages %}<strong>{{ domain.estimated_pages }}</strong>{% else %}<span style="color:var(--text-muted)">-</span>{% endif %}</td>
+                    <td>{{ domain.index_source }}</td>
+                    <td>{% if domain.indexed %}<span class="badge badge-success">Indexed</span>{% else %}<span class="badge badge-warning">Not Indexed</span>{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
     {% if latest_data.domains|length > 50 %}
-    <p style="margin-top: 1rem; color: #666;">
-        Showing top 50 of {{ latest_data.domains|length }} domains. 
-        <a href="/report/{{ reports[0].date }}">View full report</a>
+    <p style="margin-top: 1rem; text-align: center;">
+        <a href="/report/{{ reports[0].date }}" class="btn btn-secondary">View all {{ latest_data.domains|length }} domains</a>
     </p>
     {% endif %}
     {% else %}
     <div class="empty-state">
+        <div class="empty-icon">&#128269;</div>
         <p>No domains found in the latest scan.</p>
     </div>
     {% endif %}
@@ -80,22 +133,90 @@
 <div class="card">
     <h2>No Reports Available</h2>
     <div class="empty-state">
+        <div class="empty-icon">&#128640;</div>
         <p>No scan results found. Run your first scan to get started!</p>
-        <button id="scan-btn" class="btn" onclick="startScan()">🔄 Run First Scan</button>
+        <button id="scan-btn" class="btn" onclick="startScan()" style="margin-top: 1rem;">Run First Scan</button>
     </div>
 </div>
 {% endif %}
 
 {% if reports %}
 <div class="card">
-    <h2>Historical Reports</h2>
+    <h2><span class="icon">&#128197;</span> Historical Reports</h2>
     <ul class="report-list">
         {% for report in reports %}
         <li>
-            <a href="/report/{{ report.date }}">📄 {{ report.date }}</a>
+            <a href="/report/{{ report.date }}">
+                <span class="report-date">{{ report.date }}</span>
+                {% if loop.first %}<span class="badge badge-info">Latest</span>{% endif %}
+            </a>
         </li>
         {% endfor %}
     </ul>
 </div>
 {% endif %}
+{% endblock %}
+
+{% block extra_script %}
+<script>
+    var activeFilter = 'all';
+    var currentSort = { col: -1, asc: true };
+    var searchInput = document.getElementById('search');
+    var clearBtn = document.getElementById('clear-search');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            clearBtn.classList.toggle('visible', e.target.value.length > 0);
+            applyFilters();
+        });
+    }
+
+    function clearSearch() {
+        if (searchInput) { searchInput.value = ''; clearBtn.classList.remove('visible'); applyFilters(); searchInput.focus(); }
+    }
+
+    function filterTLD(tld, el) {
+        activeFilter = tld;
+        document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
+        el.classList.add('active');
+        applyFilters();
+    }
+
+    function applyFilters() {
+        var table = document.getElementById('domains-table'); if (!table) return;
+        var rows = table.querySelectorAll('tbody tr');
+        var term = searchInput ? searchInput.value.toLowerCase() : '';
+        var vc = 0;
+        rows.forEach(function(row) {
+            var tld = row.getAttribute('data-tld');
+            var text = row.textContent.toLowerCase();
+            var v = (activeFilter === 'all' || tld === activeFilter) && (!term || text.indexOf(term) >= 0);
+            row.style.display = v ? '' : 'none';
+            if (v) vc++;
+        });
+        var c = document.getElementById('result-count');
+        if (c) c.textContent = 'Showing ' + vc + ' domains';
+    }
+
+    function sortTable(ci) {
+        var table = document.getElementById('domains-table'); if (!table) return;
+        var tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        var ths = table.querySelectorAll('th');
+        if (currentSort.col === ci) currentSort.asc = !currentSort.asc;
+        else { currentSort.col = ci; currentSort.asc = true; }
+        ths.forEach(function(h, i) {
+            h.classList.toggle('sorted', i === ci);
+            var ic = h.querySelector('.sort-icon');
+            if (ic) ic.innerHTML = i === ci ? (currentSort.asc ? '&#8593;' : '&#8595;') : '&#8693;';
+        });
+        rows.sort(function(a, b) {
+            var at = a.cells[ci].textContent.trim(), bt = b.cells[ci].textContent.trim();
+            var an = parseFloat(at), bn = parseFloat(bt), r;
+            if (!isNaN(an) && !isNaN(bn)) r = an - bn; else r = at.localeCompare(bt);
+            return currentSort.asc ? r : -r;
+        });
+        rows.forEach(function(r) { tbody.appendChild(r); });
+    }
+</script>
 {% endblock %}

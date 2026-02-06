@@ -2,7 +2,14 @@
 """
 Static site generator for GitHub Pages.
 
-Converts JSON reports into static HTML pages that can be served on GitHub Pages.
+Converts JSON reports into static HTML pages with:
+- PWA support (manifest, service worker, standalone mode)
+- Favicon (SVG)
+- Dark mode with system preference detection
+- Responsive mobile-first design with app-like feel
+- Structured data (JSON-LD) for search engine crawlers
+- Open Graph / Twitter Card meta tags
+- Search, sort, filter on every page
 """
 
 import json
@@ -12,8 +19,11 @@ from datetime import datetime, timezone
 
 # Configuration
 REPORT_DIR = Path("reports")
-OUTPUT_DIR = Path("docs")  # GitHub Pages serves from /docs or root
+OUTPUT_DIR = Path("docs")
 TEMPLATE_DIR = Path("templates")
+SITE_NAME = "SE/NU Domain Snapback Scanner"
+SITE_DESCRIPTION = "Find valuable expiring .se and .nu domains before they become available for registration."
+GITHUB_URL = "https://github.com/Caceras/se-domain-snapback"
 
 
 def load_reports():
@@ -38,592 +48,663 @@ def load_report(report_date):
     return None
 
 
+# ── Shared CSS ────────────────────────────────────────────────────────────────
+
+SHARED_CSS = """\
+:root {
+    --bg-primary:#f5f7fa; --bg-card:#fff;
+    --bg-header:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    --bg-table-header:#f8f9fa; --bg-table-hover:#f0f2f5;
+    --bg-input:#fff;
+    --bg-badge-success:#d4edda; --bg-badge-warning:#fff3cd; --bg-badge-info:#d1ecf1;
+    --bg-chip:#e8eaf6; --bg-chip-active:#667eea; --bg-footer:#fff;
+    --text-primary:#1a1a2e; --text-secondary:#555; --text-muted:#888;
+    --text-badge-success:#155724; --text-badge-warning:#856404; --text-badge-info:#0c5460;
+    --text-chip:#444; --text-chip-active:#fff; --text-on-header:#fff;
+    --border-color:#e0e0e0; --border-input:#d0d0d0;
+    --accent:#667eea; --accent-hover:#5568d3; --accent-light:rgba(102,126,234,0.1);
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+    --tld-se:#2196F3; --tld-nu:#4CAF50;
+    --radius-sm:6px; --radius-md:10px; --transition:0.25s ease;
+    --safe-top:env(safe-area-inset-top,0px); --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+[data-theme="dark"] {
+    --bg-primary:#0f0f1a; --bg-card:#1a1a2e;
+    --bg-header:linear-gradient(135deg,#434eab 0%,#5a3678 100%);
+    --bg-table-header:#16162b; --bg-table-hover:#222240;
+    --bg-input:#16162b;
+    --bg-badge-success:#1a3a2a; --bg-badge-warning:#3a3020; --bg-badge-info:#1a2a3a;
+    --bg-chip:#2a2a4a; --bg-chip-active:#667eea; --bg-footer:#1a1a2e;
+    --text-primary:#e0e0f0; --text-secondary:#aab; --text-muted:#777;
+    --text-badge-success:#7dcc8a; --text-badge-warning:#ddc46a; --text-badge-info:#6ac5d8;
+    --text-chip:#bbb; --text-chip-active:#fff; --text-on-header:#fff;
+    --border-color:#2a2a4a; --border-input:#3a3a5a;
+    --accent:#7b8ff0; --accent-hover:#6a7ee0; --accent-light:rgba(102,126,234,0.15);
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.3); --shadow-md:0 4px 12px rgba(0,0,0,0.3);
+    --tld-se:#64b5f6; --tld-nu:#81c784;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+    line-height:1.6;color:var(--text-primary);background:var(--bg-primary);
+    transition:background var(--transition),color var(--transition);
+    -webkit-tap-highlight-color:transparent;overscroll-behavior-y:contain;
+    padding-top:var(--safe-top);padding-bottom:var(--safe-bottom);
+}
+.header{background:var(--bg-header);color:var(--text-on-header);padding:1rem 0;box-shadow:var(--shadow-md);position:sticky;top:0;z-index:100}
+.container{max-width:1280px;margin:0 auto;padding:0 16px}
+.header-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.header-brand h1{font-size:1.35rem;font-weight:700;letter-spacing:-.02em}
+.header-brand .subtitle{opacity:.85;font-size:.85rem;margin-top:.1rem}
+.header-actions{display:flex;align-items:center;gap:.5rem}
+.nav{display:flex;gap:.4rem;flex-wrap:wrap}
+.nav a{
+    color:white;text-decoration:none;padding:.4rem .75rem;
+    background:rgba(255,255,255,.12);border-radius:var(--radius-sm);
+    transition:background var(--transition);border:1px solid rgba(255,255,255,.15);
+    font-size:.85rem;white-space:nowrap;-webkit-tap-highlight-color:transparent;
+}
+.nav a:hover{background:rgba(255,255,255,.22)}
+.nav a:active{background:rgba(255,255,255,.30)}
+.theme-toggle{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);
+    color:white;padding:.4rem .55rem;border-radius:var(--radius-sm);
+    cursor:pointer;font-size:1.1rem;transition:background var(--transition);line-height:1;
+    -webkit-tap-highlight-color:transparent;
+}
+.theme-toggle:hover{background:rgba(255,255,255,.22)}
+.content{padding:1.25rem 0 3rem}
+.card{
+    background:var(--bg-card);border-radius:var(--radius-md);
+    padding:1.25rem;margin-bottom:1.25rem;box-shadow:var(--shadow-sm);
+    transition:background var(--transition),box-shadow var(--transition);
+    border:1px solid var(--border-color);
+}
+.card h2{margin-bottom:.75rem;color:var(--accent);font-size:1.15rem;font-weight:600;display:flex;align-items:center;gap:.4rem}
+.card h2 .icon{font-size:1rem}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.25rem}
+.stat-card{
+    background:var(--bg-card);padding:1rem 1.15rem;border-radius:var(--radius-md);
+    box-shadow:var(--shadow-sm);border:1px solid var(--border-color);
+    transition:transform var(--transition),box-shadow var(--transition),background var(--transition);
+    position:relative;overflow:hidden;
+}
+.stat-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent);border-radius:4px 0 0 4px}
+.stat-card:active{transform:scale(.98)}
+.stat-value{font-size:1.75rem;font-weight:700;color:var(--accent);line-height:1.2}
+.stat-label{color:var(--text-secondary);margin-top:.25rem;font-size:.8rem}
+.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius-sm);border:1px solid var(--border-color);margin-top:.75rem}
+table{width:100%;border-collapse:collapse;min-width:580px}
+th,td{padding:.6rem .7rem;text-align:left;border-bottom:1px solid var(--border-color);white-space:nowrap}
+th{
+    background:var(--bg-table-header);font-weight:600;color:var(--text-secondary);
+    font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;
+    position:sticky;top:0;z-index:10;
+}
+th.sortable{cursor:pointer;user-select:none;transition:background var(--transition);-webkit-tap-highlight-color:transparent}
+th.sortable:hover{background:var(--bg-table-hover)}
+th .sort-icon{opacity:.4;margin-left:.25rem;font-size:.7rem;transition:opacity var(--transition)}
+th.sorted .sort-icon{opacity:1;color:var(--accent)}
+td{font-size:.85rem}
+tbody tr{transition:background var(--transition)}
+tbody tr:hover{background:var(--bg-table-hover)}
+tbody tr:active{background:var(--bg-table-hover)}
+tbody tr:last-child td{border-bottom:none}
+.badge{display:inline-flex;align-items:center;gap:.25rem;padding:.15rem .5rem;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:.02em}
+.badge-success{background:var(--bg-badge-success);color:var(--text-badge-success)}
+.badge-info{background:var(--bg-badge-info);color:var(--text-badge-info)}
+.badge-warning{background:var(--bg-badge-warning);color:var(--text-badge-warning)}
+.tld-se{color:var(--tld-se);font-weight:600}
+.tld-nu{color:var(--tld-nu);font-weight:600}
+.btn{
+    display:inline-flex;align-items:center;gap:.35rem;padding:.5rem 1rem;
+    background:var(--accent);color:white;text-decoration:none;
+    border-radius:var(--radius-sm);border:none;cursor:pointer;
+    font-size:.88rem;font-family:inherit;font-weight:500;
+    transition:background var(--transition),transform .1s;
+    -webkit-tap-highlight-color:transparent;
+}
+.btn:hover{background:var(--accent-hover)}
+.btn:active{transform:scale(.97)}
+.btn-secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-secondary:hover{background:var(--accent-light)}
+.filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.75rem}
+.filter-bar label{font-size:.8rem;color:var(--text-secondary);font-weight:500}
+.chip{
+    display:inline-flex;align-items:center;gap:.25rem;padding:.3rem .65rem;
+    background:var(--bg-chip);color:var(--text-chip);border-radius:50px;
+    font-size:.78rem;font-weight:500;cursor:pointer;border:1px solid transparent;
+    transition:all var(--transition);user-select:none;-webkit-tap-highlight-color:transparent;
+}
+.chip:hover{border-color:var(--accent)}
+.chip:active{transform:scale(.95)}
+.chip.active{background:var(--bg-chip-active);color:var(--text-chip-active);border-color:var(--bg-chip-active)}
+.chip .count{background:rgba(255,255,255,.2);padding:0 .3rem;border-radius:50px;font-size:.7rem}
+.chip.active .count{background:rgba(255,255,255,.3)}
+.search-box{position:relative}
+.search-box input{
+    width:100%;padding:.5rem .8rem .5rem 2.2rem;
+    border:1px solid var(--border-input);border-radius:var(--radius-sm);
+    font-size:16px;font-family:inherit;
+    background:var(--bg-input);color:var(--text-primary);
+    transition:border var(--transition),box-shadow var(--transition),background var(--transition);
+    -webkit-appearance:none;appearance:none;
+}
+.search-box input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+.search-box input::placeholder{color:var(--text-muted)}
+.search-box .search-icon{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:.85rem;pointer-events:none}
+.search-box .clear-btn{
+    position:absolute;right:.5rem;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:var(--text-muted);cursor:pointer;
+    font-size:1rem;padding:.3rem;display:none;line-height:1;
+    -webkit-tap-highlight-color:transparent;
+}
+.search-box .clear-btn.visible{display:block}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem}
+.toolbar-left{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;flex:1;min-width:0}
+.toolbar-right{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem}
+.result-count{font-size:.8rem;color:var(--text-muted);padding:.2rem 0}
+.report-list{list-style:none}
+.report-list li{border-bottom:1px solid var(--border-color)}
+.report-list li:last-child{border-bottom:none}
+.report-list a{
+    display:flex;align-items:center;gap:.4rem;padding:.6rem .4rem;
+    color:var(--accent);text-decoration:none;
+    transition:background var(--transition),padding var(--transition);
+    border-radius:var(--radius-sm);-webkit-tap-highlight-color:transparent;
+}
+.report-list a:hover{background:var(--accent-light);padding-left:.8rem}
+.report-list a:active{background:var(--accent-light)}
+.report-list .report-date{font-weight:500;font-size:.9rem}
+.empty-state{text-align:center;padding:2.5rem 1rem;color:var(--text-muted)}
+.empty-state .empty-icon{font-size:2.5rem;margin-bottom:.75rem;opacity:.5}
+.footer{
+    background:var(--bg-footer);border-top:1px solid var(--border-color);
+    padding:1.25rem 0;padding-bottom:calc(1.25rem + var(--safe-bottom));
+    margin-top:1.5rem;transition:background var(--transition);
+}
+.footer-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;font-size:.8rem;color:var(--text-muted)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.back-to-top{
+    position:fixed;bottom:calc(1.25rem + var(--safe-bottom));right:1rem;
+    width:44px;height:44px;background:var(--accent);color:white;border:none;
+    border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow-md);
+    opacity:0;transform:translateY(10px);
+    transition:opacity var(--transition),transform var(--transition),background var(--transition);
+    pointer-events:none;z-index:50;display:flex;align-items:center;justify-content:center;
+    -webkit-tap-highlight-color:transparent;
+}
+.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.back-to-top:hover{background:var(--accent-hover)}
+.back-to-top:active{transform:scale(.92)}
+.report-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.4rem}
+.download-links{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem}
+.breadcrumb{margin-bottom:.75rem;font-size:.82rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--accent);text-decoration:none}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeInUp .35s ease forwards}
+@media(min-width:769px){
+    .container{padding:0 24px}
+    .header{padding:1.5rem 0}
+    .header-brand h1{font-size:1.6rem}
+    .header-brand .subtitle{font-size:.95rem}
+    .content{padding:2rem 0 3rem}
+    .card{padding:1.5rem;margin-bottom:1.5rem}
+    .card h2{font-size:1.3rem}
+    .stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .stat-value{font-size:2rem}
+    .stat-label{font-size:.9rem}
+    .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+}
+@media(max-width:480px){
+    .header-row{flex-direction:column;align-items:flex-start}
+    .header-actions{width:100%;justify-content:space-between}
+    .toolbar{flex-direction:column;align-items:stretch}
+    .report-nav{flex-direction:column;align-items:stretch;text-align:center}
+}
+::-webkit-scrollbar{height:4px;width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
+@media(display-mode:standalone){
+    .header{padding-top:calc(1rem + var(--safe-top))}
+    .footer{padding-bottom:calc(1.25rem + var(--safe-bottom))}
+}
+"""
+
+
+# ── Shared JavaScript ─────────────────────────────────────────────────────────
+
+SHARED_JS = """\
+/* Theme */
+function toggleTheme(){
+    var h=document.documentElement,c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    h.setAttribute('data-theme',n);localStorage.setItem('theme',n);updateThemeIcon(n);
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m)m.setAttribute('content',n==='dark'?'#434eab':'#667eea');
+}
+function updateThemeIcon(t){var i=document.querySelector('.theme-icon');if(i)i.innerHTML=t==='dark'?'&#9788;':'&#9790;';}
+(function(){
+    var s=localStorage.getItem('theme');
+    if(s){document.documentElement.setAttribute('data-theme',s);updateThemeIcon(s);}
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){
+        document.documentElement.setAttribute('data-theme','dark');updateThemeIcon('dark');
+    }
+})();
+
+/* Back to top */
+var btt=document.querySelector('.back-to-top');
+window.addEventListener('scroll',function(){
+    if(btt){if(window.scrollY>300)btt.classList.add('visible');else btt.classList.remove('visible');}
+},{passive:true});
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+/* Sort */
+var currentSort={col:-1,asc:true};
+function sortTable(ci){
+    var t=document.getElementById('domains-table');if(!t)return;
+    var tb=t.querySelector('tbody'),rows=Array.from(tb.querySelectorAll('tr')),ths=t.querySelectorAll('th');
+    if(currentSort.col===ci)currentSort.asc=!currentSort.asc;
+    else{currentSort.col=ci;currentSort.asc=true;}
+    ths.forEach(function(h,i){
+        h.classList.toggle('sorted',i===ci);
+        var ic=h.querySelector('.sort-icon');
+        if(ic){ic.innerHTML=i===ci?(currentSort.asc?'&#8593;':'&#8595;'):'&#8693;';}
+    });
+    rows.sort(function(a,b){
+        var at=a.cells[ci].textContent.trim(),bt=b.cells[ci].textContent.trim();
+        var an=parseFloat(at),bn=parseFloat(bt),r;
+        if(!isNaN(an)&&!isNaN(bn))r=an-bn; else r=at.localeCompare(bt);
+        return currentSort.asc?r:-r;
+    });
+    rows.forEach(function(r){tb.appendChild(r);});
+}
+
+/* Filter & Search */
+var activeFilter='all';
+function filterTLD(tld,el){
+    activeFilter=tld;
+    document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});
+    el.classList.add('active');
+    applyFilters();
+}
+function applyFilters(){
+    var t=document.getElementById('domains-table');if(!t)return;
+    var rows=t.querySelectorAll('tbody tr'),si=document.getElementById('search'),
+        term=si?si.value.toLowerCase():'',vc=0;
+    rows.forEach(function(r){
+        var tld=r.getAttribute('data-tld'),idx=r.getAttribute('data-indexed'),
+            txt=r.textContent.toLowerCase(),mf,ms;
+        if(activeFilter==='all')mf=true;
+        else if(activeFilter==='indexed')mf=idx==='true';
+        else mf=tld===activeFilter;
+        ms=!term||txt.indexOf(term)>=0;
+        var v=mf&&ms;r.style.display=v?'':'none';if(v)vc++;
+    });
+    var ce=document.getElementById('result-count');
+    if(ce)ce.textContent='Showing '+vc+' domains';
+}
+function clearSearch(){
+    var si=document.getElementById('search'),cb=document.getElementById('clear-search');
+    if(si){si.value='';if(cb)cb.classList.remove('visible');applyFilters();si.focus();}
+}
+document.addEventListener('DOMContentLoaded',function(){
+    var si=document.getElementById('search'),cb=document.getElementById('clear-search');
+    if(si)si.addEventListener('input',function(e){
+        var t=e.target.value;
+        if(cb)cb.classList.toggle('visible',t.length>0);
+        applyFilters();
+    });
+    /* Animate */
+    document.querySelectorAll('.stat-card,.card').forEach(function(el,i){
+        el.classList.add('animate-in');el.style.animationDelay=(i*0.05)+'s';
+    });
+});
+
+/* Service Worker */
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+"""
+
+
+def escape_html(text):
+    """Escape HTML special characters."""
+    if text is None:
+        return ''
+    return str(text).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
+
+
+def json_ld(obj):
+    """Serialize a dict to a JSON-LD script tag."""
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>'
+
+
+def html_head(title=SITE_NAME, description=SITE_DESCRIPTION, extra_ld=None):
+    """Generate <head> with meta tags, favicon, PWA, structured data."""
+    ld_blocks = [json_ld({
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": SITE_NAME,
+        "description": SITE_DESCRIPTION,
+        "url": "index.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "author": {"@type": "Organization", "name": SITE_NAME}
+    })]
+    if extra_ld:
+        for obj in extra_ld:
+            ld_blocks.append(json_ld(obj))
+
+    return f"""<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>{escape_html(title)}</title>
+    <meta name="description" content="{escape_html(description)}">
+    <meta name="keywords" content="domain scanner, .se domains, .nu domains, expiring domains, snapback, domain drop, Swedish domains">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{escape_html(title)}">
+    <meta property="og:description" content="{escape_html(description)}">
+    <meta property="og:site_name" content="{escape_html(SITE_NAME)}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{escape_html(title)}">
+    <meta name="twitter:description" content="{escape_html(description)}">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="DomainScan">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="DomainScan">
+    {''.join(ld_blocks)}
+    <style>{SHARED_CSS}</style>
+</head>
+<body>"""
+
+
+def html_site_header(nav_links):
+    """Generate the site header/nav bar."""
+    nav = ''.join(f'<a href="{href}">{label}</a>' for label, href in nav_links)
+    return f"""
+    <div class="header">
+        <div class="container">
+            <div class="header-row">
+                <div class="header-brand">
+                    <h1>{SITE_NAME}</h1>
+                    <p class="subtitle">Find valuable expiring .se and .nu domains</p>
+                </div>
+                <div class="header-actions">
+                    <div class="nav">{nav}</div>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">
+                        <span class="theme-icon">&#9790;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>"""
+
+
+def html_footer():
+    """Generate footer, back-to-top button, and shared JS."""
+    return f"""
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <span>Data from <a href="https://www.internetstiftelsen.se" target="_blank" rel="noopener">Internetstiftelsen</a></span>
+                <span><a href="{GITHUB_URL}" target="_blank" rel="noopener">GitHub</a></span>
+            </div>
+        </div>
+    </footer>
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">&#8593;</button>
+    <script>{SHARED_JS}</script>
+</body>
+</html>"""
+
+
+# ── Component Generators ──────────────────────────────────────────────────────
+
+def generate_stat_cards(cards):
+    html = '<div class="stats">\n'
+    for value, label in cards:
+        html += f'<div class="stat-card"><div class="stat-value">{value}</div><div class="stat-label">{escape_html(label)}</div></div>\n'
+    html += '</div>\n'
+    return html
+
+
+def generate_domain_row(domain):
+    tld = domain.get('tld', 'se')
+    indexed = domain.get('indexed', False)
+    pages = domain.get('estimated_pages')
+    pages_html = f'<strong>{pages}</strong>' if pages else '<span style="color:var(--text-muted)">-</span>'
+    badge = '<span class="badge badge-success">Indexed</span>' if indexed else '<span class="badge badge-warning">Not Indexed</span>'
+    return (f'<tr data-tld="{escape_html(tld)}" data-indexed="{"true" if indexed else "false"}">'
+            f'<td><strong>{escape_html(domain.get("domain", ""))}</strong></td>'
+            f'<td><span class="tld-{escape_html(tld)}">.{escape_html(tld)}</span></td>'
+            f'<td>{escape_html(domain.get("release_date", ""))}</td>'
+            f'<td>{pages_html}</td>'
+            f'<td>{escape_html(domain.get("index_source", ""))}</td>'
+            f'<td>{badge}</td></tr>')
+
+
+def generate_domains_table(domains, table_id="domains-table"):
+    cols = [("Domain", 0), ("TLD", 1), ("Date", 2), ("Pages", 3), ("Source", 4), ("Status", 5)]
+    hdr = ''.join(
+        f'<th class="sortable" onclick="sortTable({i})" tabindex="0" role="button" '
+        f'onkeypress="if(event.key===\'Enter\')sortTable({i})">'
+        f'{n} <span class="sort-icon">&#8693;</span></th>'
+        for n, i in cols
+    )
+    rows = '\n'.join(generate_domain_row(d) for d in domains)
+    return f'<div class="table-wrapper"><table id="{table_id}"><thead><tr>{hdr}</tr></thead><tbody>{rows}</tbody></table></div>'
+
+
+def generate_filter_bar(domains):
+    total = len(domains)
+    se = sum(1 for d in domains if d.get('tld') == 'se')
+    nu = sum(1 for d in domains if d.get('tld') == 'nu')
+    idx = sum(1 for d in domains if d.get('indexed'))
+    return f"""<div class="toolbar">
+<div class="toolbar-left"><div class="search-box">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="search" placeholder="Search domains..." aria-label="Search domains">
+    <button class="clear-btn" id="clear-search" onclick="clearSearch()" aria-label="Clear search">&#10005;</button>
+</div></div>
+<div class="toolbar-right"><div class="filter-bar">
+    <button class="chip active" onclick="filterTLD('all',this)">All <span class="count">{total}</span></button>
+    <button class="chip" onclick="filterTLD('se',this)">.se <span class="count">{se}</span></button>
+    <button class="chip" onclick="filterTLD('nu',this)">.nu <span class="count">{nu}</span></button>
+    <button class="chip" onclick="filterTLD('indexed',this)">Indexed <span class="count">{idx}</span></button>
+</div></div>
+</div>
+<div class="result-count" id="result-count">Showing {total} domains</div>"""
+
+
+def generate_report_list(reports, current_date=None):
+    html = '<ul class="report-list">\n'
+    for report in reports:
+        d = report['date']
+        style = ' style="font-weight:bold;background:var(--accent-light);"' if d == current_date else ''
+        badge = ' <span class="badge badge-info">Current</span>' if d == current_date else ''
+        if current_date is None and report == reports[0]:
+            badge = ' <span class="badge badge-info">Latest</span>'
+        html += f'<li><a href="report-{d}.html"{style}><span class="report-date">{d}</span>{badge}</a></li>\n'
+    html += '</ul>\n'
+    return html
+
+
+# ── Page Generators ───────────────────────────────────────────────────────────
+
 def generate_index_page(reports):
-    """Generate the index.html page."""
     latest_data = None
     if reports:
         latest_data = load_report(reports[0]['date'])
-    
-    # Generate HTML
-    html = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SE/NU Domain Snapback Scanner</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        
-        .nav a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .content {
-            padding: 2rem 0;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .card h2 {
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        
-        th, td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        th {
-            background: #f8f9fa;
-            font-weight: 600;
-            color: #555;
-        }
-        
-        tr:hover {
-            background: #f8f9fa;
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        
-        .badge-success {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .badge-warning {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #667eea;
-        }
-        
-        .stat-label {
-            color: #666;
-            margin-top: 0.5rem;
-        }
-        
-        .report-list {
-            list-style: none;
-        }
-        
-        .report-list li {
-            padding: 0.5rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .report-list a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .report-list a:hover {
-            text-decoration: underline;
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
-        
-        .tld-se {
-            color: #2196F3;
-            font-weight: 500;
-        }
-        
-        .tld-nu {
-            color: #4CAF50;
-            font-weight: 500;
-        }
-        
-        .github-link {
-            margin-top: 2rem;
-            text-align: center;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-        }
-        
-        .github-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <div class="container">
-            <h1>🔍 SE/NU Domain Snapback Scanner</h1>
-            <p class="subtitle">Find valuable expiring .se and .nu domains</p>
-            <div class="nav">
-                <a href="index.html">Latest Results</a>
-                <a href="#reports">All Reports</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container content">
-"""
-    
+
+    description = SITE_DESCRIPTION
+    extra_ld = []
     if latest_data and reports:
-        indexed_count = sum(1 for d in latest_data.get('domains', []) if d.get('indexed'))
-        
-        html += f"""
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-value">{latest_data.get('total_domains', 0)}</div>
-                <div class="stat-label">Valuable Domains Found</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">{len(reports)}</div>
-                <div class="stat-label">Historical Reports</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">{indexed_count}</div>
-                <div class="stat-label">Indexed Domains</div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>Latest Scan Results ({reports[0]['date']})</h2>
-"""
-        
-        if latest_data.get('domains'):
-            html += """
-            <table>
-                <thead>
-                    <tr>
-                        <th>Domain</th>
-                        <th>TLD</th>
-                        <th>Release Date</th>
-                        <th>Indexed Pages</th>
-                        <th>Source</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-"""
-            
-            # Show top 50 domains
-            for domain in latest_data['domains'][:50]:
-                indexed_badge = '<span class="badge badge-success">Indexed</span>' if domain.get('indexed') else '<span class="badge badge-warning">Not Indexed</span>'
-                pages = f"<strong>{domain.get('estimated_pages', '-')}</strong>" if domain.get('estimated_pages') else '-'
-                tld_class = f"tld-{domain.get('tld', 'se')}"
-                
-                html += f"""
-                    <tr>
-                        <td><strong>{domain.get('domain', '')}</strong></td>
-                        <td><span class="{tld_class}">.{domain.get('tld', '')}</span></td>
-                        <td>{domain.get('release_date', '')}</td>
-                        <td>{pages}</td>
-                        <td>{domain.get('index_source', '')}</td>
-                        <td>{indexed_badge}</td>
-                    </tr>
-"""
-            
-            html += """
-                </tbody>
-            </table>
-"""
-            
-            if len(latest_data['domains']) > 50:
-                html += f"""
-            <p style="margin-top: 1rem; color: #666;">
-                Showing top 50 of {len(latest_data['domains'])} domains. 
-                <a href="report-{reports[0]['date']}.html">View full report</a>
-            </p>
-"""
+        total = latest_data.get('total_domains', 0)
+        description = f"Today's scan found {total} valuable expiring .se and .nu domains. Daily updated domain snapback scanner."
+        extra_ld.append({
+            "@context": "https://schema.org",
+            "@type": "Dataset",
+            "name": f"SE/NU Expiring Domain Report - {reports[0]['date']}",
+            "description": f"{total} valuable expiring .se and .nu domains found on {reports[0]['date']}.",
+            "temporalCoverage": reports[0]['date'],
+            "creator": {"@type": "Organization", "name": SITE_NAME}
+        })
+
+    html = html_head(title=SITE_NAME, description=description, extra_ld=extra_ld)
+    html += html_site_header([("Latest Results", "index.html"), ("All Reports", "#reports")])
+    html += '\n<main class="container content" role="main">\n'
+
+    if latest_data and reports:
+        domains = latest_data.get('domains', [])
+        indexed = sum(1 for d in domains if d.get('indexed'))
+        se = sum(1 for d in domains if d.get('tld') == 'se')
+
+        html += generate_stat_cards([
+            (latest_data.get('total_domains', 0), "Domains Found"),
+            (len(reports), "Reports"),
+            (indexed, "Indexed"),
+            (se, ".se Domains"),
+        ])
+
+        html += f'<div class="card">\n<h2><span class="icon">&#128202;</span> Latest Results ({reports[0]["date"]})</h2>\n'
+
+        if domains:
+            display = domains[:50]
+            html += generate_filter_bar(display)
+            html += generate_domains_table(display)
+            if len(domains) > 50:
+                html += f'<p style="margin-top:1rem;text-align:center;"><a href="report-{reports[0]["date"]}.html" class="btn btn-secondary">View all {len(domains)} domains</a></p>'
         else:
-            html += """
-            <div class="empty-state">
-                <p>No domains found in the latest scan.</p>
-            </div>
-"""
-        
-        html += """
-        </div>
-"""
+            html += '<div class="empty-state"><div class="empty-icon">&#128269;</div><p>No domains found in the latest scan.</p></div>'
+        html += '\n</div>\n'
     else:
-        html += """
-        <div class="card">
-            <h2>No Reports Available</h2>
-            <div class="empty-state">
-                <p>No scan results found yet. Check back soon!</p>
-            </div>
-        </div>
-"""
-    
-    # Add historical reports section
+        html += '<div class="card"><h2>No Reports Available</h2><div class="empty-state"><div class="empty-icon">&#128640;</div><p>No scan results found yet. Check back soon!</p></div></div>'
+
     if reports:
-        html += """
-        <div class="card" id="reports">
-            <h2>Historical Reports</h2>
-            <ul class="report-list">
-"""
-        for report in reports:
-            html += f'                <li><a href="report-{report["date"]}.html">📄 {report["date"]}</a></li>\n'
-        
-        html += """
-            </ul>
-        </div>
-"""
-    
-    # Add GitHub link
-    html += """
-        <div class="github-link">
-            <p>📊 Data updated daily via <a href="https://github.com/Caceras/se-domain-snapback" target="_blank">GitHub Actions</a></p>
-            <p style="margin-top: 0.5rem;">⭐ <a href="https://github.com/Caceras/se-domain-snapback" target="_blank">View on GitHub</a></p>
-        </div>
-    </div>
-</body>
-</html>
-"""
-    
+        html += f'<div class="card" id="reports"><h2><span class="icon">&#128197;</span> Historical Reports</h2>\n{generate_report_list(reports)}</div>'
+
+    html += '\n</main>'
+    html += html_footer()
     return html
 
 
 def generate_report_page(report_date, report_data, reports):
-    """Generate a report page for a specific date."""
-    html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domain Report - {report_date}</title>
-    <style>
-        * {{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }}
-        
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }}
-        
-        .header {{
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }}
-        
-        .container {{
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }}
-        
-        h1 {{
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }}
-        
-        .subtitle {{
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }}
-        
-        .nav {{
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }}
-        
-        .nav a {{
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            transition: background 0.2s;
-        }}
-        
-        .nav a:hover {{
-            background: rgba(255,255,255,0.2);
-        }}
-        
-        .content {{
-            padding: 2rem 0;
-        }}
-        
-        .card {{
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }}
-        
-        .card h2 {{
-            margin-bottom: 1rem;
-            color: #667eea;
-        }}
-        
-        table {{
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }}
-        
-        th, td {{
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }}
-        
-        th {{
-            background: #f8f9fa;
-            font-weight: 600;
-            color: #555;
-        }}
-        
-        tr:hover {{
-            background: #f8f9fa;
-        }}
-        
-        .badge {{
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }}
-        
-        .badge-success {{
-            background: #d4edda;
-            color: #155724;
-        }}
-        
-        .badge-warning {{
-            background: #fff3cd;
-            color: #856404;
-        }}
-        
-        .tld-se {{
-            color: #2196F3;
-            font-weight: 500;
-        }}
-        
-        .tld-nu {{
-            color: #4CAF50;
-            font-weight: 500;
-        }}
-        
-        .download-links {{
-            margin-top: 1rem;
-        }}
-        
-        .download-links a {{
-            display: inline-block;
-            margin-right: 1rem;
-            padding: 0.5rem 1rem;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }}
-        
-        .download-links a:hover {{
-            background: #5568d3;
-        }}
-    </style>
-</head>
-<body>
-    <div class="header">
-        <div class="container">
-            <h1>🔍 SE/NU Domain Snapback Scanner</h1>
-            <p class="subtitle">Report for {report_date}</p>
-            <div class="nav">
-                <a href="index.html">← Back to Latest</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container content">
-        <div class="card">
-            <h2>Domain Report - {report_date}</h2>
-            <p><strong>Total Domains:</strong> {report_data.get('total_domains', 0)}</p>
-            <p><strong>Generated:</strong> {report_data.get('generated_at', 'N/A')}</p>
-            
-            <div class="download-links">
-                <a href="../reports/{report_date}.json" download>📥 Download JSON</a>
-                <a href="../reports/{report_date}.csv" download>📥 Download CSV</a>
-            </div>
-"""
-    
-    if report_data.get('domains'):
-        html += """
-            <table>
-                <thead>
-                    <tr>
-                        <th>Domain</th>
-                        <th>TLD</th>
-                        <th>Release Date</th>
-                        <th>Indexed Pages</th>
-                        <th>Source</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-"""
-        
-        for domain in report_data['domains']:
-            indexed_badge = '<span class="badge badge-success">Indexed</span>' if domain.get('indexed') else '<span class="badge badge-warning">Not Indexed</span>'
-            pages = f"<strong>{domain.get('estimated_pages', '-')}</strong>" if domain.get('estimated_pages') else '-'
-            tld_class = f"tld-{domain.get('tld', 'se')}"
-            
-            html += f"""
-                    <tr>
-                        <td><strong>{domain.get('domain', '')}</strong></td>
-                        <td><span class="{tld_class}">.{domain.get('tld', '')}</span></td>
-                        <td>{domain.get('release_date', '')}</td>
-                        <td>{pages}</td>
-                        <td>{domain.get('index_source', '')}</td>
-                        <td>{indexed_badge}</td>
-                    </tr>
-"""
-        
-        html += """
-                </tbody>
-            </table>
-"""
+    domains = report_data.get('domains', [])
+    total = report_data.get('total_domains', 0)
+    indexed = sum(1 for d in domains if d.get('indexed'))
+    se = sum(1 for d in domains if d.get('tld') == 'se')
+    nu = sum(1 for d in domains if d.get('tld') == 'nu')
+
+    dates = [r['date'] for r in reports]
+    try:
+        idx = dates.index(report_date)
+    except ValueError:
+        idx = -1
+    prev_date = dates[idx - 1] if idx > 0 else None
+    next_date = dates[idx + 1] if 0 <= idx < len(dates) - 1 else None
+
+    title = f"Report {report_date} - {SITE_NAME}"
+    description = f"{total} expiring .se/.nu domains with index status for {report_date}."
+    extra_ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Dataset",
+            "name": f"SE/NU Expiring Domain Report - {report_date}",
+            "description": description,
+            "temporalCoverage": report_date,
+            "datePublished": report_data.get("generated_at", ""),
+            "creator": {"@type": "Organization", "name": SITE_NAME},
+            "variableMeasured": [
+                {"@type": "PropertyValue", "name": "Total Domains", "value": str(total)},
+                {"@type": "PropertyValue", "name": "Indexed Domains", "value": str(indexed)}
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "index.html"},
+                {"@type": "ListItem", "position": 2, "name": f"Report {report_date}", "item": f"report-{report_date}.html"}
+            ]
+        }
+    ]
+
+    html = html_head(title=title, description=description, extra_ld=extra_ld)
+    html += html_site_header([("&larr; Latest", "index.html")])
+    html += '\n<main class="container content" role="main">\n'
+
+    # Breadcrumb
+    html += f'<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span style="margin:0 .3rem">/</span> <span>Report {report_date}</span></nav>\n'
+
+    # Prev/Next
+    html += '<div class="report-nav">\n'
+    html += f'<a href="report-{next_date}.html" class="btn btn-secondary" style="font-size:.82rem">&larr; {next_date}</a>\n' if next_date else '<span></span>\n'
+    html += '<a href="index.html" class="btn btn-secondary" style="font-size:.82rem">Latest</a>\n'
+    html += f'<a href="report-{prev_date}.html" class="btn btn-secondary" style="font-size:.82rem">{prev_date} &rarr;</a>\n' if prev_date else '<span></span>\n'
+    html += '</div>\n'
+
+    html += '<div class="card">\n'
+    html += f'<h2><span class="icon">&#128202;</span> Report: {report_date}</h2>\n'
+    html += f'<p style="color:var(--text-muted);margin-bottom:.75rem;font-size:.82rem">Generated: {escape_html(report_data.get("generated_at", "N/A"))}</p>\n'
+
+    html += generate_stat_cards([
+        (total, "Total"), (indexed, "Indexed"), (se, ".se"), (nu, ".nu")
+    ])
+
+    html += generate_filter_bar(domains)
+
+    html += f'<div class="download-links">'
+    html += f'<a href="../reports/{report_date}.json" download class="btn btn-secondary" style="font-size:.82rem">Export JSON</a>'
+    html += f'<a href="../reports/{report_date}.csv" download class="btn btn-secondary" style="font-size:.82rem">Export CSV</a>'
+    html += '</div>\n'
+
+    if domains:
+        html += generate_domains_table(domains)
     else:
-        html += """
-            <p style="margin-top: 1rem;">No domains found in this report.</p>
-"""
-    
-    html += """
-        </div>
-    </div>
-</body>
-</html>
-"""
-    
+        html += '<p style="margin-top:1rem">No domains found in this report.</p>\n'
+
+    html += '</div>\n'
+
+    html += f'<div class="card"><h2><span class="icon">&#128197;</span> Other Reports</h2>\n{generate_report_list(reports, current_date=report_date)}</div>'
+
+    html += '\n</main>'
+    html += html_footer()
     return html
 
 
 def main():
     """Generate static site."""
-    print("🏗️  Building static site for GitHub Pages...")
-    
-    # Create output directory
+    print("Building static site for GitHub Pages...")
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    
-    # Load all reports
+
     reports = load_reports()
-    print(f"📊 Found {len(reports)} reports")
-    
-    # Generate index page
-    print("📄 Generating index.html...")
-    index_html = generate_index_page(reports)
+    print(f"Found {len(reports)} reports")
+
+    # Copy static assets that need to live at docs/ root
+    # (favicon.svg, manifest.json, sw.js are written by this script or committed separately)
+
+    print("Generating index.html...")
     with open(OUTPUT_DIR / "index.html", 'w') as f:
-        f.write(index_html)
-    
-    # Generate individual report pages
+        f.write(generate_index_page(reports))
+
     for report in reports:
-        print(f"📄 Generating report-{report['date']}.html...")
+        print(f"Generating report-{report['date']}.html...")
         report_data = load_report(report['date'])
         if report_data:
-            report_html = generate_report_page(report['date'], report_data, reports)
             with open(OUTPUT_DIR / f"report-{report['date']}.html", 'w') as f:
-                f.write(report_html)
-    
-    print(f"✅ Static site generated in {OUTPUT_DIR}/")
-    print(f"🌐 To test locally: cd {OUTPUT_DIR} && python -m http.server 8000")
+                f.write(generate_report_page(report['date'], report_data, reports))
+
+    print(f"Static site generated in {OUTPUT_DIR}/")
+    print(f"To test: cd {OUTPUT_DIR} && python -m http.server 8000")
 
 
 if __name__ == "__main__":

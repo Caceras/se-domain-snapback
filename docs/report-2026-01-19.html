@@ -1,1001 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domain Report - 2026-01-19</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        
-        .nav a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .content {
-            padding: 2rem 0;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .card h2 {
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        
-        th, td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        th {
-            background: #f8f9fa;
-            font-weight: 600;
-            color: #555;
-        }
-        
-        tr:hover {
-            background: #f8f9fa;
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        
-        .badge-success {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .badge-warning {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        .tld-se {
-            color: #2196F3;
-            font-weight: 500;
-        }
-        
-        .tld-nu {
-            color: #4CAF50;
-            font-weight: 500;
-        }
-        
-        .download-links {
-            margin-top: 1rem;
-        }
-        
-        .download-links a {
-            display: inline-block;
-            margin-right: 1rem;
-            padding: 0.5rem 1rem;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        
-        .download-links a:hover {
-            background: #5568d3;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Report 2026-01-19 - SE/NU Domain Snapback Scanner</title>
+    <meta name="description" content="90 expiring .se/.nu domains with index status for 2026-01-19.">
+    <meta name="keywords" content="domain scanner, .se domains, .nu domains, expiring domains, snapback, domain drop, Swedish domains">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Report 2026-01-19 - SE/NU Domain Snapback Scanner">
+    <meta property="og:description" content="90 expiring .se/.nu domains with index status for 2026-01-19.">
+    <meta property="og:site_name" content="SE/NU Domain Snapback Scanner">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Report 2026-01-19 - SE/NU Domain Snapback Scanner">
+    <meta name="twitter:description" content="90 expiring .se/.nu domains with index status for 2026-01-19.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="DomainScan">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="DomainScan">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "SE/NU Domain Snapback Scanner", "description": "Find valuable expiring .se and .nu domains before they become available for registration.", "url": "index.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "SE/NU Domain Snapback Scanner"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "SE/NU Expiring Domain Report - 2026-01-19", "description": "90 expiring .se/.nu domains with index status for 2026-01-19.", "temporalCoverage": "2026-01-19", "datePublished": "2026-01-18T07:53:25.967133+00:00", "creator": {"@type": "Organization", "name": "SE/NU Domain Snapback Scanner"}, "variableMeasured": [{"@type": "PropertyValue", "name": "Total Domains", "value": "90"}, {"@type": "PropertyValue", "name": "Indexed Domains", "value": "90"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "index.html"}, {"@type": "ListItem", "position": 2, "name": "Report 2026-01-19", "item": "report-2026-01-19.html"}]}</script>
+    <style>:root {
+    --bg-primary:#f5f7fa; --bg-card:#fff;
+    --bg-header:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    --bg-table-header:#f8f9fa; --bg-table-hover:#f0f2f5;
+    --bg-input:#fff;
+    --bg-badge-success:#d4edda; --bg-badge-warning:#fff3cd; --bg-badge-info:#d1ecf1;
+    --bg-chip:#e8eaf6; --bg-chip-active:#667eea; --bg-footer:#fff;
+    --text-primary:#1a1a2e; --text-secondary:#555; --text-muted:#888;
+    --text-badge-success:#155724; --text-badge-warning:#856404; --text-badge-info:#0c5460;
+    --text-chip:#444; --text-chip-active:#fff; --text-on-header:#fff;
+    --border-color:#e0e0e0; --border-input:#d0d0d0;
+    --accent:#667eea; --accent-hover:#5568d3; --accent-light:rgba(102,126,234,0.1);
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+    --tld-se:#2196F3; --tld-nu:#4CAF50;
+    --radius-sm:6px; --radius-md:10px; --transition:0.25s ease;
+    --safe-top:env(safe-area-inset-top,0px); --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+[data-theme="dark"] {
+    --bg-primary:#0f0f1a; --bg-card:#1a1a2e;
+    --bg-header:linear-gradient(135deg,#434eab 0%,#5a3678 100%);
+    --bg-table-header:#16162b; --bg-table-hover:#222240;
+    --bg-input:#16162b;
+    --bg-badge-success:#1a3a2a; --bg-badge-warning:#3a3020; --bg-badge-info:#1a2a3a;
+    --bg-chip:#2a2a4a; --bg-chip-active:#667eea; --bg-footer:#1a1a2e;
+    --text-primary:#e0e0f0; --text-secondary:#aab; --text-muted:#777;
+    --text-badge-success:#7dcc8a; --text-badge-warning:#ddc46a; --text-badge-info:#6ac5d8;
+    --text-chip:#bbb; --text-chip-active:#fff; --text-on-header:#fff;
+    --border-color:#2a2a4a; --border-input:#3a3a5a;
+    --accent:#7b8ff0; --accent-hover:#6a7ee0; --accent-light:rgba(102,126,234,0.15);
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.3); --shadow-md:0 4px 12px rgba(0,0,0,0.3);
+    --tld-se:#64b5f6; --tld-nu:#81c784;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+    line-height:1.6;color:var(--text-primary);background:var(--bg-primary);
+    transition:background var(--transition),color var(--transition);
+    -webkit-tap-highlight-color:transparent;overscroll-behavior-y:contain;
+    padding-top:var(--safe-top);padding-bottom:var(--safe-bottom);
+}
+.header{background:var(--bg-header);color:var(--text-on-header);padding:1rem 0;box-shadow:var(--shadow-md);position:sticky;top:0;z-index:100}
+.container{max-width:1280px;margin:0 auto;padding:0 16px}
+.header-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.header-brand h1{font-size:1.35rem;font-weight:700;letter-spacing:-.02em}
+.header-brand .subtitle{opacity:.85;font-size:.85rem;margin-top:.1rem}
+.header-actions{display:flex;align-items:center;gap:.5rem}
+.nav{display:flex;gap:.4rem;flex-wrap:wrap}
+.nav a{
+    color:white;text-decoration:none;padding:.4rem .75rem;
+    background:rgba(255,255,255,.12);border-radius:var(--radius-sm);
+    transition:background var(--transition);border:1px solid rgba(255,255,255,.15);
+    font-size:.85rem;white-space:nowrap;-webkit-tap-highlight-color:transparent;
+}
+.nav a:hover{background:rgba(255,255,255,.22)}
+.nav a:active{background:rgba(255,255,255,.30)}
+.theme-toggle{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);
+    color:white;padding:.4rem .55rem;border-radius:var(--radius-sm);
+    cursor:pointer;font-size:1.1rem;transition:background var(--transition);line-height:1;
+    -webkit-tap-highlight-color:transparent;
+}
+.theme-toggle:hover{background:rgba(255,255,255,.22)}
+.content{padding:1.25rem 0 3rem}
+.card{
+    background:var(--bg-card);border-radius:var(--radius-md);
+    padding:1.25rem;margin-bottom:1.25rem;box-shadow:var(--shadow-sm);
+    transition:background var(--transition),box-shadow var(--transition);
+    border:1px solid var(--border-color);
+}
+.card h2{margin-bottom:.75rem;color:var(--accent);font-size:1.15rem;font-weight:600;display:flex;align-items:center;gap:.4rem}
+.card h2 .icon{font-size:1rem}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.25rem}
+.stat-card{
+    background:var(--bg-card);padding:1rem 1.15rem;border-radius:var(--radius-md);
+    box-shadow:var(--shadow-sm);border:1px solid var(--border-color);
+    transition:transform var(--transition),box-shadow var(--transition),background var(--transition);
+    position:relative;overflow:hidden;
+}
+.stat-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent);border-radius:4px 0 0 4px}
+.stat-card:active{transform:scale(.98)}
+.stat-value{font-size:1.75rem;font-weight:700;color:var(--accent);line-height:1.2}
+.stat-label{color:var(--text-secondary);margin-top:.25rem;font-size:.8rem}
+.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius-sm);border:1px solid var(--border-color);margin-top:.75rem}
+table{width:100%;border-collapse:collapse;min-width:580px}
+th,td{padding:.6rem .7rem;text-align:left;border-bottom:1px solid var(--border-color);white-space:nowrap}
+th{
+    background:var(--bg-table-header);font-weight:600;color:var(--text-secondary);
+    font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;
+    position:sticky;top:0;z-index:10;
+}
+th.sortable{cursor:pointer;user-select:none;transition:background var(--transition);-webkit-tap-highlight-color:transparent}
+th.sortable:hover{background:var(--bg-table-hover)}
+th .sort-icon{opacity:.4;margin-left:.25rem;font-size:.7rem;transition:opacity var(--transition)}
+th.sorted .sort-icon{opacity:1;color:var(--accent)}
+td{font-size:.85rem}
+tbody tr{transition:background var(--transition)}
+tbody tr:hover{background:var(--bg-table-hover)}
+tbody tr:active{background:var(--bg-table-hover)}
+tbody tr:last-child td{border-bottom:none}
+.badge{display:inline-flex;align-items:center;gap:.25rem;padding:.15rem .5rem;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:.02em}
+.badge-success{background:var(--bg-badge-success);color:var(--text-badge-success)}
+.badge-info{background:var(--bg-badge-info);color:var(--text-badge-info)}
+.badge-warning{background:var(--bg-badge-warning);color:var(--text-badge-warning)}
+.tld-se{color:var(--tld-se);font-weight:600}
+.tld-nu{color:var(--tld-nu);font-weight:600}
+.btn{
+    display:inline-flex;align-items:center;gap:.35rem;padding:.5rem 1rem;
+    background:var(--accent);color:white;text-decoration:none;
+    border-radius:var(--radius-sm);border:none;cursor:pointer;
+    font-size:.88rem;font-family:inherit;font-weight:500;
+    transition:background var(--transition),transform .1s;
+    -webkit-tap-highlight-color:transparent;
+}
+.btn:hover{background:var(--accent-hover)}
+.btn:active{transform:scale(.97)}
+.btn-secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-secondary:hover{background:var(--accent-light)}
+.filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.75rem}
+.filter-bar label{font-size:.8rem;color:var(--text-secondary);font-weight:500}
+.chip{
+    display:inline-flex;align-items:center;gap:.25rem;padding:.3rem .65rem;
+    background:var(--bg-chip);color:var(--text-chip);border-radius:50px;
+    font-size:.78rem;font-weight:500;cursor:pointer;border:1px solid transparent;
+    transition:all var(--transition);user-select:none;-webkit-tap-highlight-color:transparent;
+}
+.chip:hover{border-color:var(--accent)}
+.chip:active{transform:scale(.95)}
+.chip.active{background:var(--bg-chip-active);color:var(--text-chip-active);border-color:var(--bg-chip-active)}
+.chip .count{background:rgba(255,255,255,.2);padding:0 .3rem;border-radius:50px;font-size:.7rem}
+.chip.active .count{background:rgba(255,255,255,.3)}
+.search-box{position:relative}
+.search-box input{
+    width:100%;padding:.5rem .8rem .5rem 2.2rem;
+    border:1px solid var(--border-input);border-radius:var(--radius-sm);
+    font-size:16px;font-family:inherit;
+    background:var(--bg-input);color:var(--text-primary);
+    transition:border var(--transition),box-shadow var(--transition),background var(--transition);
+    -webkit-appearance:none;appearance:none;
+}
+.search-box input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+.search-box input::placeholder{color:var(--text-muted)}
+.search-box .search-icon{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:.85rem;pointer-events:none}
+.search-box .clear-btn{
+    position:absolute;right:.5rem;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:var(--text-muted);cursor:pointer;
+    font-size:1rem;padding:.3rem;display:none;line-height:1;
+    -webkit-tap-highlight-color:transparent;
+}
+.search-box .clear-btn.visible{display:block}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem}
+.toolbar-left{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;flex:1;min-width:0}
+.toolbar-right{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem}
+.result-count{font-size:.8rem;color:var(--text-muted);padding:.2rem 0}
+.report-list{list-style:none}
+.report-list li{border-bottom:1px solid var(--border-color)}
+.report-list li:last-child{border-bottom:none}
+.report-list a{
+    display:flex;align-items:center;gap:.4rem;padding:.6rem .4rem;
+    color:var(--accent);text-decoration:none;
+    transition:background var(--transition),padding var(--transition);
+    border-radius:var(--radius-sm);-webkit-tap-highlight-color:transparent;
+}
+.report-list a:hover{background:var(--accent-light);padding-left:.8rem}
+.report-list a:active{background:var(--accent-light)}
+.report-list .report-date{font-weight:500;font-size:.9rem}
+.empty-state{text-align:center;padding:2.5rem 1rem;color:var(--text-muted)}
+.empty-state .empty-icon{font-size:2.5rem;margin-bottom:.75rem;opacity:.5}
+.footer{
+    background:var(--bg-footer);border-top:1px solid var(--border-color);
+    padding:1.25rem 0;padding-bottom:calc(1.25rem + var(--safe-bottom));
+    margin-top:1.5rem;transition:background var(--transition);
+}
+.footer-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;font-size:.8rem;color:var(--text-muted)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.back-to-top{
+    position:fixed;bottom:calc(1.25rem + var(--safe-bottom));right:1rem;
+    width:44px;height:44px;background:var(--accent);color:white;border:none;
+    border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow-md);
+    opacity:0;transform:translateY(10px);
+    transition:opacity var(--transition),transform var(--transition),background var(--transition);
+    pointer-events:none;z-index:50;display:flex;align-items:center;justify-content:center;
+    -webkit-tap-highlight-color:transparent;
+}
+.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.back-to-top:hover{background:var(--accent-hover)}
+.back-to-top:active{transform:scale(.92)}
+.report-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.4rem}
+.download-links{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem}
+.breadcrumb{margin-bottom:.75rem;font-size:.82rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--accent);text-decoration:none}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeInUp .35s ease forwards}
+@media(min-width:769px){
+    .container{padding:0 24px}
+    .header{padding:1.5rem 0}
+    .header-brand h1{font-size:1.6rem}
+    .header-brand .subtitle{font-size:.95rem}
+    .content{padding:2rem 0 3rem}
+    .card{padding:1.5rem;margin-bottom:1.5rem}
+    .card h2{font-size:1.3rem}
+    .stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .stat-value{font-size:2rem}
+    .stat-label{font-size:.9rem}
+    .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+}
+@media(max-width:480px){
+    .header-row{flex-direction:column;align-items:flex-start}
+    .header-actions{width:100%;justify-content:space-between}
+    .toolbar{flex-direction:column;align-items:stretch}
+    .report-nav{flex-direction:column;align-items:stretch;text-align:center}
+}
+::-webkit-scrollbar{height:4px;width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
+@media(display-mode:standalone){
+    .header{padding-top:calc(1rem + var(--safe-top))}
+    .footer{padding-bottom:calc(1.25rem + var(--safe-bottom))}
+}
+</style>
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <h1>🔍 SE/NU Domain Snapback Scanner</h1>
-            <p class="subtitle">Report for 2026-01-19</p>
-            <div class="nav">
-                <a href="index.html">← Back to Latest</a>
+            <div class="header-row">
+                <div class="header-brand">
+                    <h1>SE/NU Domain Snapback Scanner</h1>
+                    <p class="subtitle">Find valuable expiring .se and .nu domains</p>
+                </div>
+                <div class="header-actions">
+                    <div class="nav"><a href="index.html">&larr; Latest</a></div>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">
+                        <span class="theme-icon">&#9790;</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="container content">
-        <div class="card">
-            <h2>Domain Report - 2026-01-19</h2>
-            <p><strong>Total Domains:</strong> 90</p>
-            <p><strong>Generated:</strong> 2026-01-18T07:53:25.967133+00:00</p>
-            
-            <div class="download-links">
-                <a href="../reports/2026-01-19.json" download>📥 Download JSON</a>
-                <a href="../reports/2026-01-19.csv" download>📥 Download CSV</a>
+<main class="container content" role="main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span style="margin:0 .3rem">/</span> <span>Report 2026-01-19</span></nav>
+<div class="report-nav">
+<a href="report-2026-01-18.html" class="btn btn-secondary" style="font-size:.82rem">&larr; 2026-01-18</a>
+<a href="index.html" class="btn btn-secondary" style="font-size:.82rem">Latest</a>
+<a href="report-2026-01-20.html" class="btn btn-secondary" style="font-size:.82rem">2026-01-20 &rarr;</a>
+</div>
+<div class="card">
+<h2><span class="icon">&#128202;</span> Report: 2026-01-19</h2>
+<p style="color:var(--text-muted);margin-bottom:.75rem;font-size:.82rem">Generated: 2026-01-18T07:53:25.967133+00:00</p>
+<div class="stats">
+<div class="stat-card"><div class="stat-value">90</div><div class="stat-label">Total</div></div>
+<div class="stat-card"><div class="stat-value">90</div><div class="stat-label">Indexed</div></div>
+<div class="stat-card"><div class="stat-value">90</div><div class="stat-label">.se</div></div>
+<div class="stat-card"><div class="stat-value">0</div><div class="stat-label">.nu</div></div>
+</div>
+<div class="toolbar">
+<div class="toolbar-left"><div class="search-box">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="search" placeholder="Search domains..." aria-label="Search domains">
+    <button class="clear-btn" id="clear-search" onclick="clearSearch()" aria-label="Clear search">&#10005;</button>
+</div></div>
+<div class="toolbar-right"><div class="filter-bar">
+    <button class="chip active" onclick="filterTLD('all',this)">All <span class="count">90</span></button>
+    <button class="chip" onclick="filterTLD('se',this)">.se <span class="count">90</span></button>
+    <button class="chip" onclick="filterTLD('nu',this)">.nu <span class="count">0</span></button>
+    <button class="chip" onclick="filterTLD('indexed',this)">Indexed <span class="count">90</span></button>
+</div></div>
+</div>
+<div class="result-count" id="result-count">Showing 90 domains</div><div class="download-links"><a href="../reports/2026-01-19.json" download class="btn btn-secondary" style="font-size:.82rem">Export JSON</a><a href="../reports/2026-01-19.csv" download class="btn btn-secondary" style="font-size:.82rem">Export CSV</a></div>
+<div class="table-wrapper"><table id="domains-table"><thead><tr><th class="sortable" onclick="sortTable(0)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(0)">Domain <span class="sort-icon">&#8693;</span></th><th class="sortable" onclick="sortTable(1)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(1)">TLD <span class="sort-icon">&#8693;</span></th><th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Date <span class="sort-icon">&#8693;</span></th><th class="sortable" onclick="sortTable(3)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(3)">Pages <span class="sort-icon">&#8693;</span></th><th class="sortable" onclick="sortTable(4)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(4)">Source <span class="sort-icon">&#8693;</span></th><th class="sortable" onclick="sortTable(5)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(5)">Status <span class="sort-icon">&#8693;</span></th></tr></thead><tbody><tr data-tld="se" data-indexed="true"><td><strong>2finance.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>aattract.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>abiskohikes.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>acconti.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>adelon.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>adhdutredning.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>adsr.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>advocado.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>airwallet.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>akhelgesson.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>albertherbert.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>allabarbord.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>alnostrand.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>aloant.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>amarillovisby.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>amonstade.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>andamanthaimassage.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>apure.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>arbcamp.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>arbdays.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>arcticfresh.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>arenagrontillvaxt.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>ariavault.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>ariya.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>arkipell.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>arvidlind.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>arztme.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>asfaltsvision.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>atelieramanda.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>augury.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>auradeck.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>aurorai.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>auto-mow.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>avebringyogalila.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>ayhanfastigheter.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>babybunny.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bankskivan.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>basskydd.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bastur.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bathroomstories.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bayoa.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bedazzling.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>begagnade-skrivbord.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bekvamekonomi.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bergatrade.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bergvarmehuddinge.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>betongmark.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bhsbygg.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>biljettlost.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bioavfall.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>biopasar.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>biosimeter.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bjarnumsdackcenter.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>blabarspaj.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>boloyoga.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bonito.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bonnierlara.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>breezlify.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bruus.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bulklager.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bullfittan.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>bultcirkelguiden.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>buytoast.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>byggfirmahansjohansson.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>camillalind.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>cassabella.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>cassetti.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>chatify.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>chlorasolv.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>clairitex.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>corragio.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>correlerat.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>coutureflow.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>crosstraning.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>crystalstrategi.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>curvanordahl.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>dalarne.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>damara.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>danzephoto.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>databutik.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>datorn.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>davidnaas.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>dejtsenior.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>demar24.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>detalityorganics.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>diabetes0.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>diasporaservices.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>digek.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>digibreak.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr>
+<tr data-tld="se" data-indexed="true"><td><strong>digidakt.se</strong></td><td><span class="tld-se">.se</span></td><td>2026-01-19</td><td><span style="color:var(--text-muted)">-</span></td><td>google</td><td><span class="badge badge-success">Indexed</span></td></tr></tbody></table></div></div>
+<div class="card"><h2><span class="icon">&#128197;</span> Other Reports</h2>
+<ul class="report-list">
+<li><a href="report-2026-02-07.html"><span class="report-date">2026-02-07</span></a></li>
+<li><a href="report-2026-02-06.html"><span class="report-date">2026-02-06</span></a></li>
+<li><a href="report-2026-02-05.html"><span class="report-date">2026-02-05</span></a></li>
+<li><a href="report-2026-02-04.html"><span class="report-date">2026-02-04</span></a></li>
+<li><a href="report-2026-02-03.html"><span class="report-date">2026-02-03</span></a></li>
+<li><a href="report-2026-02-02.html"><span class="report-date">2026-02-02</span></a></li>
+<li><a href="report-2026-02-01.html"><span class="report-date">2026-02-01</span></a></li>
+<li><a href="report-2026-01-31.html"><span class="report-date">2026-01-31</span></a></li>
+<li><a href="report-2026-01-30.html"><span class="report-date">2026-01-30</span></a></li>
+<li><a href="report-2026-01-29.html"><span class="report-date">2026-01-29</span></a></li>
+<li><a href="report-2026-01-28.html"><span class="report-date">2026-01-28</span></a></li>
+<li><a href="report-2026-01-27.html"><span class="report-date">2026-01-27</span></a></li>
+<li><a href="report-2026-01-26.html"><span class="report-date">2026-01-26</span></a></li>
+<li><a href="report-2026-01-25.html"><span class="report-date">2026-01-25</span></a></li>
+<li><a href="report-2026-01-24.html"><span class="report-date">2026-01-24</span></a></li>
+<li><a href="report-2026-01-23.html"><span class="report-date">2026-01-23</span></a></li>
+<li><a href="report-2026-01-22.html"><span class="report-date">2026-01-22</span></a></li>
+<li><a href="report-2026-01-21.html"><span class="report-date">2026-01-21</span></a></li>
+<li><a href="report-2026-01-20.html"><span class="report-date">2026-01-20</span></a></li>
+<li><a href="report-2026-01-19.html" style="font-weight:bold;background:var(--accent-light);"><span class="report-date">2026-01-19</span> <span class="badge badge-info">Current</span></a></li>
+<li><a href="report-2026-01-18.html"><span class="report-date">2026-01-18</span></a></li>
+<li><a href="report-2026-01-17.html"><span class="report-date">2026-01-17</span></a></li>
+<li><a href="report-2026-01-16.html"><span class="report-date">2026-01-16</span></a></li>
+<li><a href="report-2026-01-15.html"><span class="report-date">2026-01-15</span></a></li>
+<li><a href="report-2026-01-14.html"><span class="report-date">2026-01-14</span></a></li>
+<li><a href="report-2026-01-13.html"><span class="report-date">2026-01-13</span></a></li>
+<li><a href="report-2026-01-12.html"><span class="report-date">2026-01-12</span></a></li>
+<li><a href="report-2026-01-11.html"><span class="report-date">2026-01-11</span></a></li>
+</ul>
+</div>
+</main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <span>Data from <a href="https://www.internetstiftelsen.se" target="_blank" rel="noopener">Internetstiftelsen</a></span>
+                <span><a href="https://github.com/Caceras/se-domain-snapback" target="_blank" rel="noopener">GitHub</a></span>
             </div>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Domain</th>
-                        <th>TLD</th>
-                        <th>Release Date</th>
-                        <th>Indexed Pages</th>
-                        <th>Source</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td><strong>2finance.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>aattract.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>abiskohikes.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>acconti.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>adelon.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>adhdutredning.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>adsr.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>advocado.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>airwallet.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>akhelgesson.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>albertherbert.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>allabarbord.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>alnostrand.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>aloant.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>amarillovisby.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>amonstade.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>andamanthaimassage.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>apure.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>arbcamp.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>arbdays.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>arcticfresh.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>arenagrontillvaxt.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ariavault.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ariya.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>arkipell.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>arvidlind.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>arztme.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>asfaltsvision.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>atelieramanda.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>augury.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>auradeck.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>aurorai.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>auto-mow.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>avebringyogalila.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ayhanfastigheter.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>babybunny.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bankskivan.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>basskydd.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bastur.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bathroomstories.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bayoa.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bedazzling.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>begagnade-skrivbord.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bekvamekonomi.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bergatrade.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bergvarmehuddinge.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>betongmark.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bhsbygg.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>biljettlost.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bioavfall.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>biopasar.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>biosimeter.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bjarnumsdackcenter.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>blabarspaj.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>boloyoga.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bonito.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bonnierlara.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>breezlify.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bruus.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bulklager.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bullfittan.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>bultcirkelguiden.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>buytoast.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>byggfirmahansjohansson.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>camillalind.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>cassabella.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>cassetti.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>chatify.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>chlorasolv.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>clairitex.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>corragio.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>correlerat.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>coutureflow.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>crosstraning.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>crystalstrategi.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>curvanordahl.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>dalarne.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>damara.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>danzephoto.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>databutik.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>datorn.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>davidnaas.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>dejtsenior.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>demar24.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>detalityorganics.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>diabetes0.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>diasporaservices.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>digek.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>digibreak.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>digidakt.se</strong></td>
-                        <td><span class="tld-se">.se</span></td>
-                        <td>2026-01-19</td>
-                        <td>-</td>
-                        <td>google</td>
-                        <td><span class="badge badge-success">Indexed</span></td>
-                    </tr>
-
-                </tbody>
-            </table>
-
         </div>
-    </div>
+    </footer>
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">&#8593;</button>
+    <script>/* Theme */
+function toggleTheme(){
+    var h=document.documentElement,c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    h.setAttribute('data-theme',n);localStorage.setItem('theme',n);updateThemeIcon(n);
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m)m.setAttribute('content',n==='dark'?'#434eab':'#667eea');
+}
+function updateThemeIcon(t){var i=document.querySelector('.theme-icon');if(i)i.innerHTML=t==='dark'?'&#9788;':'&#9790;';}
+(function(){
+    var s=localStorage.getItem('theme');
+    if(s){document.documentElement.setAttribute('data-theme',s);updateThemeIcon(s);}
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){
+        document.documentElement.setAttribute('data-theme','dark');updateThemeIcon('dark');
+    }
+})();
+
+/* Back to top */
+var btt=document.querySelector('.back-to-top');
+window.addEventListener('scroll',function(){
+    if(btt){if(window.scrollY>300)btt.classList.add('visible');else btt.classList.remove('visible');}
+},{passive:true});
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+/* Sort */
+var currentSort={col:-1,asc:true};
+function sortTable(ci){
+    var t=document.getElementById('domains-table');if(!t)return;
+    var tb=t.querySelector('tbody'),rows=Array.from(tb.querySelectorAll('tr')),ths=t.querySelectorAll('th');
+    if(currentSort.col===ci)currentSort.asc=!currentSort.asc;
+    else{currentSort.col=ci;currentSort.asc=true;}
+    ths.forEach(function(h,i){
+        h.classList.toggle('sorted',i===ci);
+        var ic=h.querySelector('.sort-icon');
+        if(ic){ic.innerHTML=i===ci?(currentSort.asc?'&#8593;':'&#8595;'):'&#8693;';}
+    });
+    rows.sort(function(a,b){
+        var at=a.cells[ci].textContent.trim(),bt=b.cells[ci].textContent.trim();
+        var an=parseFloat(at),bn=parseFloat(bt),r;
+        if(!isNaN(an)&&!isNaN(bn))r=an-bn; else r=at.localeCompare(bt);
+        return currentSort.asc?r:-r;
+    });
+    rows.forEach(function(r){tb.appendChild(r);});
+}
+
+/* Filter & Search */
+var activeFilter='all';
+function filterTLD(tld,el){
+    activeFilter=tld;
+    document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});
+    el.classList.add('active');
+    applyFilters();
+}
+function applyFilters(){
+    var t=document.getElementById('domains-table');if(!t)return;
+    var rows=t.querySelectorAll('tbody tr'),si=document.getElementById('search'),
+        term=si?si.value.toLowerCase():'',vc=0;
+    rows.forEach(function(r){
+        var tld=r.getAttribute('data-tld'),idx=r.getAttribute('data-indexed'),
+            txt=r.textContent.toLowerCase(),mf,ms;
+        if(activeFilter==='all')mf=true;
+        else if(activeFilter==='indexed')mf=idx==='true';
+        else mf=tld===activeFilter;
+        ms=!term||txt.indexOf(term)>=0;
+        var v=mf&&ms;r.style.display=v?'':'none';if(v)vc++;
+    });
+    var ce=document.getElementById('result-count');
+    if(ce)ce.textContent='Showing '+vc+' domains';
+}
+function clearSearch(){
+    var si=document.getElementById('search'),cb=document.getElementById('clear-search');
+    if(si){si.value='';if(cb)cb.classList.remove('visible');applyFilters();si.focus();}
+}
+document.addEventListener('DOMContentLoaded',function(){
+    var si=document.getElementById('search'),cb=document.getElementById('clear-search');
+    if(si)si.addEventListener('input',function(e){
+        var t=e.target.value;
+        if(cb)cb.classList.toggle('visible',t.length>0);
+        applyFilters();
+    });
+    /* Animate */
+    document.querySelectorAll('.stat-card,.card').forEach(function(el,i){
+        el.classList.add('animate-in');el.style.animationDelay=(i*0.05)+'s';
+    });
+});
+
+/* Service Worker */
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+</script>
 </body>
 </html>
