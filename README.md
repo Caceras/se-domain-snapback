@@ -1,18 +1,17 @@
 # SE/NU Domain Snapback Scanner
 
-Automated daily scanner to find valuable .se and .nu domains that will drop soon and may be available for registration.
+Lists ALL .se and .nu domains that will be released tonight.
 
 🌐 **[View Live Results on GitHub Pages](https://caceras.github.io/se-domain-snapback/)**
 
 ## Features
 
-- **Automated Scanning**: Daily scans of domains dropping in Swedish TLDs (.se and .nu)
-- **Search Engine Verification**: Checks Google/Bing to identify domains with indexed pages (indicating past traffic/value)
-- **DNS Availability Check**: Verifies if domains are already available for registration
-- **GitHub Pages**: Published static site with daily updates showing latest scan results
-- **Web UI**: Beautiful web interface to view scan results and trigger manual scans
+- **Complete Domain Listing**: Shows ALL domains releasing tonight in Swedish TLDs (.se and .nu)
+- **Simple & Fast**: No filtering, no checking - just a complete list
+- **GitHub Pages**: Published static site with daily updates
+- **Web UI**: Beautiful web interface to view all releasing domains
 - **Historical Reports**: Tracks all scan results with CSV and JSON exports
-- **GitHub Actions Integration**: Automated daily execution at 07:00 UTC
+- **GitHub Actions Integration**: Automated daily execution
 
 ## Web Interface
 
@@ -30,10 +29,9 @@ The web interface will be available at `http://localhost:5000`
 
 ### Web UI Features
 
-- **Dashboard**: View latest scan results with statistics
-- **Domain Table**: Sortable and searchable table of valuable domains
+- **Dashboard**: View ALL domains releasing tonight
+- **Domain Table**: Sortable and searchable table of all domains
 - **Historical Reports**: Browse and export past scan results
-- **Manual Scan**: Trigger new scans on-demand
 - **Export**: Download results as CSV or JSON
 
 ## Command Line Interface
@@ -41,17 +39,11 @@ The web interface will be available at `http://localhost:5000`
 ### Basic Usage
 
 ```bash
-# Run a scan for tomorrow's drops (default)
+# List ALL domains releasing tonight (default)
 python src/main.py
 
-# Scan for a specific date
+# List ALL domains releasing on a specific date
 python src/main.py --date 2026-02-10
-
-# Skip availability checking (recommended for future drops)
-python src/main.py --no-availability-check
-
-# Include all domains, not just indexed ones
-python src/main.py --all-domains
 
 # Dry run (don't save reports)
 python src/main.py --dry-run
@@ -62,28 +54,22 @@ python src/main.py --test-fetch
 
 ## How It Works
 
-The scanner performs a 5-step process:
+The scanner performs a simple 2-step process:
 
-1. **Fetch Drop Lists**: Retrieves domains dropping on target date from Internetstiftelsen (IIS) API
-2. **Check Availability**: Verifies via DNS if domains are already available
-3. **Check Search Engine Index**: Queries Google/Bing to see if domains have indexed pages
-4. **Filter Valuable Domains**: Keeps only indexed domains with traffic history
-5. **Generate Reports**: Creates CSV and JSON reports in the `/reports` directory
+1. **Fetch Drop Lists**: Retrieves ALL domains releasing on target date from Internetstiftelsen (IIS) API
+2. **Generate Reports**: Creates CSV and JSON reports in the `/reports` directory
 
 ## Configuration
 
 Edit `config.py` to customize:
 
-- `SCAN_DELAY_SECONDS`: Delay between Google index checks (default: 2.5s)
-- `DNS_TIMEOUT_SECONDS`: Timeout for DNS lookups (default: 3s)
-- `MIN_INDEXED_PAGES`: Minimum pages to include in report (default: 1)
 - `REPORT_DIR`: Output directory for reports (default: `./reports`)
 
 ## GitHub Actions
 
 The scanner runs automatically via GitHub Actions:
 
-- **Schedule**: Daily at 07:00 UTC (21 hours before domains drop at 04:00 UTC)
+- **Schedule**: Daily to capture domains releasing tonight
 - **Manual Trigger**: Use the "Run workflow" button in the Actions tab
 - **Auto-commit**: Reports are automatically committed to the repository
 
@@ -107,7 +93,7 @@ The static site includes:
 ### CSV Format
 ```csv
 domain,tld,release_date,available,indexed,estimated_pages,index_source,checked_at
-example.se,se,2026-02-10,true,true,150,google,2026-02-09T07:00:00Z
+example.se,se,2026-02-10,True,False,,,2026-02-09T07:00:00Z
 ```
 
 ### JSON Format
@@ -121,9 +107,9 @@ example.se,se,2026-02-10,true,true,150,google,2026-02-09T07:00:00Z
       "tld": "se",
       "release_date": "2026-02-10",
       "available": true,
-      "indexed": true,
-      "estimated_pages": 150,
-      "index_source": "google",
+      "indexed": false,
+      "estimated_pages": null,
+      "index_source": null,
       "checked_at": "2026-02-09T07:00:00Z"
     }
   ]
@@ -135,9 +121,6 @@ example.se,se,2026-02-10,true,true,150,google,2026-02-09T07:00:00Z
 - Python 3.12+
 - Dependencies listed in `requirements.txt`:
   - requests
-  - dnspython
-  - httpx
-  - beautifulsoup4
   - flask
 
 ## Installation

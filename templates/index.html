@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block meta_description %}Today's scan found {{ latest_data.total_domains if latest_data else 0 }} valuable expiring .se and .nu domains. Daily updated domain snapback scanner with index status.{% endblock %}
+{% block meta_description %}Tonight's list: {{ latest_data.total_domains if latest_data else 0 }} .se and .nu domains releasing. Complete daily domain list with no filtering.{% endblock %}
 
 {% block structured_data %}
 <script type="application/ld+json">
@@ -8,7 +8,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "SE/NU Domain Snapback Scanner",
-    "description": "Daily scanner for valuable expiring .se and .nu domains.",
+    "description": "Lists ALL .se and .nu domains releasing tonight.",
     "url": "/",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any",
@@ -20,8 +20,8 @@
 {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "SE/NU Expiring Domain Report - {{ reports[0].date if reports else 'latest' }}",
-    "description": "{{ latest_data.total_domains }} valuable expiring .se and .nu domains found on {{ reports[0].date if reports else 'latest scan' }}.",
+    "name": "SE/NU Domain Release List - {{ reports[0].date if reports else 'latest' }}",
+    "description": "{{ latest_data.total_domains }} .se and .nu domains releasing on {{ reports[0].date if reports else 'latest date' }}.",
     "temporalCoverage": "{{ reports[0].date if reports else '' }}",
     "distribution": [
         { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "/api/report/{{ reports[0].date if reports else '' }}" },
@@ -42,24 +42,24 @@
 <div class="stats">
     <div class="stat-card">
         <div class="stat-value">{{ latest_data.total_domains }}</div>
-        <div class="stat-label">Domains Found</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-value">{{ reports|length }}</div>
-        <div class="stat-label">Reports</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-value">{{ latest_data.domains|selectattr('indexed')|list|length }}</div>
-        <div class="stat-label">Indexed</div>
+        <div class="stat-label">Total Domains</div>
     </div>
     <div class="stat-card">
         <div class="stat-value">{{ latest_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</div>
         <div class="stat-label">.se Domains</div>
     </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ latest_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</div>
+        <div class="stat-label">.nu Domains</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ reports|length }}</div>
+        <div class="stat-label">Reports</div>
+    </div>
 </div>
 
 <div class="card">
-    <h2><span class="icon">&#128202;</span> Latest Results ({{ reports[0].date if reports else 'N/A' }})</h2>
+    <h2><span class="icon">&#128202;</span> Domains Releasing Tonight ({{ reports[0].date if reports else 'N/A' }})</h2>
 
     <div class="toolbar">
         <div class="toolbar-left">
@@ -96,10 +96,7 @@
                 <tr>
                     <th class="sortable" onclick="sortTable(0)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(0)">Domain <span class="sort-icon">&#8693;</span></th>
                     <th class="sortable" onclick="sortTable(1)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(1)">TLD <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Date <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(3)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(3)">Pages <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(4)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(4)">Source <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(5)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(5)">Status <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Release Date <span class="sort-icon">&#8693;</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -108,9 +105,6 @@
                     <td><strong>{{ domain.domain }}</strong></td>
                     <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
                     <td>{{ domain.release_date }}</td>
-                    <td>{% if domain.estimated_pages %}<strong>{{ domain.estimated_pages }}</strong>{% else %}<span style="color:var(--text-muted)">-</span>{% endif %}</td>
-                    <td>{{ domain.index_source }}</td>
-                    <td>{% if domain.indexed %}<span class="badge badge-success">Indexed</span>{% else %}<span class="badge badge-warning">Not Indexed</span>{% endif %}</td>
                 </tr>
                 {% endfor %}
             </tbody>
