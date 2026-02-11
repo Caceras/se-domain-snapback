@@ -22,7 +22,7 @@ REPORT_DIR = Path("reports")
 OUTPUT_DIR = Path("docs")
 TEMPLATE_DIR = Path("templates")
 SITE_NAME = "SE/NU Domain Snapback Scanner"
-SITE_DESCRIPTION = "Find valuable expiring .se and .nu domains before they become available for registration."
+SITE_DESCRIPTION = "Lists ALL .se and .nu domains that will be released tonight. Complete domain snapback scanner."
 GITHUB_URL = "https://github.com/Caceras/se-domain-snapback"
 
 
@@ -334,10 +334,9 @@ function applyFilters(){
     var rows=t.querySelectorAll('tbody tr'),si=document.getElementById('search'),
         term=si?si.value.toLowerCase():'',vc=0;
     rows.forEach(function(r){
-        var tld=r.getAttribute('data-tld'),idx=r.getAttribute('data-indexed'),
+        var tld=r.getAttribute('data-tld'),
             txt=r.textContent.toLowerCase(),mf,ms;
         if(activeFilter==='all')mf=true;
-        else if(activeFilter==='indexed')mf=idx==='true';
         else mf=tld===activeFilter;
         ms=!term||txt.indexOf(term)>=0;
         var v=mf&&ms;r.style.display=v?'':'none';if(v)vc++;
@@ -436,7 +435,7 @@ def html_site_header(nav_links):
             <div class="header-row">
                 <div class="header-brand">
                     <h1>{SITE_NAME}</h1>
-                    <p class="subtitle">Find valuable expiring .se and .nu domains</p>
+                    <p class="subtitle">ALL .se and .nu domains releasing tonight</p>
                 </div>
                 <div class="header-actions">
                     <div class="nav">{nav}</div>
@@ -478,21 +477,15 @@ def generate_stat_cards(cards):
 
 def generate_domain_row(domain):
     tld = domain.get('tld', 'se')
-    indexed = domain.get('indexed', False)
-    pages = domain.get('estimated_pages')
-    pages_html = f'<strong>{pages}</strong>' if pages else '<span style="color:var(--text-muted)">-</span>'
-    badge = '<span class="badge badge-success">Indexed</span>' if indexed else '<span class="badge badge-warning">Not Indexed</span>'
-    return (f'<tr data-tld="{escape_html(tld)}" data-indexed="{"true" if indexed else "false"}">'
+    return (f'<tr data-tld="{escape_html(tld)}">'
             f'<td><strong>{escape_html(domain.get("domain", ""))}</strong></td>'
             f'<td><span class="tld-{escape_html(tld)}">.{escape_html(tld)}</span></td>'
             f'<td>{escape_html(domain.get("release_date", ""))}</td>'
-            f'<td>{pages_html}</td>'
-            f'<td>{escape_html(domain.get("index_source", ""))}</td>'
-            f'<td>{badge}</td></tr>')
+            f'</tr>')
 
 
 def generate_domains_table(domains, table_id="domains-table"):
-    cols = [("Domain", 0), ("TLD", 1), ("Date", 2), ("Pages", 3), ("Source", 4), ("Status", 5)]
+    cols = [("Domain", 0), ("TLD", 1), ("Release Date", 2)]
     hdr = ''.join(
         f'<th class="sortable" onclick="sortTable({i})" tabindex="0" role="button" '
         f'onkeypress="if(event.key===\'Enter\')sortTable({i})">'
@@ -507,7 +500,6 @@ def generate_filter_bar(domains):
     total = len(domains)
     se = sum(1 for d in domains if d.get('tld') == 'se')
     nu = sum(1 for d in domains if d.get('tld') == 'nu')
-    idx = sum(1 for d in domains if d.get('indexed'))
     return f"""<div class="toolbar">
 <div class="toolbar-left"><div class="search-box">
     <span class="search-icon">&#128269;</span>
@@ -518,7 +510,6 @@ def generate_filter_bar(domains):
     <button class="chip active" onclick="filterTLD('all',this)">All <span class="count">{total}</span></button>
     <button class="chip" onclick="filterTLD('se',this)">.se <span class="count">{se}</span></button>
     <button class="chip" onclick="filterTLD('nu',this)">.nu <span class="count">{nu}</span></button>
-    <button class="chip" onclick="filterTLD('indexed',this)">Indexed <span class="count">{idx}</span></button>
 </div></div>
 </div>
 <div class="result-count" id="result-count">Showing {total} domains</div>"""
@@ -564,14 +555,13 @@ def generate_index_page(reports):
 
     if latest_data and reports:
         domains = latest_data.get('domains', [])
-        indexed = sum(1 for d in domains if d.get('indexed'))
         se = sum(1 for d in domains if d.get('tld') == 'se')
 
         html += generate_stat_cards([
-            (latest_data.get('total_domains', 0), "Domains Found"),
-            (len(reports), "Reports"),
-            (indexed, "Indexed"),
+            (latest_data.get('total_domains', 0), "Total Domains"),
             (se, ".se Domains"),
+            (len(domains) - se, ".nu Domains"),
+            (len(reports), "Reports"),
         ])
 
         html += f'<div class="card">\n<h2><span class="icon">&#128202;</span> Latest Results ({reports[0]["date"]})</h2>\n'
@@ -599,7 +589,6 @@ def generate_index_page(reports):
 def generate_report_page(report_date, report_data, reports):
     domains = report_data.get('domains', [])
     total = report_data.get('total_domains', 0)
-    indexed = sum(1 for d in domains if d.get('indexed'))
     se = sum(1 for d in domains if d.get('tld') == 'se')
     nu = sum(1 for d in domains if d.get('tld') == 'nu')
 
@@ -612,19 +601,18 @@ def generate_report_page(report_date, report_data, reports):
     next_date = dates[idx + 1] if 0 <= idx < len(dates) - 1 else None
 
     title = f"Report {report_date} - {SITE_NAME}"
-    description = f"{total} expiring .se/.nu domains with index status for {report_date}."
+    description = f"ALL {total} .se/.nu domains releasing on {report_date}."
     extra_ld = [
         {
             "@context": "https://schema.org",
             "@type": "Dataset",
-            "name": f"SE/NU Expiring Domain Report - {report_date}",
+            "name": f"SE/NU Domain Release List - {report_date}",
             "description": description,
             "temporalCoverage": report_date,
             "datePublished": report_data.get("generated_at", ""),
             "creator": {"@type": "Organization", "name": SITE_NAME},
             "variableMeasured": [
-                {"@type": "PropertyValue", "name": "Total Domains", "value": str(total)},
-                {"@type": "PropertyValue", "name": "Indexed Domains", "value": str(indexed)}
+                {"@type": "PropertyValue", "name": "Total Domains", "value": str(total)}
             ]
         },
         {
@@ -656,7 +644,7 @@ def generate_report_page(report_date, report_data, reports):
     html += f'<p style="color:var(--text-muted);margin-bottom:.75rem;font-size:.82rem">Generated: {escape_html(report_data.get("generated_at", "N/A"))}</p>\n'
 
     html += generate_stat_cards([
-        (total, "Total"), (indexed, "Indexed"), (se, ".se"), (nu, ".nu")
+        (total, "Total"), (se, ".se"), (nu, ".nu"), (report_date, "Release Date")
     ])
 
     html += generate_filter_bar(domains)

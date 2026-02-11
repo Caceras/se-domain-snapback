@@ -132,9 +132,6 @@ def start_scan():
             # Run the scanner - fetch ALL domains, no filtering
             run_scanner(
                 target_date=target_date,
-                check_availability=False,
-                check_index=False,
-                filter_indexed_only=False,
                 dry_run=False
             )
             

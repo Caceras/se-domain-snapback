@@ -21,12 +21,22 @@ def fetch_drop_list(tld: Literal["se", "nu"] = "se") -> list[dict]:
     """
     url = IIS_NU_URL if tld == "nu" else IIS_SE_URL
 
-    response = requests.get(
-        url,
-        headers={"User-Agent": USER_AGENT},
-        timeout=30
-    )
-    response.raise_for_status()
+    try:
+        response = requests.get(
+            url,
+            headers={"User-Agent": USER_AGENT},
+            timeout=30
+        )
+        response.raise_for_status()
+    except requests.exceptions.ConnectionError:
+        print(f"  Warning: Could not connect to {url}. Network may be unavailable.")
+        return []
+    except requests.exceptions.Timeout:
+        print(f"  Warning: Request to {url} timed out.")
+        return []
+    except requests.exceptions.RequestException as e:
+        print(f"  Warning: Failed to fetch .{tld} drop list: {e}")
+        return []
 
     return response.json().get("data", [])
 
