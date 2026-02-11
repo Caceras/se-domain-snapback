@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}Report {{ report_date }} - Domain Snapback Scanner{% endblock %}
-{% block meta_description %}Domain snapback report for {{ report_date }}: {{ report_data.total_domains }} expiring .se/.nu domains with index status.{% endblock %}
+{% block meta_description %}Domain release list for {{ report_date }}: ALL {{ report_data.total_domains }} .se/.nu domains releasing.{% endblock %}
 {% block og_title %}Domain Report {{ report_date }}{% endblock %}
-{% block og_description %}{{ report_data.total_domains }} valuable expiring .se and .nu domains found on {{ report_date }}.{% endblock %}
+{% block og_description %}ALL {{ report_data.total_domains }} .se and .nu domains releasing on {{ report_date }}.{% endblock %}
 
 {% block structured_data %}
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "SE/NU Expiring Domain Report - {{ report_date }}",
-    "description": "{{ report_data.total_domains }} valuable expiring .se and .nu domains found on {{ report_date }}. Includes Google/Bing index status.",
+    "name": "SE/NU Domain Release List - {{ report_date }}",
+    "description": "ALL {{ report_data.total_domains }} .se and .nu domains releasing on {{ report_date }}.",
     "temporalCoverage": "{{ report_date }}",
     "datePublished": "{{ report_data.generated_at }}",
     "distribution": [
@@ -20,8 +20,7 @@
     ],
     "creator": { "@type": "Organization", "name": "SE Domain Snapback Scanner" },
     "variableMeasured": [
-        { "@type": "PropertyValue", "name": "Total Domains", "value": "{{ report_data.total_domains }}" },
-        { "@type": "PropertyValue", "name": "Indexed Domains", "value": "{{ report_data.domains|selectattr('indexed')|list|length }}" }
+        { "@type": "PropertyValue", "name": "Total Domains", "value": "{{ report_data.total_domains }}" }
     ]
 }
 </script>
@@ -80,16 +79,16 @@
             <div class="stat-label">Total</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">{{ report_data.domains|selectattr('indexed')|list|length }}</div>
-            <div class="stat-label">Indexed</div>
-        </div>
-        <div class="stat-card">
             <div class="stat-value">{{ report_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</div>
             <div class="stat-label">.se</div>
         </div>
         <div class="stat-card">
             <div class="stat-value">{{ report_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</div>
             <div class="stat-label">.nu</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">{{ report_date }}</div>
+            <div class="stat-label">Release Date</div>
         </div>
     </div>
 
@@ -106,7 +105,6 @@
                 <button class="chip active" onclick="filterTLD('all', this)">All <span class="count">{{ report_data.domains|length }}</span></button>
                 <button class="chip" onclick="filterTLD('se', this)">.se <span class="count">{{ report_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</span></button>
                 <button class="chip" onclick="filterTLD('nu', this)">.nu <span class="count">{{ report_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</span></button>
-                <button class="chip" onclick="filterTLD('indexed', this)">Indexed <span class="count">{{ report_data.domains|selectattr('indexed')|list|length }}</span></button>
             </div>
         </div>
     </div>
@@ -124,21 +122,15 @@
                 <tr>
                     <th class="sortable" onclick="sortTable(0)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(0)">Domain <span class="sort-icon">&#8693;</span></th>
                     <th class="sortable" onclick="sortTable(1)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(1)">TLD <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Date <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(3)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(3)">Pages <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(4)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(4)">Source <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(5)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(5)">Status <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Release Date <span class="sort-icon">&#8693;</span></th>
                 </tr>
             </thead>
             <tbody>
                 {% for domain in report_data.domains %}
-                <tr data-tld="{{ domain.tld }}" data-indexed="{{ 'true' if domain.indexed else 'false' }}">
+                <tr data-tld="{{ domain.tld }}">
                     <td><strong>{{ domain.domain }}</strong></td>
                     <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
                     <td>{{ domain.release_date }}</td>
-                    <td>{% if domain.estimated_pages %}<strong>{{ domain.estimated_pages }}</strong>{% else %}<span style="color:var(--text-muted)">-</span>{% endif %}</td>
-                    <td>{{ domain.index_source }}</td>
-                    <td>{% if domain.indexed %}<span class="badge badge-success">Indexed</span>{% else %}<span class="badge badge-warning">Not Indexed</span>{% endif %}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -194,11 +186,9 @@
         var vc = 0;
         rows.forEach(function(row) {
             var tld = row.getAttribute('data-tld');
-            var idx = row.getAttribute('data-indexed');
             var text = row.textContent.toLowerCase();
             var mf;
             if (activeFilter === 'all') mf = true;
-            else if (activeFilter === 'indexed') mf = idx === 'true';
             else mf = tld === activeFilter;
             var v = mf && (!term || text.indexOf(term) >= 0);
             row.style.display = v ? '' : 'none';

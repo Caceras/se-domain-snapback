@@ -2,14 +2,11 @@
 """
 SE/NU Domain Snapback Scanner
 
-Automated daily scanner to find valuable .se and .nu domains that will
-drop soon and may be available for registration.
+Lists ALL .se and .nu domains that will be released tonight.
 
 Features:
 - Fetches official drop lists from Internetstiftelsen (IIS)
-- Scans domains dropping tomorrow (21 hours ahead) by default
-- Checks domain availability via DNS (for already-dropped domains)
-- Verifies Google/Bing index presence
+- Shows ALL domains releasing tonight (today) by default
 - Generates CSV and JSON reports
 """
 
@@ -30,33 +27,33 @@ from config import REPORT_DIR
 
 def main(
     target_date: str = None,
-    check_availability: bool = True,
-    check_index: bool = True,
-    filter_indexed_only: bool = True,
+    check_availability: bool = False,
+    check_index: bool = False,
+    filter_indexed_only: bool = False,
     dry_run: bool = False,
 ) -> None:
     """
     Main scanner workflow.
 
     Args:
-        target_date: Date to scan (YYYY-MM-DD), defaults to tomorrow
+        target_date: Date to scan (YYYY-MM-DD), defaults to tonight (today)
         check_availability: Whether to check if domains are available
         check_index: Whether to check search engine index status
         filter_indexed_only: Only include indexed domains in final report
         dry_run: If True, don't write reports, just print results
     """
-    # Default to tomorrow if no date specified
+    # Default to tonight (today) if no date specified
     if target_date is None:
-        target_date = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y-%m-%d")
+        target_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     print(f"SE/NU Domain Snapback Scanner")
     print(f"=" * 40)
-    print(f"Target drop date: {target_date}")
+    print(f"Target release date: {target_date} (tonight)")
     print(f"Started at: {datetime.now(timezone.utc).isoformat()}")
     print()
 
-    # Step 1: Fetch domains dropping on target date
-    print(f"Step 1: Fetching domains dropping on {target_date}...")
+    # Step 1: Fetch ALL domains releasing on target date
+    print(f"Step 1: Fetching ALL domains releasing on {target_date}...")
     domains = fetch_all_dropping_on_date(target_date)
 
     se_count = sum(1 for d in domains if d.get("tld") == "se")
@@ -64,46 +61,24 @@ def main(
     print(f"  Found {len(domains)} domains ({se_count} .se, {nu_count} .nu)")
 
     if not domains:
-        print(f"  No domains dropping on {target_date}. Exiting.")
+        print(f"  No domains releasing on {target_date}. Exiting.")
         return
 
-    # Step 2: Check availability (only useful for already-dropped domains)
-    if check_availability:
-        print()
-        print("Step 2: Checking domain availability via DNS...")
-        domains = check_availability_batch(domains)
-        available_count = sum(1 for d in domains if d.get("available"))
-        print(f"  Checked {len(domains)} domains ({available_count} appear available)")
-    else:
-        # Mark all as available if not checking (future drops aren't registered yet)
-        for d in domains:
-            d["available"] = True
+    # Mark all domains as available (they will be released tonight)
+    for d in domains:
+        d["available"] = True
+        d["indexed"] = False
+        d["estimated_pages"] = None
+        d["index_source"] = None
 
-    # Step 3: Check search engine index
-    if check_index:
-        print()
-        print("Step 3: Checking search engine index status...")
-        print(f"  This may take a while ({len(domains)} domains to check)...")
-        domains = check_index_batch(domains, use_fallback=True)
-
-        indexed_count = sum(1 for d in domains if d.get("indexed"))
-        print(f"  {indexed_count} domains have indexed pages")
-
-    # Step 4: Filter to valuable domains only
-    if filter_indexed_only:
-        print()
-        print("Step 4: Filtering to indexed domains only...")
-        domains = filter_valuable_domains(domains)
-        print(f"  {len(domains)} valuable domains remain")
-
-    # Step 5: Generate report
+    # Step 2: Generate report
     print()
     if dry_run:
-        print("Step 5: Dry run - not writing reports")
+        print("Step 2: Dry run - not writing reports")
         print()
         print(generate_summary(domains))
     else:
-        print("Step 5: Generating reports...")
+        print("Step 2: Generating reports...")
         # Use target date for report filename
         csv_path, json_path = generate_report(domains, timestamp=target_date)
         print(f"  CSV: {csv_path}")
@@ -121,31 +96,13 @@ def main(
 def cli():
     """Command-line interface."""
     parser = argparse.ArgumentParser(
-        description="Scan for valuable .se and .nu domains dropping soon"
+        description="List ALL .se and .nu domains that will be released tonight"
     )
 
     parser.add_argument(
         "--date",
         type=str,
-        help="Target drop date (YYYY-MM-DD). Defaults to tomorrow."
-    )
-
-    parser.add_argument(
-        "--no-availability-check",
-        action="store_true",
-        help="Skip DNS availability checking (recommended for future drops)"
-    )
-
-    parser.add_argument(
-        "--no-index-check",
-        action="store_true",
-        help="Skip search engine index checking"
-    )
-
-    parser.add_argument(
-        "--all-domains",
-        action="store_true",
-        help="Include all domains, not just indexed ones"
+        help="Target release date (YYYY-MM-DD). Defaults to tonight (today)."
     )
 
     parser.add_argument(
@@ -171,9 +128,9 @@ def cli():
 
     main(
         target_date=args.date,
-        check_availability=not args.no_availability_check,
-        check_index=not args.no_index_check,
-        filter_indexed_only=not args.all_domains,
+        check_availability=False,
+        check_index=False,
+        filter_indexed_only=False,
         dry_run=args.dry_run,
     )
 

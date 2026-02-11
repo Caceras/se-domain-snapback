@@ -2,7 +2,7 @@
 """
 Flask web application for SE/NU Domain Snapback Scanner.
 
-Provides a web UI to view scan results and trigger scans.
+Lists ALL .se and .nu domains that will be released tonight.
 """
 
 import json
@@ -54,7 +54,7 @@ def load_report(report_date):
 
 @app.route('/')
 def index():
-    """Home page showing latest scan results."""
+    """Home page showing ALL domains releasing tonight."""
     reports = get_available_reports()
     
     # Load the most recent report
@@ -127,14 +127,14 @@ def start_scan():
         try:
             with scan_status_lock:
                 scan_status["running"] = True
-                scan_status["message"] = f"Scanning domains for {target_date or 'tomorrow'}..."
+                scan_status["message"] = f"Scanning ALL domains releasing on {target_date or 'tonight'}..."
             
-            # Run the scanner
+            # Run the scanner - fetch ALL domains, no filtering
             run_scanner(
                 target_date=target_date,
-                check_availability=True,
-                check_index=True,
-                filter_indexed_only=True,
+                check_availability=False,
+                check_index=False,
+                filter_indexed_only=False,
                 dry_run=False
             )
             
