@@ -12,24 +12,19 @@ Features:
 
 import sys
 import argparse
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.fetcher import fetch_all_dropping_on_date, fetch_drop_list
-from src.availability import check_availability_batch
-from src.index_checker import check_index_batch
-from src.reporter import generate_report, generate_summary, filter_valuable_domains
+from src.reporter import generate_report, generate_summary
 from config import REPORT_DIR
 
 
 def main(
     target_date: str = None,
-    check_availability: bool = False,
-    check_index: bool = False,
-    filter_indexed_only: bool = False,
     dry_run: bool = False,
 ) -> None:
     """
@@ -37,18 +32,17 @@ def main(
 
     Args:
         target_date: Date to scan (YYYY-MM-DD), defaults to tonight (today)
-        check_availability: Whether to check if domains are available
-        check_index: Whether to check search engine index status
-        filter_indexed_only: Only include indexed domains in final report
         dry_run: If True, don't write reports, just print results
     """
     # Default to tonight (today) if no date specified
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     if target_date is None:
-        target_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        target_date = today
 
+    tonight_label = " (tonight)" if target_date == today else ""
     print(f"SE/NU Domain Snapback Scanner")
     print(f"=" * 40)
-    print(f"Target release date: {target_date} (tonight)")
+    print(f"Target release date: {target_date}{tonight_label}")
     print(f"Started at: {datetime.now(timezone.utc).isoformat()}")
     print()
 
@@ -64,9 +58,9 @@ def main(
         print(f"  No domains releasing on {target_date}. Exiting.")
         return
 
-    # Mark all domains as available (they will be released tonight)
+    # Initialize fields - availability is unknown until explicitly checked
     for d in domains:
-        d["available"] = True
+        d["available"] = None
         d["indexed"] = False
         d["estimated_pages"] = None
         d["index_source"] = None
@@ -128,9 +122,6 @@ def cli():
 
     main(
         target_date=args.date,
-        check_availability=False,
-        check_index=False,
-        filter_indexed_only=False,
         dry_run=args.dry_run,
     )
 
