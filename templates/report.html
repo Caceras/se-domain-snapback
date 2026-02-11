@@ -86,7 +86,7 @@
             <div class="stat-value">{{ report_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</div>
             <div class="stat-label">.nu</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" aria-label="Release date">
             <div class="stat-value">{{ report_date }}</div>
             <div class="stat-label">Release Date</div>
         </div>
