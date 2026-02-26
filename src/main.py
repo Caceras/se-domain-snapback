@@ -19,6 +19,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.fetcher import fetch_all_dropping_on_date, fetch_drop_list
+from src.availability import check_availability_batch
+from src.index_checker import check_index_batch
 from src.reporter import generate_report, generate_summary
 from config import REPORT_DIR
 
@@ -58,21 +60,35 @@ def main(
         print(f"  No domains releasing on {target_date}. Exiting.")
         return
 
-    # Initialize fields - availability is unknown until explicitly checked
+    # Initialize fields as defaults (will be overwritten by checks below)
     for d in domains:
         d["available"] = None
         d["indexed"] = False
         d["estimated_pages"] = None
-        d["index_source"] = None
+        d["source"] = None
 
-    # Step 2: Generate report
+    # Step 2: Check DNS availability
+    print()
+    print(f"Step 2: Checking DNS availability for {len(domains)} domains...")
+    domains = check_availability_batch(domains)
+    available_count = sum(1 for d in domains if d.get("available"))
+    print(f"  Available: {available_count}, Registered: {len(domains) - available_count}")
+
+    # Step 3: Check search engine index status
+    print()
+    print(f"Step 3: Checking search engine index status...")
+    domains = check_index_batch(domains)
+    indexed_count = sum(1 for d in domains if d.get("indexed"))
+    print(f"  Indexed: {indexed_count} domains")
+
+    # Step 4: Generate report
     print()
     if dry_run:
-        print("Step 2: Dry run - not writing reports")
+        print("Step 4: Dry run - not writing reports")
         print()
         print(generate_summary(domains))
     else:
-        print("Step 2: Generating reports...")
+        print("Step 4: Generating reports...")
         # Use target date for report filename
         csv_path, json_path = generate_report(domains, timestamp=target_date)
         print(f"  CSV: {csv_path}")
