@@ -12,10 +12,10 @@ on:
   # Allow manual trigger
   workflow_dispatch:
   
-  # Run on push to main branch
+  # Run on push to master branch
   push:
     branches:
-      - main
+      - master
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:

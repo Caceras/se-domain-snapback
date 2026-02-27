@@ -67,38 +67,42 @@ class TestMainFunction(unittest.TestCase):
         self.assertEqual(param_names, ['target_date', 'dry_run'])
 
     @patch('src.main.fetch_all_dropping_on_date')
-    def test_main_tonight_label_today(self, mock_fetch):
-        """main() prints '(tonight)' when using today's date."""
+    def test_main_tomorrow_label_default(self, mock_fetch):
+        """main() prints '(tomorrow)' when using default (tomorrow) date."""
         mock_fetch.return_value = []
         captured = StringIO()
         with patch('sys.stdout', captured):
             main(dry_run=True)
         output = captured.getvalue()
-        self.assertIn("(tonight)", output)
+        self.assertIn("(tomorrow)", output)
 
     @patch('src.main.fetch_all_dropping_on_date')
-    def test_main_no_tonight_label_custom_date(self, mock_fetch):
-        """main() doesn't print '(tonight)' for a custom non-today date."""
+    def test_main_no_tomorrow_label_custom_date(self, mock_fetch):
+        """main() doesn't print '(tomorrow)' for a custom non-tomorrow date."""
         mock_fetch.return_value = []
         captured = StringIO()
         with patch('sys.stdout', captured):
             main(target_date="2020-01-01", dry_run=True)
         output = captured.getvalue()
-        self.assertNotIn("(tonight)", output)
+        self.assertNotIn("(tomorrow)", output)
         self.assertIn("2020-01-01", output)
 
+    @patch('src.main.check_index_batch')
+    @patch('src.main.check_availability_batch')
     @patch('src.main.fetch_all_dropping_on_date')
-    def test_main_sets_available_none(self, mock_fetch):
-        """main() sets available=None (not True) for domains."""
-        mock_fetch.return_value = [
-            {"name": "test.se", "tld": "se", "release_at": "2026-01-11"}
-        ]
+    def test_main_sets_available_none(self, mock_fetch, mock_avail, mock_index):
+        """main() initialises available=None before running checks."""
+        domain = {"name": "test.se", "tld": "se", "release_at": "2026-01-11"}
+        mock_fetch.return_value = [domain]
+        # Capture the domains list *before* availability check overwrites it
+        def capture_then_return(domains):
+            self.assertIsNone(domains[0]["available"])
+            return domains
+        mock_avail.side_effect = capture_then_return
+        mock_index.side_effect = lambda domains: domains
         captured = StringIO()
         with patch('sys.stdout', captured):
             main(target_date="2026-01-11", dry_run=True)
-        # Verify the domain was modified with available=None
-        domain = mock_fetch.return_value[0]
-        self.assertIsNone(domain["available"])
 
 
 class TestReporter(unittest.TestCase):
@@ -162,37 +166,39 @@ class TestFlaskApp(unittest.TestCase):
 class TestBuildStaticSite(unittest.TestCase):
     """Test static site builder consistency."""
 
-    def test_generated_html_has_3_column_table(self):
-        """Static site should generate 3-column tables matching Flask."""
+    def test_generated_html_has_6_column_table(self):
+        """Static site should generate 6-column tables matching Flask templates."""
         from build_static_site import generate_domains_table
         domains = [
-            {"domain": "test.se", "tld": "se", "release_date": "2026-01-11"},
+            {"domain": "test.se", "tld": "se", "release_date": "2026-01-11",
+             "available": True, "indexed": True, "estimated_pages": 50},
         ]
         html = generate_domains_table(domains)
         self.assertIn("Domain", html)
         self.assertIn("TLD", html)
-        self.assertIn("Release Date", html)
-        # Should NOT have old columns
-        self.assertNotIn("Pages", html)
-        self.assertNotIn("Source", html)
-        self.assertNotIn("Status", html)
+        self.assertIn("Release", html)
+        self.assertIn("Avail", html)
+        self.assertIn("Indexed", html)
+        self.assertIn("Pages", html)
 
-    def test_generated_row_no_indexed_attribute(self):
-        """Static site rows should not have data-indexed attribute."""
+    def test_generated_row_has_availability_and_index(self):
+        """Static site rows should render available/indexed fields."""
         from build_static_site import generate_domain_row
-        domain = {"domain": "test.se", "tld": "se", "release_date": "2026-01-11"}
+        domain = {"domain": "test.se", "tld": "se", "release_date": "2026-01-11",
+                  "available": True, "indexed": True, "estimated_pages": 42}
         html = generate_domain_row(domain)
-        self.assertNotIn("data-indexed", html)
+        self.assertIn("pill-g", html)   # green pill for indexed
+        self.assertIn("42", html)       # estimated pages shown
 
-    def test_filter_bar_no_indexed_chip(self):
-        """Static site filter bar should not have Indexed chip."""
+    def test_filter_bar_has_indexed_chip(self):
+        """Static site filter bar should include an Indexed chip."""
         from build_static_site import generate_filter_bar
         domains = [
-            {"domain": "test.se", "tld": "se"},
-            {"domain": "test.nu", "tld": "nu"},
+            {"domain": "test.se", "tld": "se", "indexed": True},
+            {"domain": "test.nu", "tld": "nu", "indexed": False},
         ]
         html = generate_filter_bar(domains)
-        self.assertNotIn("Indexed", html)
+        self.assertIn("Indexed", html)
         self.assertIn("All", html)
         self.assertIn(".se", html)
         self.assertIn(".nu", html)

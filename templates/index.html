@@ -1,148 +1,142 @@
 {% extends "base.html" %}
 
-{% block meta_description %}Tonight's list: {{ latest_data.total_domains if latest_data else 0 }} .se and .nu domains releasing. Complete daily domain list with no filtering.{% endblock %}
+{% block meta_description %}Find valuable expiring .se and .nu domains before they drop. Daily scanner powered by Wayback Machine archive data.{% endblock %}
 
 {% block structured_data %}
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "SE/NU Domain Snapback Scanner",
-    "description": "Lists ALL .se and .nu domains releasing tonight.",
-    "url": "/",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "@context":"https://schema.org","@type":"WebApplication",
+    "name":"DropScan","description":"Find valuable expiring .se and .nu domains.",
+    "url":"/","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
 }
 </script>
-{% if latest_data %}
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "SE/NU Domain Release List - {{ reports[0].date if reports else 'latest' }}",
-    "description": "{{ latest_data.total_domains }} .se and .nu domains releasing on {{ reports[0].date if reports else 'latest date' }}.",
-    "temporalCoverage": "{{ reports[0].date if reports else '' }}",
-    "distribution": [
-        { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "/api/report/{{ reports[0].date if reports else '' }}" },
-        { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "/api/report/{{ reports[0].date if reports else '' }}/csv" }
-    ],
-    "creator": { "@type": "Organization", "name": "SE Domain Snapback Scanner" }
-}
-</script>
-{% endif %}
 {% endblock %}
 
 {% block content %}
-<div id="status-banner" class="status-banner status-idle">
-    <span>&#10003;</span> System ready
-</div>
-
 {% if latest_data %}
-<div class="stats">
+<p class="page-title">Tonight's Drops</p>
+<p class="page-subtitle">{{ reports[0].date if reports else '' }} · {{ latest_data.total_domains }} domains · {{ latest_data.domains|selectattr('indexed')|list|length }} indexed</p>
+
+<div class="stats fup">
     <div class="stat-card">
         <div class="stat-value">{{ latest_data.total_domains }}</div>
-        <div class="stat-label">Total Domains</div>
+        <div class="stat-label">Total</div>
     </div>
     <div class="stat-card">
-        <div class="stat-value">{{ latest_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</div>
-        <div class="stat-label">.se Domains</div>
+        <div class="stat-value">{{ latest_data.domains|selectattr('tld','equalto','se')|list|length }}</div>
+        <div class="stat-label">.se</div>
     </div>
     <div class="stat-card">
-        <div class="stat-value">{{ latest_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</div>
-        <div class="stat-label">.nu Domains</div>
+        <div class="stat-value">{{ latest_data.domains|selectattr('tld','equalto','nu')|list|length }}</div>
+        <div class="stat-label">.nu</div>
     </div>
     <div class="stat-card">
-        <div class="stat-value">{{ reports|length }}</div>
-        <div class="stat-label">Reports</div>
+        <div class="stat-value">{{ latest_data.domains|selectattr('indexed')|list|length }}</div>
+        <div class="stat-label">Indexed</div>
     </div>
 </div>
 
-<div class="card">
-    <h2><span class="icon">&#128202;</span> Domains Releasing Tonight ({{ reports[0].date if reports else 'N/A' }})</h2>
-
+<div class="card fup">
     <div class="toolbar">
-        <div class="toolbar-left">
-            <button id="scan-btn" class="btn" onclick="startScan()">Run New Scan</button>
+        <span class="card-title" style="margin-bottom:0">Domains</span>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <button class="btn btn-ghost" id="scan-btn-inline" onclick="startScan()" style="font-size:13px;padding:7px 14px">Run Scan</button>
             {% if reports %}
-            <a href="/report/{{ reports[0].date }}" class="btn btn-secondary">Full Report</a>
+            <a href="/report/{{ reports[0].date }}" class="btn btn-tinted" style="font-size:13px;padding:7px 14px">Full Report</a>
             {% endif %}
         </div>
     </div>
 
     {% if latest_data.domains %}
-    <div class="toolbar">
-        <div class="toolbar-left">
-            <div class="search-box">
-                <span class="search-icon">&#128269;</span>
-                <input type="text" id="search" placeholder="Search domains..." aria-label="Search domains">
-                <button class="clear-btn" id="clear-search" onclick="clearSearch()" aria-label="Clear search">&#10005;</button>
-            </div>
-        </div>
-        <div class="toolbar-right">
-            <div class="filter-bar">
-                <button class="chip active" onclick="filterTLD('all', this)">All <span class="count">{{ latest_data.domains|length }}</span></button>
-                <button class="chip" onclick="filterTLD('se', this)">.se <span class="count">{{ latest_data.domains|selectattr('tld', 'equalto', 'se')|list|length }}</span></button>
-                <button class="chip" onclick="filterTLD('nu', this)">.nu <span class="count">{{ latest_data.domains|selectattr('tld', 'equalto', 'nu')|list|length }}</span></button>
-            </div>
-        </div>
+    <div class="search-wrap">
+        <svg class="ico" viewBox="0 0 16 16" fill="currentColor"><path d="M6.5 0a6.5 6.5 0 014.952 10.73l3.41 3.41a.75.75 0 01-1.06 1.06l-3.41-3.41A6.5 6.5 0 116.5 0zm0 1.5a5 5 0 100 10 5 5 0 000-10z"/></svg>
+        <input class="search-input" id="search" type="text" placeholder="Search domains…" autocomplete="off" autocorrect="off" spellcheck="false">
+        <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
     </div>
 
-    <div class="result-count" id="result-count">Showing {{ [latest_data.domains|length, 50]|min }} of {{ latest_data.domains|length }}</div>
+    <div class="chip-row">
+        <button class="chip on" onclick="setTLD('all',this)">All <span class="n">{{ latest_data.domains|length }}</span></button>
+        <button class="chip" onclick="setTLD('se',this)">.se <span class="n">{{ latest_data.domains|selectattr('tld','equalto','se')|list|length }}</span></button>
+        <button class="chip" onclick="setTLD('nu',this)">.nu <span class="n">{{ latest_data.domains|selectattr('tld','equalto','nu')|list|length }}</span></button>
+        <button class="chip" onclick="setTLD('indexed',this)">Indexed <span class="n">{{ latest_data.domains|selectattr('indexed')|list|length }}</span></button>
+    </div>
 
-    <div class="table-wrapper">
-        <table id="domains-table">
+    <div class="toolbar">
+        <span class="rcount" id="rcount">Showing {{ [latest_data.domains|length,50]|min }} of {{ latest_data.domains|length }}</span>
+    </div>
+
+    <div class="table-wrap">
+        <table id="tbl">
             <thead>
                 <tr>
-                    <th class="sortable" onclick="sortTable(0)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(0)">Domain <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(1)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(1)">TLD <span class="sort-icon">&#8693;</span></th>
-                    <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Release Date <span class="sort-icon">&#8693;</span></th>
+                    <th class="sort" onclick="sortBy(0)">Domain <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(1)">TLD <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(2)">Release <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(3)">Avail <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(4)">Indexed <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(5)">Pages <span class="si">⇅</span></th>
                 </tr>
             </thead>
             <tbody>
-                {% for domain in latest_data.domains[:50] %}
-                <tr data-tld="{{ domain.tld }}">
-                    <td><strong>{{ domain.domain }}</strong></td>
-                    <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
-                    <td>{{ domain.release_date }}</td>
-                </tr>
-                {% endfor %}
+            {% for domain in latest_data.domains[:50] %}
+            <tr data-tld="{{ domain.tld }}" data-indexed="{{ 'yes' if domain.indexed else 'no' }}">
+                <td><span class="domain-name">{{ domain.domain }}</span></td>
+                <td><span class="tld tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
+                <td style="color:var(--label-2)">{{ domain.release_date }}</td>
+                <td>
+                    {% if domain.available is none %}<span class="pill pill-m">—</span>
+                    {% elif domain.available %}<span class="pill pill-g">✓ Free</span>
+                    {% else %}<span class="pill pill-r">✗ Taken</span>{% endif %}
+                </td>
+                <td>
+                    {% if domain.indexed is none %}<span class="pill pill-m">—</span>
+                    {% elif domain.indexed %}<span class="pill pill-g">✓ Yes</span>
+                    {% else %}<span class="pill pill-m">No</span>{% endif %}
+                </td>
+                <td style="color:var(--label-2)">{{ domain.estimated_pages if domain.estimated_pages else '—' }}</td>
+            </tr>
+            {% endfor %}
             </tbody>
         </table>
     </div>
 
     {% if latest_data.domains|length > 50 %}
-    <p style="margin-top: 1rem; text-align: center;">
-        <a href="/report/{{ reports[0].date }}" class="btn btn-secondary">View all {{ latest_data.domains|length }} domains</a>
-    </p>
+    <div style="text-align:center;margin-top:16px">
+        <a href="/report/{{ reports[0].date }}" class="btn btn-tinted">View all {{ latest_data.domains|length }} domains</a>
+    </div>
     {% endif %}
+
     {% else %}
-    <div class="empty-state">
-        <div class="empty-icon">&#128269;</div>
-        <p>No domains found in the latest scan.</p>
+    <div class="empty">
+        <div class="ei">🔍</div>
+        <p>No domains in latest scan.</p>
+        <button class="btn btn-primary" id="scan-btn-inline" onclick="startScan()">Run First Scan</button>
     </div>
     {% endif %}
 </div>
+
 {% else %}
-<div class="card">
-    <h2>No Reports Available</h2>
-    <div class="empty-state">
-        <div class="empty-icon">&#128640;</div>
-        <p>No scan results found. Run your first scan to get started!</p>
-        <button id="scan-btn" class="btn" onclick="startScan()" style="margin-top: 1rem;">Run First Scan</button>
+<div class="card fup">
+    <div class="empty">
+        <div class="ei">🚀</div>
+        <p>No scan results yet. Run your first scan to discover expiring domains.</p>
+        <button class="btn btn-primary" id="scan-btn-inline" onclick="startScan()">Run First Scan</button>
     </div>
 </div>
 {% endif %}
 
 {% if reports %}
-<div class="card">
-    <h2><span class="icon">&#128197;</span> Historical Reports</h2>
+<div class="card fup" id="reports-section">
+    <p class="card-title">History</p>
     <ul class="report-list">
         {% for report in reports %}
         <li>
             <a href="/report/{{ report.date }}">
-                <span class="report-date">{{ report.date }}</span>
-                {% if loop.first %}<span class="badge badge-info">Latest</span>{% endif %}
+                <span class="rd">{{ report.date }}</span>
+                <span class="rc">
+                    {% if loop.first %}<span class="badge badge-blue">Latest</span>{% endif %}
+                    ›
+                </span>
             </a>
         </li>
         {% endfor %}
@@ -153,64 +147,66 @@
 
 {% block extra_script %}
 <script>
-    var activeFilter = 'all';
-    var currentSort = { col: -1, asc: true };
-    var searchInput = document.getElementById('search');
-    var clearBtn = document.getElementById('clear-search');
+var _tld = 'all';
+var _sort = {col:-1, asc:true};
+var inp = document.getElementById('search');
+var clr = document.getElementById('search-clear');
 
-    if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
-            clearBtn.classList.toggle('visible', e.target.value.length > 0);
-            applyFilters();
-        });
-    }
+if (inp) inp.addEventListener('input', function(){
+    clr.classList.toggle('on', inp.value.length > 0);
+    applyFilters();
+});
 
-    function clearSearch() {
-        if (searchInput) { searchInput.value = ''; clearBtn.classList.remove('visible'); applyFilters(); searchInput.focus(); }
-    }
+function clearSearch() { if (inp){inp.value=''; clr.classList.remove('on'); applyFilters(); inp.focus();} }
 
-    function filterTLD(tld, el) {
-        activeFilter = tld;
-        document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
-        el.classList.add('active');
-        applyFilters();
-    }
+function setTLD(v, el) {
+    _tld = v;
+    document.querySelectorAll('.chip-row .chip').forEach(function(c){ c.classList.remove('on'); });
+    el.classList.add('on');
+    applyFilters();
+}
 
-    function applyFilters() {
-        var table = document.getElementById('domains-table'); if (!table) return;
-        var rows = table.querySelectorAll('tbody tr');
-        var term = searchInput ? searchInput.value.toLowerCase() : '';
-        var vc = 0;
-        rows.forEach(function(row) {
-            var tld = row.getAttribute('data-tld');
-            var text = row.textContent.toLowerCase();
-            var v = (activeFilter === 'all' || tld === activeFilter) && (!term || text.indexOf(term) >= 0);
-            row.style.display = v ? '' : 'none';
-            if (v) vc++;
-        });
-        var c = document.getElementById('result-count');
-        if (c) c.textContent = 'Showing ' + vc + ' domains';
-    }
+function applyFilters() {
+    var tbl = document.getElementById('tbl'); if (!tbl) return;
+    var rows = tbl.querySelectorAll('tbody tr');
+    var term = inp ? inp.value.toLowerCase() : '';
+    var n = 0;
+    rows.forEach(function(r){
+        var tld = r.getAttribute('data-tld');
+        var indexed = r.getAttribute('data-indexed');
+        var text = r.textContent.toLowerCase();
+        var match = (_tld === 'all' || (_tld === 'indexed' && indexed === 'yes') || tld === _tld)
+                    && (!term || text.includes(term));
+        r.style.display = match ? '' : 'none';
+        if (match) n++;
+    });
+    var rc = document.getElementById('rcount');
+    if (rc) rc.textContent = 'Showing ' + n + ' domains';
+}
 
-    function sortTable(ci) {
-        var table = document.getElementById('domains-table'); if (!table) return;
-        var tbody = table.querySelector('tbody');
-        var rows = Array.from(tbody.querySelectorAll('tr'));
-        var ths = table.querySelectorAll('th');
-        if (currentSort.col === ci) currentSort.asc = !currentSort.asc;
-        else { currentSort.col = ci; currentSort.asc = true; }
-        ths.forEach(function(h, i) {
-            h.classList.toggle('sorted', i === ci);
-            var ic = h.querySelector('.sort-icon');
-            if (ic) ic.innerHTML = i === ci ? (currentSort.asc ? '&#8593;' : '&#8595;') : '&#8693;';
-        });
-        rows.sort(function(a, b) {
-            var at = a.cells[ci].textContent.trim(), bt = b.cells[ci].textContent.trim();
-            var an = parseFloat(at), bn = parseFloat(bt), r;
-            if (!isNaN(an) && !isNaN(bn)) r = an - bn; else r = at.localeCompare(bt);
-            return currentSort.asc ? r : -r;
-        });
-        rows.forEach(function(r) { tbody.appendChild(r); });
-    }
+function sortBy(ci) {
+    var tbl = document.getElementById('tbl'); if (!tbl) return;
+    var ths = tbl.querySelectorAll('th');
+    if (_sort.col === ci) _sort.asc = !_sort.asc;
+    else { _sort.col = ci; _sort.asc = true; }
+    ths.forEach(function(h,i){
+        h.classList.remove('asc','desc');
+        var si = h.querySelector('.si');
+        if (i === ci) {
+            h.classList.add(_sort.asc ? 'asc' : 'desc');
+            if (si) si.textContent = _sort.asc ? '↑' : '↓';
+        } else if (si) si.textContent = '⇅';
+    });
+    var tbody = tbl.querySelector('tbody');
+    var rows = Array.from(tbody.querySelectorAll('tr'));
+    rows.sort(function(a,b){
+        var at = a.cells[ci] ? a.cells[ci].textContent.trim() : '';
+        var bt = b.cells[ci] ? b.cells[ci].textContent.trim() : '';
+        var an = parseFloat(at), bn = parseFloat(bt), r;
+        if (!isNaN(an) && !isNaN(bn)) r = an - bn; else r = at.localeCompare(bt);
+        return _sort.asc ? r : -r;
+    });
+    rows.forEach(function(r){ tbody.appendChild(r); });
+}
 </script>
 {% endblock %}
