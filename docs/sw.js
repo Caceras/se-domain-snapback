@@ -1,71 +1,53 @@
-const CACHE_NAME = 'domain-scanner-v1';
-const OFFLINE_URL = '/';
+const CACHE = 'dropscan-v2';
+const STATIC = ['/static/favicon.svg', '/static/manifest.json'];
 
-// Assets to pre-cache on install
-const PRE_CACHE = [
-  '/',
-  '/index.html',
-  '/favicon.svg',
-  '/manifest.json'
-];
-
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(PRE_CACHE);
-    })
-  );
-  self.skipWaiting();
+self.addEventListener('install', function(e) {
+    e.waitUntil(caches.open(CACHE).then(function(c) { return c.addAll(STATIC); }));
+    self.skipWaiting();
 });
 
-self.addEventListener('activate', function(event) {
-  event.waitUntil(
-    caches.keys().then(function(names) {
-      return Promise.all(
-        names.filter(function(name) { return name !== CACHE_NAME; })
-             .map(function(name) { return caches.delete(name); })
-      );
-    })
-  );
-  self.clients.claim();
-});
-
-self.addEventListener('fetch', function(event) {
-  // Only cache GET requests
-  if (event.request.method !== 'GET') return;
-
-  // Network-first for HTML (always get fresh data when online)
-  if (event.request.headers.get('accept') &&
-      event.request.headers.get('accept').includes('text/html')) {
-    event.respondWith(
-      fetch(event.request)
-        .then(function(response) {
-          var clone = response.clone();
-          caches.open(CACHE_NAME).then(function(cache) {
-            cache.put(event.request, clone);
-          });
-          return response;
-        })
-        .catch(function() {
-          return caches.match(event.request).then(function(cached) {
-            return cached || caches.match(OFFLINE_URL);
-          });
+self.addEventListener('activate', function(e) {
+    e.waitUntil(
+        caches.keys().then(function(keys) {
+            return Promise.all(keys.filter(function(k) { return k !== CACHE; }).map(function(k) { return caches.delete(k); }));
         })
     );
-    return;
-  }
+    self.clients.claim();
+});
 
-  // Cache-first for static assets
-  event.respondWith(
-    caches.match(event.request).then(function(cached) {
-      if (cached) return cached;
-      return fetch(event.request).then(function(response) {
-        var clone = response.clone();
-        caches.open(CACHE_NAME).then(function(cache) {
-          cache.put(event.request, clone);
-        });
-        return response;
-      });
-    })
-  );
+self.addEventListener('fetch', function(e) {
+    var req = e.request;
+    if (req.method !== 'GET') return;
+
+    // API calls: network-first, no cache
+    if (req.url.includes('/api/')) {
+        e.respondWith(fetch(req).catch(function() { return new Response('{"error":"offline"}', {headers:{'Content-Type':'application/json'}}); }));
+        return;
+    }
+
+    // Static assets: cache-first
+    if (req.url.includes('/static/')) {
+        e.respondWith(
+            caches.match(req).then(function(cached) {
+                if (cached) return cached;
+                return fetch(req).then(function(res) {
+                    var clone = res.clone();
+                    caches.open(CACHE).then(function(c) { c.put(req, clone); });
+                    return res;
+                });
+            })
+        );
+        return;
+    }
+
+    // HTML pages: network-first, fall back to cache
+    e.respondWith(
+        fetch(req).then(function(res) {
+            var clone = res.clone();
+            caches.open(CACHE).then(function(c) { c.put(req, clone); });
+            return res;
+        }).catch(function() {
+            return caches.match(req).then(function(cached) { return cached || caches.match('/'); });
+        })
+    );
 });

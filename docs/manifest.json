@@ -1,21 +1,30 @@
 {
-  "name": "SE/NU Domain Snapback Scanner",
-  "short_name": "DomainScan",
-  "description": "Find valuable expiring .se and .nu domains before they become available for registration.",
+  "name": "DropScan — .SE/.NU Domain Scanner",
+  "short_name": "DropScan",
+  "description": "Find valuable expiring .se and .nu domains before they drop.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#f5f7fa",
-  "theme_color": "#667eea",
+  "background_color": "#ffffff",
+  "theme_color": "#0071E3",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "/static/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "Latest Drops",
+      "short_name": "Latest",
+      "url": "/",
+      "description": "View tonight's dropping domains"
+    }
+  ],
   "categories": ["utilities", "business"],
   "lang": "en",
-  "dir": "ltr"
+  "dir": "ltr",
+  "scope": "/"
 }

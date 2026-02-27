@@ -176,10 +176,10 @@ class TestBuildStaticSite(unittest.TestCase):
         html = generate_domains_table(domains)
         self.assertIn("Domain", html)
         self.assertIn("TLD", html)
-        self.assertIn("Release Date", html)
-        self.assertIn("Available", html)
+        self.assertIn("Release", html)
+        self.assertIn("Avail", html)
         self.assertIn("Indexed", html)
-        self.assertIn("Est. Pages", html)
+        self.assertIn("Pages", html)
 
     def test_generated_row_has_availability_and_index(self):
         """Static site rows should render available/indexed fields."""
@@ -187,18 +187,18 @@ class TestBuildStaticSite(unittest.TestCase):
         domain = {"domain": "test.se", "tld": "se", "release_date": "2026-01-11",
                   "available": True, "indexed": True, "estimated_pages": 42}
         html = generate_domain_row(domain)
-        self.assertIn("4caf50", html)   # green check for indexed
+        self.assertIn("pill-g", html)   # green pill for indexed
         self.assertIn("42", html)       # estimated pages shown
 
-    def test_filter_bar_no_indexed_chip(self):
-        """Static site filter bar should not have Indexed chip."""
+    def test_filter_bar_has_indexed_chip(self):
+        """Static site filter bar should include an Indexed chip."""
         from build_static_site import generate_filter_bar
         domains = [
-            {"domain": "test.se", "tld": "se"},
-            {"domain": "test.nu", "tld": "nu"},
+            {"domain": "test.se", "tld": "se", "indexed": True},
+            {"domain": "test.nu", "tld": "nu", "indexed": False},
         ]
         html = generate_filter_bar(domains)
-        self.assertNotIn("Indexed", html)
+        self.assertIn("Indexed", html)
         self.assertIn("All", html)
         self.assertIn(".se", html)
         self.assertIn(".nu", html)
