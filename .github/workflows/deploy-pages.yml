@@ -1,11 +1,13 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Run after daily scan completes
+  # Run after daily scan completes on main
   workflow_run:
     workflows: ["Daily Domain Scan"]
     types:
       - completed
+    branches:
+      - main
   
   # Allow manual trigger
   workflow_dispatch:
@@ -33,6 +35,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
       
       - name: Set up Python
         uses: actions/setup-python@v5
