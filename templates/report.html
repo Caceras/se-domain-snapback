@@ -123,6 +123,9 @@
                     <th class="sortable" onclick="sortTable(0)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(0)">Domain <span class="sort-icon">&#8693;</span></th>
                     <th class="sortable" onclick="sortTable(1)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(1)">TLD <span class="sort-icon">&#8693;</span></th>
                     <th class="sortable" onclick="sortTable(2)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(2)">Release Date <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(3)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(3)">Available <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(4)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(4)">Indexed <span class="sort-icon">&#8693;</span></th>
+                    <th class="sortable" onclick="sortTable(5)" tabindex="0" role="button" onkeypress="if(event.key==='Enter')sortTable(5)">Est. Pages <span class="sort-icon">&#8693;</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -131,6 +134,9 @@
                     <td><strong>{{ domain.domain }}</strong></td>
                     <td><span class="tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
                     <td>{{ domain.release_date }}</td>
+                    <td>{% if domain.available is none %}—{% elif domain.available %}✓{% else %}<span style="color:var(--text-muted)">✗</span>{% endif %}</td>
+                    <td>{% if domain.indexed is none %}—{% elif domain.indexed %}<span style="color:#4caf50">✓</span>{% else %}<span style="color:var(--text-muted)">✗</span>{% endif %}</td>
+                    <td>{{ domain.estimated_pages if domain.estimated_pages else '—' }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

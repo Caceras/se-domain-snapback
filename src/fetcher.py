@@ -96,38 +96,13 @@ def fetch_all_dropping_on_date(target_date: str) -> list[dict]:
     return se_domains + nu_domains
 
 
-# Keep backwards compatibility
-def fetch_dropping_today(tld: Literal["se", "nu"] = "se") -> list[dict]:
-    """
-    Fetch domains releasing today (tonight) for a given TLD.
-    
-    Args:
-        tld: Either "se" or "nu"
-        
-    Returns:
-        List of domain entries releasing today
-    """
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    return fetch_dropping_on_date(tld, today)
-
-
-def fetch_all_dropping_today() -> list[dict]:
-    """
-    Fetch all .se and .nu domains releasing today (tonight).
-    
-    Returns:
-        Combined list of domains from both TLDs releasing today
-    """
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    return fetch_all_dropping_on_date(today)
-
-
 if __name__ == "__main__":
     # Test the fetcher
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    print(f"Fetching domains releasing today ({today})...")
-    domains = fetch_all_dropping_today()
-    print(f"Found {len(domains)} domains releasing today")
+    from datetime import timedelta
+    tomorrow = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y-%m-%d")
+    print(f"Fetching domains releasing tomorrow ({tomorrow})...")
+    domains = fetch_all_dropping_on_date(tomorrow)
+    print(f"Found {len(domains)} domains releasing tomorrow")
 
     se_count = sum(1 for d in domains if d.get("tld") == "se")
     nu_count = sum(1 for d in domains if d.get("tld") == "nu")

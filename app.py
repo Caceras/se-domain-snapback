@@ -127,7 +127,7 @@ def start_scan():
         try:
             with scan_status_lock:
                 scan_status["running"] = True
-                scan_status["message"] = f"Scanning ALL domains releasing on {target_date or 'tonight'}..."
+                scan_status["message"] = f"Scanning ALL domains releasing on {target_date or 'tomorrow'}..."
             
             # Run the scanner - fetch ALL domains, no filtering
             run_scanner(

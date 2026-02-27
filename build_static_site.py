@@ -18,9 +18,10 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 # Configuration
-REPORT_DIR = Path("reports")
-OUTPUT_DIR = Path("docs")
-TEMPLATE_DIR = Path("templates")
+_HERE = Path(__file__).parent
+REPORT_DIR = _HERE / "reports"
+OUTPUT_DIR = _HERE / "docs"
+TEMPLATE_DIR = _HERE / "templates"
 SITE_NAME = "SE/NU Domain Snapback Scanner"
 SITE_DESCRIPTION = "Lists ALL .se and .nu domains that will be released tonight. Complete domain snapback scanner."
 GITHUB_URL = "https://github.com/Caceras/se-domain-snapback"
@@ -477,15 +478,34 @@ def generate_stat_cards(cards):
 
 def generate_domain_row(domain):
     tld = domain.get('tld', 'se')
+    available = domain.get('available')
+    if available is None:
+        avail_cell = '&mdash;'
+    elif available:
+        avail_cell = '&#10003;'
+    else:
+        avail_cell = '<span style="color:#888">&#10007;</span>'
+    indexed = domain.get('indexed')
+    if indexed is None:
+        index_cell = '&mdash;'
+    elif indexed:
+        index_cell = '<span style="color:#4caf50">&#10003;</span>'
+    else:
+        index_cell = '<span style="color:#888">&#10007;</span>'
+    pages = domain.get('estimated_pages')
+    pages_cell = escape_html(str(pages)) if pages else '&mdash;'
     return (f'<tr data-tld="{escape_html(tld)}">'
             f'<td><strong>{escape_html(domain.get("domain", ""))}</strong></td>'
             f'<td><span class="tld-{escape_html(tld)}">.{escape_html(tld)}</span></td>'
             f'<td>{escape_html(domain.get("release_date", ""))}</td>'
+            f'<td>{avail_cell}</td>'
+            f'<td>{index_cell}</td>'
+            f'<td>{pages_cell}</td>'
             f'</tr>')
 
 
 def generate_domains_table(domains, table_id="domains-table"):
-    cols = [("Domain", 0), ("TLD", 1), ("Release Date", 2)]
+    cols = [("Domain", 0), ("TLD", 1), ("Release Date", 2), ("Available", 3), ("Indexed", 4), ("Est. Pages", 5)]
     hdr = ''.join(
         f'<th class="sortable" onclick="sortTable({i})" tabindex="0" role="button" '
         f'onkeypress="if(event.key===\'Enter\')sortTable({i})">'

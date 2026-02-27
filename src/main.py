@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.fetcher import fetch_all_dropping_on_date, fetch_drop_list
 from src.availability import check_availability_batch
 from src.index_checker import check_index_batch
-from src.reporter import generate_report, generate_summary
+from src.reporter import generate_report, generate_summary, filter_valuable_domains
 from config import REPORT_DIR
 
 
@@ -82,6 +82,10 @@ def main(
     domains = check_index_batch(domains)
     indexed_count = sum(1 for d in domains if d.get("indexed"))
     print(f"  Indexed: {indexed_count} domains")
+
+    # Step 3.5: Identify valuable snapback targets
+    valuable = filter_valuable_domains(domains)
+    print(f"  Valuable snapback targets (indexed + pages threshold): {len(valuable)}")
 
     # Step 4: Generate report
     print()
