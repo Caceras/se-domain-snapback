@@ -12,7 +12,7 @@ Features:
 
 import sys
 import argparse
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 # Add parent directory to path for imports
@@ -33,23 +33,25 @@ def main(
     Main scanner workflow.
 
     Args:
-        target_date: Date to scan (YYYY-MM-DD), defaults to tonight (today)
+        target_date: Date to scan (YYYY-MM-DD), defaults to tomorrow
         dry_run: If True, don't write reports, just print results
     """
-    # Default to tonight (today) if no date specified
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Default to tomorrow - domains drop at 04:00 UTC, scan runs at 07:00 UTC.
+    # Fetching tomorrow gives ~21h advance notice while domains are still registered,
+    # allowing index checks before they drop.
+    tomorrow = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y-%m-%d")
     if target_date is None:
-        target_date = today
+        target_date = tomorrow
 
-    tonight_label = " (tonight)" if target_date == today else ""
+    tomorrow_label = " (tomorrow)" if target_date == tomorrow else ""
     print(f"SE/NU Domain Snapback Scanner")
     print(f"=" * 40)
-    print(f"Target release date: {target_date}{tonight_label}")
+    print(f"Target release date: {target_date}{tomorrow_label}")
     print(f"Started at: {datetime.now(timezone.utc).isoformat()}")
     print()
 
     # Step 1: Fetch ALL domains releasing on target date
-    print(f"Step 1: Fetching ALL domains releasing on {target_date}...")
+    print(f"Step 1: Fetching ALL domains dropping on {target_date}...")
     domains = fetch_all_dropping_on_date(target_date)
 
     se_count = sum(1 for d in domains if d.get("tld") == "se")
@@ -57,7 +59,7 @@ def main(
     print(f"  Found {len(domains)} domains ({se_count} .se, {nu_count} .nu)")
 
     if not domains:
-        print(f"  No domains releasing on {target_date}. Exiting.")
+        print(f"  No domains dropping on {target_date}. Exiting.")
         return
 
     # Initialize fields as defaults (will be overwritten by checks below)
@@ -112,7 +114,7 @@ def cli():
     parser.add_argument(
         "--date",
         type=str,
-        help="Target release date (YYYY-MM-DD). Defaults to tonight (today)."
+        help="Target drop date (YYYY-MM-DD). Defaults to tomorrow."
     )
 
     parser.add_argument(
