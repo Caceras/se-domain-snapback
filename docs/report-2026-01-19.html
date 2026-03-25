@@ -194,6 +194,12 @@ tbody tr:last-child td{border-bottom:none}
 ::-webkit-scrollbar{height:4px;width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
+.row-highlight td{background:var(--blue-t)}
+.row-highlight:hover td{background:rgba(0,113,227,0.15)}
+[data-theme="dark"] .row-highlight td{background:rgba(10,132,255,0.12)}
+[data-theme="dark"] .row-highlight:hover td{background:rgba(10,132,255,0.18)}
+.highlight-legend{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--label-2);margin-left:12px}
+.highlight-swatch{width:12px;height:12px;border-radius:3px;background:var(--blue-t);border:1px solid var(--blue)}
 @media(display-mode:standalone){
     .header{padding-top:calc(1rem + var(--safe-top))}
     .footer{padding-bottom:calc(1.25rem + var(--safe-bottom))}
@@ -209,6 +215,7 @@ tbody tr:last-child td{border-bottom:none}
         </a>
         <nav class="nav-links" aria-label="Main">
             <a href="index.html" class="">Latest</a>
+            <a href="expiring.html" class="">Expiring</a>
             <a href="#reports-section" class="on">History</a>
         </nav>
         <div>
@@ -343,6 +350,7 @@ tbody tr:last-child td{border-bottom:none}
 <tr data-tld="se" data-indexed="yes"><td><strong>digidakt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-01-19</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr></tbody></table></div></div>
 <div class="card fup"><p class="card-title">Other Reports</p>
 <ul class="report-list">
+<li><a href="report-2026-03-26.html"><span class="rd">2026-03-26</span><span class="rc">&#8250;</span></a></li>
 <li><a href="report-2026-03-25.html"><span class="rd">2026-03-25</span><span class="rc">&#8250;</span></a></li>
 <li><a href="report-2026-03-24.html"><span class="rd">2026-03-24</span><span class="rc">&#8250;</span></a></li>
 <li><a href="report-2026-03-23.html"><span class="rd">2026-03-23</span><span class="rc">&#8250;</span></a></li>
