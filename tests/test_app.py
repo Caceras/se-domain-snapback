@@ -163,6 +163,44 @@ class TestFlaskApp(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
 
 
+class TestExpiringTracker(unittest.TestCase):
+    """Test the expiring domains tracker."""
+
+    def setUp(self):
+        self.client = app.test_client()
+
+    def test_expiring_page_loads(self):
+        resp = self.client.get('/expiring')
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(b'Expiring Soon', resp.data)
+
+    def test_expiring_api(self):
+        resp = self.client.get('/api/expiring')
+        self.assertEqual(resp.status_code, 200)
+        data = resp.get_json()
+        self.assertIn('domains', data)
+        self.assertIn('highlighted_count', data)
+        self.assertIn('total_expiring', data)
+        # All returned domains should be indexed with pages >= 1
+        for d in data['domains']:
+            self.assertTrue(d.get('indexed'))
+            self.assertGreaterEqual(d.get('estimated_pages', 0), 1)
+
+    def test_expiring_api_sorted_descending(self):
+        resp = self.client.get('/api/expiring')
+        data = resp.get_json()
+        domains = data['domains']
+        if len(domains) > 1:
+            pages = [d.get('estimated_pages', 0) for d in domains]
+            self.assertEqual(pages, sorted(pages, reverse=True))
+
+    def test_expiring_highlighted_count(self):
+        resp = self.client.get('/api/expiring')
+        data = resp.get_json()
+        expected = sum(1 for d in data['domains'] if (d.get('estimated_pages') or 0) >= 2)
+        self.assertEqual(data['highlighted_count'], expected)
+
+
 class TestBuildStaticSite(unittest.TestCase):
     """Test static site builder consistency."""
 
@@ -202,6 +240,20 @@ class TestBuildStaticSite(unittest.TestCase):
         self.assertIn("All", html)
         self.assertIn(".se", html)
         self.assertIn(".nu", html)
+
+
+    def test_expiring_page_generated(self):
+        """Static site should generate an expiring page with highlight rows."""
+        from build_static_site import generate_expiring_domain_row
+        domain_highlight = {"domain": "good.se", "tld": "se", "release_date": "2026-01-11",
+                            "available": True, "indexed": True, "estimated_pages": 5}
+        domain_normal = {"domain": "ok.se", "tld": "se", "release_date": "2026-01-11",
+                         "available": True, "indexed": True, "estimated_pages": 1}
+        html_h = generate_expiring_domain_row(domain_highlight)
+        html_n = generate_expiring_domain_row(domain_normal)
+        self.assertIn("row-highlight", html_h)
+        self.assertNotIn("row-highlight", html_n)
+        self.assertIn("5", html_h)
 
 
 if __name__ == "__main__":

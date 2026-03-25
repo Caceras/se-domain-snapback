@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}Expiring Soon — DropScan{% endblock %}
+{% block meta_description %}Curated list of expiring .se and .nu domains with indexed pages. Domains highlighted with 2+ archived pages.{% endblock %}
+{% block og_title %}Expiring Domains — DropScan{% endblock %}
+
+{% block extra_style %}
+.row-highlight td { background: var(--blue-t); }
+.row-highlight:hover td { background: rgba(0,113,227,0.15); }
+[data-theme="dark"] .row-highlight td { background: rgba(10,132,255,0.12); }
+[data-theme="dark"] .row-highlight:hover td { background: rgba(10,132,255,0.18); }
+.highlight-legend {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--label-2); margin-left: 12px;
+}
+.highlight-swatch {
+    width: 12px; height: 12px; border-radius: 3px;
+    background: var(--blue-t); border: 1px solid var(--blue);
+}
+{% endblock %}
+
+{% block content %}
+<nav class="breadcrumb">
+    <a href="/">DropScan</a>
+    <span>›</span>
+    <span>Expiring Soon</span>
+</nav>
+
+<p class="page-title">Expiring Soon</p>
+<p class="page-subtitle">{{ report_date }} · {{ expiring_domains|length }} domains with indexed pages · {{ highlighted_count }} with 2+ pages</p>
+
+<div class="stats fup">
+    <div class="stat-card">
+        <div class="stat-value">{{ total_scanned }}</div>
+        <div class="stat-label">Scanned</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ expiring_domains|length }}</div>
+        <div class="stat-label">Indexed</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ highlighted_count }}</div>
+        <div class="stat-label">2+ Pages</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ top_pages }}</div>
+        <div class="stat-label">Max Pages</div>
+    </div>
+</div>
+
+<div class="card fup">
+    <div class="toolbar">
+        <span class="card-title" style="margin-bottom:0">Curated Expiring Domains</span>
+        <span class="highlight-legend"><span class="highlight-swatch"></span> 2+ indexed pages</span>
+    </div>
+
+    {% if expiring_domains %}
+    <div class="search-wrap">
+        <svg class="ico" viewBox="0 0 16 16" fill="currentColor"><path d="M6.5 0a6.5 6.5 0 014.952 10.73l3.41 3.41a.75.75 0 01-1.06 1.06l-3.41-3.41A6.5 6.5 0 116.5 0zm0 1.5a5 5 0 100 10 5 5 0 000-10z"/></svg>
+        <input class="search-input" id="search" type="text" placeholder="Search expiring domains…" autocomplete="off" autocorrect="off" spellcheck="false">
+        <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
+    </div>
+
+    <div class="chip-row">
+        <button class="chip on" onclick="setTLD('all',this)">All <span class="n">{{ expiring_domains|length }}</span></button>
+        <button class="chip" onclick="setTLD('se',this)">.se <span class="n">{{ expiring_domains|selectattr('tld','equalto','se')|list|length }}</span></button>
+        <button class="chip" onclick="setTLD('nu',this)">.nu <span class="n">{{ expiring_domains|selectattr('tld','equalto','nu')|list|length }}</span></button>
+        <button class="chip" onclick="setTLD('highlighted',this)">2+ Pages <span class="n">{{ highlighted_count }}</span></button>
+    </div>
+
+    <div class="toolbar">
+        <span class="rcount" id="rcount">{{ expiring_domains|length }} domains</span>
+    </div>
+
+    <div class="table-wrap">
+        <table id="tbl">
+            <thead>
+                <tr>
+                    <th class="sort" onclick="sortBy(0)">Domain <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(1)">TLD <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(2)">Release <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(3)">Avail <span class="si">⇅</span></th>
+                    <th class="sort" onclick="sortBy(4)">Pages <span class="si">⇅</span></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for domain in expiring_domains %}
+            <tr data-tld="{{ domain.tld }}" data-indexed="yes" data-pages="{{ domain.estimated_pages or 0 }}"{% if (domain.estimated_pages or 0) >= 2 %} class="row-highlight"{% endif %}>
+                <td><span class="domain-name">{{ domain.domain }}</span></td>
+                <td><span class="tld tld-{{ domain.tld }}">.{{ domain.tld }}</span></td>
+                <td style="color:var(--label-2)">{{ domain.release_date }}</td>
+                <td>
+                    {% if domain.available is none %}<span class="pill pill-m">—</span>
+                    {% elif domain.available %}<span class="pill pill-g">✓ Free</span>
+                    {% else %}<span class="pill pill-r">✗ Taken</span>{% endif %}
+                </td>
+                <td>
+                    <strong{% if (domain.estimated_pages or 0) >= 2 %} style="color:var(--blue)"{% endif %}>{{ domain.estimated_pages if domain.estimated_pages else '—' }}</strong>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty">
+        <div class="ei">📋</div>
+        <p>No indexed expiring domains found in the latest scan.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+var _tld = 'all';
+var _sort = {col:-1, asc:true};
+var inp = document.getElementById('search');
+var clr = document.getElementById('search-clear');
+
+if (inp) inp.addEventListener('input', function(){
+    clr.classList.toggle('on', inp.value.length > 0);
+    applyFilters();
+});
+
+function clearSearch() { if(inp){inp.value=''; clr.classList.remove('on'); applyFilters(); inp.focus();} }
+
+function setTLD(v, el) {
+    _tld = v;
+    document.querySelectorAll('.chip-row .chip').forEach(function(c){ c.classList.remove('on'); });
+    el.classList.add('on');
+    applyFilters();
+}
+
+function applyFilters() {
+    var tbl = document.getElementById('tbl'); if (!tbl) return;
+    var rows = tbl.querySelectorAll('tbody tr');
+    var term = inp ? inp.value.toLowerCase() : '';
+    var n = 0;
+    rows.forEach(function(r){
+        var tld = r.getAttribute('data-tld');
+        var pages = parseInt(r.getAttribute('data-pages') || '0', 10);
+        var text = r.textContent.toLowerCase();
+        var match = (_tld === 'all' || (_tld === 'highlighted' && pages >= 2) || tld === _tld)
+                    && (!term || text.includes(term));
+        r.style.display = match ? '' : 'none';
+        if (match) n++;
+    });
+    var rc = document.getElementById('rcount');
+    if (rc) rc.textContent = n + ' domains';
+}
+
+function sortBy(ci) {
+    var tbl = document.getElementById('tbl'); if (!tbl) return;
+    var ths = tbl.querySelectorAll('th');
+    if (_sort.col === ci) _sort.asc = !_sort.asc;
+    else { _sort.col = ci; _sort.asc = true; }
+    ths.forEach(function(h,i){
+        h.classList.remove('asc','desc');
+        var si = h.querySelector('.si');
+        if (i === ci) {
+            h.classList.add(_sort.asc ? 'asc' : 'desc');
+            if (si) si.textContent = _sort.asc ? '↑' : '↓';
+        } else if (si) si.textContent = '⇅';
+    });
+    var tbody = tbl.querySelector('tbody');
+    var rows = Array.from(tbody.querySelectorAll('tr'));
+    rows.sort(function(a,b){
+        var at = a.cells[ci] ? a.cells[ci].textContent.trim() : '';
+        var bt = b.cells[ci] ? b.cells[ci].textContent.trim() : '';
+        var an = parseFloat(at), bn = parseFloat(bt), r;
+        if (!isNaN(an) && !isNaN(bn)) r = an - bn; else r = at.localeCompare(bt);
+        return _sort.asc ? r : -r;
+    });
+    rows.forEach(function(r){ tbody.appendChild(r); });
+}
+</script>
+{% endblock %}

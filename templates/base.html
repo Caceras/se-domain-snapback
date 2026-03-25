@@ -379,6 +379,7 @@
         </a>
         <nav class="nav-links" aria-label="Main">
             <a href="/" id="nl-latest">Latest</a>
+            <a href="/expiring" id="nl-expiring">Expiring</a>
             <a href="#" onclick="toReports(event)" id="nl-history">History</a>
         </nav>
         <div class="navbar-end">
@@ -401,6 +402,10 @@
     <a href="/" class="tab-item" id="tab-latest">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
         <span>Latest</span>
+    </a>
+    <a href="/expiring" class="tab-item" id="tab-expiring">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span>Expiring</span>
     </a>
     <a href="#" onclick="toReports(event)" class="tab-item" id="tab-history">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M9 4v5M15 4v5"/></svg>
@@ -433,13 +438,18 @@ function toggleTheme() {
 (function(){
     var p = location.pathname;
     var isHome = (p === '/' || p === '/index.html' || p === '');
+    var isExpiring = (p === '/expiring' || p === '/expiring/');
     ['nl-latest','tab-latest'].forEach(function(id){
         var el = document.getElementById(id);
         if (el) el.classList.toggle('on', isHome);
     });
+    ['nl-expiring','tab-expiring'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.classList.toggle('on', isExpiring);
+    });
     ['nl-history','tab-history'].forEach(function(id){
         var el = document.getElementById(id);
-        if (el) el.classList.toggle('on', !isHome);
+        if (el) el.classList.toggle('on', !isHome && !isExpiring);
     });
 })();
 
