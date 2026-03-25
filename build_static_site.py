@@ -226,6 +226,12 @@ tbody tr:last-child td{border-bottom:none}
 ::-webkit-scrollbar{height:4px;width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
+.row-highlight td{background:var(--blue-t)}
+.row-highlight:hover td{background:rgba(0,113,227,0.15)}
+[data-theme="dark"] .row-highlight td{background:rgba(10,132,255,0.12)}
+[data-theme="dark"] .row-highlight:hover td{background:rgba(10,132,255,0.18)}
+.highlight-legend{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--label-2);margin-left:12px}
+.highlight-swatch{width:12px;height:12px;border-radius:3px;background:var(--blue-t);border:1px solid var(--blue)}
 @media(display-mode:standalone){
     .header{padding-top:calc(1rem + var(--safe-top))}
     .footer{padding-bottom:calc(1.25rem + var(--safe-bottom))}
@@ -354,6 +360,7 @@ def html_site_header(active="latest"):
         </a>
         <nav class="nav-links" aria-label="Main">
             <a href="index.html" class="{'on' if active=='latest' else ''}">Latest</a>
+            <a href="expiring.html" class="{'on' if active=='expiring' else ''}">Expiring</a>
             <a href="#reports-section" class="{'on' if active=='reports' else ''}">History</a>
         </nav>
         <div>
@@ -610,6 +617,112 @@ def generate_report_page(report_date, report_data, reports):
     return html
 
 
+def generate_expiring_domain_row(domain):
+    """Generate a table row for the expiring tracker, highlighting domains with 2+ pages."""
+    tld = domain.get('tld', 'se')
+    available = domain.get('available')
+    if available is None:
+        avail_cell = '<span class="pill pill-m">&mdash;</span>'
+    elif available:
+        avail_cell = '<span class="pill pill-g">&#10003; Free</span>'
+    else:
+        avail_cell = '<span class="pill pill-r">&#10007; Taken</span>'
+    pages = domain.get('estimated_pages') or 0
+    highlight_class = ' class="row-highlight"' if pages >= 2 else ''
+    pages_style = ' style="color:var(--blue)"' if pages >= 2 else ''
+    pages_cell = f'<strong{pages_style}>{pages}</strong>' if pages else '<span style="color:var(--label-3)">&mdash;</span>'
+    return (f'<tr data-tld="{escape_html(tld)}" data-indexed="yes" data-pages="{pages}"{highlight_class}>'
+            f'<td><strong>{escape_html(domain.get("domain", ""))}</strong></td>'
+            f'<td><span class="tld tld-{escape_html(tld)}">.{escape_html(tld)}</span></td>'
+            f'<td style="color:var(--label-2)">{escape_html(domain.get("release_date", ""))}</td>'
+            f'<td>{avail_cell}</td>'
+            f'<td>{pages_cell}</td>'
+            f'</tr>')
+
+
+def generate_expiring_page(reports):
+    """Generate the expiring domains tracker page."""
+    latest_data = None
+    report_date = ''
+    if reports:
+        latest_data = load_report(reports[0]['date'])
+        report_date = reports[0]['date']
+
+    expiring_domains = []
+    total_scanned = 0
+    if latest_data:
+        total_scanned = latest_data.get('total_domains', 0)
+        for d in latest_data.get('domains', []):
+            if d.get('indexed') and (d.get('estimated_pages') or 0) >= 1:
+                expiring_domains.append(d)
+        expiring_domains.sort(key=lambda x: -(x.get('estimated_pages') or 0))
+
+    highlighted_count = sum(1 for d in expiring_domains if (d.get('estimated_pages') or 0) >= 2)
+    top_pages = max((d.get('estimated_pages') or 0 for d in expiring_domains), default=0)
+
+    title = f"Expiring Soon - {SITE_NAME}"
+    description = f"Curated list of {len(expiring_domains)} expiring .se/.nu domains with indexed pages. {highlighted_count} with 2+ archived pages."
+
+    html = html_head(title=title, description=description)
+    html += html_site_header(active="expiring")
+    html += '\n<main>\n'
+
+    html += f'<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Latest</a> <span>/</span> <span>Expiring Soon</span></nav>\n'
+    html += f'<p class="page-title">Expiring Soon</p>\n'
+    html += f'<p class="page-subtitle">{report_date} &middot; {len(expiring_domains)} domains with indexed pages &middot; {highlighted_count} with 2+ pages</p>\n'
+
+    html += generate_stat_cards([
+        (total_scanned, "Scanned"),
+        (len(expiring_domains), "Indexed"),
+        (highlighted_count, "2+ Pages"),
+        (top_pages, "Max Pages"),
+    ])
+
+    html += '<div class="card fup">\n'
+    html += '<div class="toolbar"><span class="card-title" style="margin-bottom:0">Curated Expiring Domains</span>'
+    html += '<span class="highlight-legend"><span class="highlight-swatch"></span> 2+ indexed pages</span></div>\n'
+
+    if expiring_domains:
+        # Filter bar
+        total = len(expiring_domains)
+        se = sum(1 for d in expiring_domains if d.get('tld') == 'se')
+        nu = sum(1 for d in expiring_domains if d.get('tld') == 'nu')
+        html += f"""<div class="search-wrap">
+    <input class="search-input" id="search" type="text" placeholder="Search expiring domains\\u2026" autocomplete="off">
+    <button class="search-clear" id="search-clear" onclick="clearSearch()">&#10005;</button>
+</div>
+<div class="chip-row">
+    <button class="chip on" onclick="setTLD('all',this)">All <span class="n">{total}</span></button>
+    <button class="chip" onclick="setTLD('se',this)">.se <span class="n">{se}</span></button>
+    <button class="chip" onclick="setTLD('nu',this)">.nu <span class="n">{nu}</span></button>
+    <button class="chip" onclick="setTLD('highlighted',this)">2+ Pages <span class="n">{highlighted_count}</span></button>
+</div>
+<div class="toolbar"><span class="rcount" id="rcount">{total} domains</span></div>"""
+
+        # Table
+        cols = [("Domain", 0), ("TLD", 1), ("Release", 2), ("Avail", 3), ("Pages", 4)]
+        hdr = ''.join(
+            f'<th class="sort" onclick="sortBy({i})">{n} <span class="si">&#8645;</span></th>'
+            for n, i in cols
+        )
+        rows = '\n'.join(generate_expiring_domain_row(d) for d in expiring_domains)
+        html += f'<div class="table-wrap"><table id="tbl"><thead><tr>{hdr}</tr></thead><tbody>{rows}</tbody></table></div>'
+    else:
+        html += '<div class="empty"><div class="ei">&#128203;</div><p>No indexed expiring domains found in the latest scan.</p></div>\n'
+
+    html += '\n</div>\n'
+    html += '\n</main>'
+    html += html_footer()
+
+    # Override the filter JS for the "highlighted" chip
+    html = html.replace(
+        "var m=(_tld==='all'||(_tld==='indexed'&&indexed==='yes')||tld===_tld)&&(!term||txt.includes(term));",
+        "var pages=parseInt(r.getAttribute('data-pages')||'0',10);var m=(_tld==='all'||(_tld==='highlighted'&&pages>=2)||(_tld==='indexed'&&indexed==='yes')||tld===_tld)&&(!term||txt.includes(term));"
+    )
+
+    return html
+
+
 def main():
     """Generate static site."""
     print("Building static site for GitHub Pages...")
@@ -625,6 +738,10 @@ def main():
     print("Generating index.html...")
     with open(OUTPUT_DIR / "index.html", 'w') as f:
         f.write(generate_index_page(reports))
+
+    print("Generating expiring.html...")
+    with open(OUTPUT_DIR / "expiring.html", 'w') as f:
+        f.write(generate_expiring_page(reports))
 
     for report in reports:
         print(f"Generating report-{report['date']}.html...")

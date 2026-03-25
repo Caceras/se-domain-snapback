@@ -68,6 +68,64 @@ def index():
                          scan_status=scan_status)
 
 
+@app.route('/expiring')
+def expiring():
+    """Curated list of expiring domains with indexed pages, highlighting those with 2+ pages."""
+    reports = get_available_reports()
+    latest_data = None
+    if reports:
+        latest_data = load_report(reports[0]['date'])
+
+    expiring_domains = []
+    total_scanned = 0
+    report_date = ''
+    if latest_data:
+        total_scanned = latest_data.get('total_domains', 0)
+        report_date = reports[0]['date'] if reports else ''
+        for d in latest_data.get('domains', []):
+            if d.get('indexed') and (d.get('estimated_pages') or 0) >= 1:
+                expiring_domains.append(d)
+        expiring_domains.sort(key=lambda x: -(x.get('estimated_pages') or 0))
+
+    highlighted_count = sum(1 for d in expiring_domains if (d.get('estimated_pages') or 0) >= 2)
+    top_pages = max((d.get('estimated_pages') or 0 for d in expiring_domains), default=0)
+
+    return render_template('expiring.html',
+                         reports=reports,
+                         expiring_domains=expiring_domains,
+                         total_scanned=total_scanned,
+                         report_date=report_date,
+                         highlighted_count=highlighted_count,
+                         top_pages=top_pages,
+                         scan_status=scan_status)
+
+
+@app.route('/api/expiring')
+def api_expiring():
+    """API endpoint returning curated expiring domains with indexed pages."""
+    reports = get_available_reports()
+    if not reports:
+        return jsonify({"error": "No reports available"}), 404
+
+    latest_data = load_report(reports[0]['date'])
+    if not latest_data:
+        return jsonify({"error": "Report not found"}), 404
+
+    expiring = []
+    for d in latest_data.get('domains', []):
+        if d.get('indexed') and (d.get('estimated_pages') or 0) >= 1:
+            expiring.append(d)
+    expiring.sort(key=lambda x: -(x.get('estimated_pages') or 0))
+
+    return jsonify({
+        "report_date": reports[0]['date'],
+        "total_scanned": latest_data.get('total_domains', 0),
+        "total_expiring": len(expiring),
+        "highlighted_count": sum(1 for d in expiring if (d.get('estimated_pages') or 0) >= 2),
+        "domains": expiring
+    })
+
+
 @app.route('/report/<date>')
 def view_report(date):
     """View a specific report by date."""
