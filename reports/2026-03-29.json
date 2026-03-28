@@ -1,0 +1,6216 @@
+{
+  "generated_at": "2026-03-28T10:26:53.773579+00:00",
+  "total_domains": 621,
+  "domains": [
+    {
+      "domain": "04noll.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "abyforsredovisning.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "academic.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "affarsprogress.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ai-hubben.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "aircraft.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "aktivetshuset.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "alingsascf.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "allacampervans.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "allanti.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "allion.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "alliontechnologies.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "alphaworkwear.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "alula.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "amerikanskcocker.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "amicitiasweden.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "amplifyvarberg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "anderscederholm.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "andersch.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "annastinaorn.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "another-world.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "antrah.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "anywho.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "api-group.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "aply.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "aprab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "aprecio.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "aquagroom.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "arligtarharligt.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "artiks.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "artonwall.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "asymmetriclabs.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ateljesodvik.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ateljesodviken.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "atramondo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "auroraline.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "automationsingenjor.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "azzamtransport.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "babywise.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bagelstreetcafe.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bagges.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bamtw.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "basket-brigade.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "batraochglans.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "benefacta.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bengtsson-invest.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bestreviews.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bitcoin-trade.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bizwarenova.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "blackunit.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "blendy.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "blomstersmycken.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "blyglapp.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "blyglappar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bodlander.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bokabeach.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bonumbygg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bonumfastigheter.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bottify.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bpmentertainment.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "braodds.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "brocent.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bryllupsminder.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "buca.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "burgeradvisor.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "burgevi.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "businessinvest.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "buyitfy.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "bykraberg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "caplab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "carlshamnquiz.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "carltornquist.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "casino-med-zimpler.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "casinokung.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "casinon-med-swish.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "casinoroulette.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "catchhund.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cateringfinans.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cellar-door-sales.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cellardoorsales.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "centralatrafikskolan.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "chambertradesweden.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "check4you.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "check4you.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "chemapack.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "childrenoftheworld.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cillasunghast.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "claytodayy.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cleanmasters.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cleardrive.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "clubsunset.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cncpt.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "co2ffee.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cochwell.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "code-and-business.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "coinno.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "countrys.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "curv.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "cyberfile.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "daiichi.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dalahantverkare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dalbyn622.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "danishhifi.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dansarrost.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "designbyluks.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "digicore.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "digitalalliance.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dinsamordnare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "directict.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dittskolval.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "docksapp.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dtox.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dutchwines.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "dynamex.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "easy-sport.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "easytrim-shop.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ebbascoachingochreiki.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "eestadab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "efemea.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "effektiven.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "eiracapital.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ejournal.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ekobagarn.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "elassistansen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "elektrikerskane.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "elink.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "elitefoto.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "elivateengeneering.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ellaconsulting.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "elladda.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "em-in-tech.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "emmaisabellavictoria.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "emmajenkins.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "employerbrandingbloggen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "enebyberg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "entmaleri.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "entreblommor.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "entreprenorcoachen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ephemea.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "erikhidemark.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "eumar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "eumardesign.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "evolvingtrackab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "extentionslovely.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "extrakiosk.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fadomo-och-robin.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fakoll.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "familjenvonmentzer.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fastighetsforvaltninggoteborg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fcsswe.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "felixtrading.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "feringe-esmg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fikanytt.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fikoo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "filmtek.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "filmtopplistan.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "firmagranberg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "firmo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fixahemsida.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fjallhantverkare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "flexboard.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "flexud.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fonogramservice.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "footballnews.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "foradlatlosvirke.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "formeldesign.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "formskuren.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "forsakringsformedling.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fotobooth.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "foursquare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fraktetikett.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "franssonsbyggnadsvard.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fridaform.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "frukteriet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "frykmer.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "funasoffert.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "functionalfashion.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "funnel-it.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fyndea.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "fyndea.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "galanaot.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "galar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "galnanyheter.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "galor.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "garagedorr.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "gardshundsaringe.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "gen-x.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "getcompliant.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "getitfy.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "giftset.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "girlsofsthlm.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "glimpses.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "gnestahalsa.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "goatsocks.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "goatsocks.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "goedvindbaar.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "goingenaringsliv.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "golvexperten.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "golvteknik-edne.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "gotsprings.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "greatfknideas.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "gymmix-vingaker.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "haga215.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hagglundgranstrom.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "haileyloo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "halleforslantbruk.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hammarine.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hantverkareare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hantverkarefunasdalen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hantverkareidre.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hantverkarevemdalen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "happydisc.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "healthpointe.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "healthylight.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "healthylight.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "healtylight.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "heatlesscurls.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hejmartin.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hemmaklarna.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "henlin.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "henrikcederlof.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "herrandersson.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hesu.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "higherathletics.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hikershigh.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hockeyprylar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "holmcon.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "homeworkout.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hopbv.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hostedworld.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "htckonsult.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "htravard.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hudakademien.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "humorhuset.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "husnet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hyphed.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hyresbostaderiskurup.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hyresbostaderitranas.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hyresbostaderskurup.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "hyresbostadertranas.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "idntfy.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "idreparkbyn.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "idrottsskador.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "igunet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ikwilrust.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "imedicin.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "inderegio.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "indifluence.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "infoecosprint.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "infokvall.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "innature.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "insightleadership.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "irina-tagg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "j1000.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jarlaplan.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jarvsogymnasiet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jelgstrand.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jemm.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jennyshus.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jessicanyman.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jmcbygg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "jobbstegen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "johannaisabella.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "julklappslek.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kabisa.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kajsaochjoakim2025.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kalendrr.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kangurugardens.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "karlgullo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "karlssonsphoto.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kattbollen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kebecka.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "keepdevit.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kennelredlook.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kenneltrundafvans.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "keywe.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kglowlab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "klimatkris.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kondolera.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "konstiunden.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "konsultteam.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kontosmart.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "krisproffset.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kryddshoppen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kundaliniactivationprocess.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kyltak.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "kyrk-it.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lagaframtiden.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lagatak.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lagerhotell.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lagomsthlm.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lampgalleriet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "langelone.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "larjedalenskennel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lashdoll.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lecimima.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "letswine.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "levaireva.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "leylasarac.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lillyjohansson.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lindhult.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "linusentreprenad.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lipsmack.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "livsstilsportalen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ljudprofilen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ljudvandring.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ljusleende.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lmsitconsulting.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "localai.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lokalai.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "looksmaxxing.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lovelyvapes.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lunashark.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lundsfotbollsinstitut.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "lyxett.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "madgoat.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "madstuning.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mansou-mode.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mansvar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "marinreturen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "marketingmotoragency.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "markusochjasmine.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "maskincenter.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "matochbar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "matsbild.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "maximalbonus.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "meduosa.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mellanalpen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "merakunder.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "meralivskvalitet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mfco.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mikaellindecrantz.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mikealhugo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "milisec.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mindart.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "minecrafteducation.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "minelservice.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mingolvlaggare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "minhantverkare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "minmalare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "minsolkraft.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mintaklaggare.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "minvvs.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mitchcohen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mobackbyggab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mobilizar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "modelleringsmaterial.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "modelleringsmateriel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "modistforbund.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "modistforbundet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "modistforening.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "modistforeningen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mohlin-collective.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "morkullanskennel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mortea.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "morusushi.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "motivparla.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "motivparlor.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "moviemaster.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "musiklinjen.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mussieplatt.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mybud.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mycketprotein.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mygardenchoice.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "myndighetsjurist.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "myndighetsjuristen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mynetwork.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "mypanamahat.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nacksupport.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "netlyfinans.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nl-skotsel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "noll4noll.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nordic-backdoor.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nordicaromas.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nordicbgi.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nordicroasagency.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nordstore.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "norelko.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "notebuddy.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nyckelplaten.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "nydemokrati.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "odin-cassandra.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "offentligpost.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "oimedia.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "oimediahouse.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "oioriginals.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "olefeldtkbt.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "onceagain-secondhand.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "onjuiceplus.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ontelligence.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "op2glas.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "optimousagency.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "opto-glas.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "optoglas.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "orangepear.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "oredev.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "organised.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "orgryteljus.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "orgs.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "orientgarden.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ovelia.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "overlytes.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ownitlike.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "padding.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "pannkakarecept.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "patientboken.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "patientfinder.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "peterhjalmarsson.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "piffopuff.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "pijnvrijlopen.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "pocketprice.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "polarstage.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "poolvillahuahinlaguna.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "poseidontravel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "prestigerp.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "printstories.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "proffsbelysning.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "profielbv.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "projektsynergi.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "prompted.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "protecscandinavia.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "puckadebrudar.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "puckadebrudar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "pulseball.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "puppyyoga.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "purafero.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "qualitylife.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "queutip.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "radioeskilstuna.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "redhill.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "refluxsjukdom.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rehabworld.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rehanna.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rehannasvedin.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "releaso.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "repady.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "restaurang-am.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "revisionspartner.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rigmor-janne.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rixdivanskennel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rmweb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "robo10.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "roktech.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ronneabalgarna.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rorokylteknik.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rosinggroup.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "row-studio.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rundis.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "rythm.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "safflefisk.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sagablue.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sagaflex.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sagoparlan.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "samhallskod.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sandwallkommunikation.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "saratola.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "savuer.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "scanditude.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "schoolgebouwen.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "searing.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sedek.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sekelskiftesvillan.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "serietidningar.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sevnsstest.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "shakemate.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "shandies.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "shebuilds.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "shelic.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sibyllas.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sign101wheels.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "silentapparel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "siru-mobile-casino.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sister3.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "skiease.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sknstudio.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "skorstensknuten.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "skribenter.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "smartgrid.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sneakerhub.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "socialanalfabet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "soderasenresort.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "solensfamn.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "solgrossen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "solstadsaab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "solviksbadet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "solvingthepeopleequation.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "solynordmed.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "soulfulfurniture.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sparplatsen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "spigatre.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sportnest.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sportstory.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "stamsvik.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "starkey.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "startaminiphone.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "stenblocksmaleri.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sterem.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sthlmare2026.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "stigdagerman.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "stockholm-are2026.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "stockholmare2026.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "stockholmfooddistrict.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "stockholmsbilder.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "studioaduo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "styrkeplan.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "supernumerary.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svadberg.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svadegard.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svadgard.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svealedkarlstad.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svealighters.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svenskabaren.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svenskamodistersforening.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svenskamodistforbundet.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svenskamodistforeningen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sverigesmodistforbund.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svmodistforening.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svmodistforeningen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "svsmaleri.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "swede-stops.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "sweet-spot.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "swishbingo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tambrai.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tamiyabutiken.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tandlakeri-1.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tasker.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "teamgymhouse.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "teamhellofuture.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "teebu.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "teon.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "textbanken.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tfs-klockrike.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "thebodyland.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "thecollectivey.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "thedigitalalliance.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "thesneakerhub.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "thoughtful.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "thulins.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tjekwifi.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tomandcherry.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tomgang.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tomtebo-blomimport.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "tpsanering.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "trackmaster.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "trapwear.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "trushelf.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "twirl.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "typochgrafik.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "ubcc.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "unicorncommunication.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "unikmalmoallservice.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "vastriv.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "vatician.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "vega-husbesiktning.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "veiligheidinzorg.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "venturavinduer.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "verazcollection.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "vetaclean.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "victoriawulff.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "viewwws.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "vinlagringstockholm.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "violetdecor.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "viptel.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "virpalsingh.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "visionslab.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "vitician.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "w-pellets.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wallesvarld.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wearzon.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "webag.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "webbystep.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wedding2025.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wehelpu2.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wellnessportalen.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wellwalk.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wendel21.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wepitch.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "weportal.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "westacdmy.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "wifitjek.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--badrumsrenoveringarigteborg-9yc.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--butiknyttontt-smb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--camillasthl-58a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--fjllhantverkare-1kb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--flexvska-4za.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--frskringsfrmedling-ntb17aka.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--funsoffert-s5a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--grngva-lua7k.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hantverkarefunsdalen-ozb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hantverkarere-zfb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hjrtboxen-w2a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hyresbostderiskurup-owb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hyresbostderitrans-ttb2a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hyresbostderskurup-ttb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hyresbostdertrans-yqb0a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--hyrkket-d1a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--idkraft-cya.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--insndare-2za.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--jrgine-wxa.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--jrvsgymnasiet-bfb7y.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--juliettesstdservice-qwb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--lagknsla-3za.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--lnejmfrelse-o8aj8v.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--mingolvlggare-ifb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--minmlare-d0a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--mintaklggare-mcb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--muggjvel-4za.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--ppetsinne-z7a.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--rdn-cma7g.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--rostskyddsmlningstockholm-mfc.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--slja-nakenbilder-vnb.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--smbolagsaktier-mib.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--srlkning-2zah.nu",
+      "tld": "nu",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--stigborgfrvaltning-l3b.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "xn--vinfrvaringstockholm-69b.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "yornew.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "yougoigo.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "yrkesexperten.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": false,
+      "estimated_pages": 0,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "zdk38.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "zero-email.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    },
+    {
+      "domain": "zeroemail.se",
+      "tld": "se",
+      "release_date": "2026-03-29",
+      "available": true,
+      "indexed": null,
+      "estimated_pages": null,
+      "index_source": "wayback",
+      "checked_at": "2026-03-28T10:26:53.773579+00:00"
+    }
+  ]
+}
