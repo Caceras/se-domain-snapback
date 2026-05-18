@@ -17,11 +17,14 @@ import os
 from pathlib import Path
 from datetime import datetime, timezone
 
+import markdown
+
 # Configuration
 _HERE = Path(__file__).parent
 REPORT_DIR = _HERE / "reports"
 OUTPUT_DIR = _HERE / "docs"
 TEMPLATE_DIR = _HERE / "templates"
+PRD_PATH = _HERE / "PRD.md"
 SITE_NAME = "DropScan — .SE/.NU Domain Scanner"
 SITE_DESCRIPTION = "Find valuable expiring .se and .nu domains before they drop. Daily snapback scanner with Wayback Machine data."
 GITHUB_URL = "https://github.com/Caceras/se-domain-snapback"
@@ -362,6 +365,7 @@ def html_site_header(active="latest"):
             <a href="index.html" class="{'on' if active=='latest' else ''}">Latest</a>
             <a href="expiring.html" class="{'on' if active=='expiring' else ''}">Expiring</a>
             <a href="#reports-section" class="{'on' if active=='reports' else ''}">History</a>
+            <a href="roadmap.html" class="{'on' if active=='roadmap' else ''}">Roadmap</a>
         </nav>
         <div>
             <button class="btn-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
@@ -723,6 +727,57 @@ def generate_expiring_page(reports):
     return html
 
 
+PRD_PAGE_CSS = """
+.prose{max-width:760px;margin:0 auto;color:var(--label);line-height:1.65;font-size:16px;}
+.prose h1{font-size:34px;font-weight:700;letter-spacing:-.02em;margin:32px 0 12px;}
+.prose h2{font-size:24px;font-weight:700;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px;border-top:1px solid var(--sep);}
+.prose h3{font-size:18px;font-weight:600;margin:24px 0 8px;}
+.prose p{margin:0 0 14px;}
+.prose ul,.prose ol{margin:0 0 14px;padding-left:22px;}
+.prose li{margin:4px 0;}
+.prose code{background:var(--fill);padding:1px 6px;border-radius:5px;font-size:0.92em;}
+.prose pre{background:var(--fill);padding:14px;border-radius:8px;overflow:auto;}
+.prose a{color:var(--blue);text-decoration:none;}
+.prose a:hover{text-decoration:underline;}
+.prose hr{border:0;border-top:1px solid var(--sep);margin:32px 0;}
+.prose blockquote{border-left:3px solid var(--blue);padding:4px 14px;margin:14px 0;color:var(--label-2);}
+.prose table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+.prose th,.prose td{border-bottom:1px solid var(--sep);padding:8px 10px;text-align:left;vertical-align:top;}
+.prose th{font-weight:600;color:var(--label-2);}
+.prose strong{font-weight:600;}
+.prd-meta{color:var(--label-2);font-size:13px;margin-bottom:24px;}
+"""
+
+
+def generate_roadmap_page():
+    """Render PRD.md as the published roadmap page."""
+    if not PRD_PATH.exists():
+        body_html = "<p>Roadmap not yet published.</p>"
+    else:
+        md_text = PRD_PATH.read_text(encoding="utf-8")
+        body_html = markdown.markdown(
+            md_text,
+            extensions=["extra", "sane_lists", "toc", "tables"],
+            output_format="html5",
+        )
+
+    title = f"Roadmap — {SITE_NAME}"
+    description = "Product roadmap and requirements for DropScan: trustworthy signals, action affordances, push channels, and depth data."
+
+    html = html_head(title=title, description=description)
+    # Inject prose CSS just for this page
+    html = html.replace("</style>", PRD_PAGE_CSS + "</style>", 1)
+    html += html_site_header(active="roadmap")
+    html += '\n<main>\n'
+    html += '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Latest</a> <span>/</span> <span>Roadmap</span></nav>\n'
+    html += '<article class="prose">\n'
+    html += body_html
+    html += '\n</article>\n'
+    html += '\n</main>'
+    html += html_footer()
+    return html
+
+
 def main():
     """Generate static site."""
     print("Building static site for GitHub Pages...")
@@ -742,6 +797,10 @@ def main():
     print("Generating expiring.html...")
     with open(OUTPUT_DIR / "expiring.html", 'w') as f:
         f.write(generate_expiring_page(reports))
+
+    print("Generating roadmap.html...")
+    with open(OUTPUT_DIR / "roadmap.html", 'w') as f:
+        f.write(generate_roadmap_page())
 
     for report in reports:
         print(f"Generating report-{report['date']}.html...")

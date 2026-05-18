@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Roadmap — DropScan — .SE/.NU Domain Scanner</title>
+    <meta name="description" content="Product roadmap and requirements for DropScan: trustworthy signals, action affordances, push channels, and depth data.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roadmap — DropScan — .SE/.NU Domain Scanner">
+    <meta property="og:description" content="Product roadmap and requirements for DropScan: trustworthy signals, action affordances, push channels, and depth data.">
+    <meta property="og:site_name" content="DropScan">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme:light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme:dark)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="DropScan">
+    <meta name="mobile-web-app-capable" content="yes">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "DropScan — .SE/.NU Domain Scanner", "description": "Find valuable expiring .se and .nu domains before they drop. Daily snapback scanner with Wayback Machine data.", "url": "index.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "DropScan — .SE/.NU Domain Scanner"}}</script>
+    <style>:root{
+    --bg:#F5F5F7;--surface:#fff;--surface-2:#F5F5F7;--surface-3:#E8E8ED;
+    --label:#1D1D1F;--label-2:#6E6E73;--label-3:#AEAEB2;
+    --sep:rgba(0,0,0,0.08);--fill:rgba(0,0,0,0.04);--fill-2:rgba(0,0,0,0.08);
+    --blue:#0071E3;--blue-h:#0077ED;--blue-t:rgba(0,113,227,0.1);
+    --green:#28CD41;--green-t:rgba(40,205,65,0.1);
+    --red:#FF3B30;--red-t:rgba(255,59,48,0.1);
+    --tld-se:#0071E3;--tld-nu:#28CD41;
+    --r:12px;--r-sm:8px;--r-lg:18px;
+    --shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.06);
+    --shadow-sm:0 1px 2px rgba(0,0,0,0.04);
+    --nav-h:52px;--safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
+}
+[data-theme="dark"]{
+    --bg:#000;--surface:#1C1C1E;--surface-2:#2C2C2E;--surface-3:#3A3A3C;
+    --label:#fff;--label-2:#98989D;--label-3:#636366;
+    --sep:rgba(255,255,255,0.1);--fill:rgba(255,255,255,0.06);--fill-2:rgba(255,255,255,0.12);
+    --blue:#0A84FF;--blue-h:#1A8FFF;--blue-t:rgba(10,132,255,0.15);
+    --green:#30D158;--green-t:rgba(48,209,88,0.15);
+    --red:#FF453A;--red-t:rgba(255,69,58,0.15);
+    --tld-se:#0A84FF;--tld-nu:#30D158;
+    --shadow:0 1px 3px rgba(0,0,0,0.3),0 4px 16px rgba(0,0,0,0.4);
+    --shadow-sm:0 1px 2px rgba(0,0,0,0.3);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",sans-serif;
+    font-size:15px;line-height:1.5;color:var(--label);background:var(--bg);
+    -webkit-tap-highlight-color:transparent;overscroll-behavior-y:none;
+    padding-top:calc(var(--nav-h) + var(--safe-top));
+    transition:background .2s,color .2s;
+}
+.navbar{
+    position:fixed;top:0;left:0;right:0;z-index:200;
+    height:calc(var(--nav-h) + var(--safe-top));padding-top:var(--safe-top);
+    background:rgba(255,255,255,.85);
+    backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:.5px solid var(--sep);
+}
+[data-theme="dark"] .navbar{background:rgba(28,28,30,.85);}
+.navbar-inner{
+    max-width:1100px;margin:0 auto;padding:0 20px;height:var(--nav-h);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.navbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--label);}
+.navbar-logo{width:28px;height:28px;border-radius:7px;}
+.navbar-title{font-size:17px;font-weight:700;letter-spacing:-.03em;}
+.nav-links{display:none;align-items:center;gap:4px;}
+.nav-links a{
+    font-size:14px;font-weight:500;color:var(--label-2);
+    text-decoration:none;padding:6px 12px;border-radius:var(--r-sm);
+    transition:color .15s,background .15s;
+}
+.nav-links a:hover{color:var(--label);background:var(--fill);}
+.nav-links a.on{color:var(--blue);}
+.btn-theme{
+    width:36px;height:36px;border-radius:50%;background:var(--fill);border:none;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-size:15px;color:var(--label-2);transition:background .15s;
+}
+.btn-theme:hover{background:var(--fill-2);}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 40px;}
+.page-title{font-size:26px;font-weight:700;letter-spacing:-.04em;margin-bottom:4px;}
+.page-subtitle{font-size:14px;color:var(--label-2);margin-bottom:20px;}
+.card{background:var(--surface);border-radius:var(--r-lg);padding:20px;margin-bottom:16px;box-shadow:var(--shadow);}
+.card-title{font-size:17px;font-weight:600;letter-spacing:-.02em;margin-bottom:14px;}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;}
+.stat-card{
+    background:var(--surface);border-radius:var(--r);padding:14px 16px;
+    box-shadow:var(--shadow-sm);transition:transform .15s;
+}
+.stat-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent);border-radius:4px 0 0 4px}
+.stat-card:active{transform:scale(.97)}
+.stat-value{font-size:28px;font-weight:700;letter-spacing:-.04em;line-height:1.1}
+.stat-label{font-size:11px;font-weight:600;color:var(--label-2);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th{padding:8px 12px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--label-3);border-bottom:.5px solid var(--sep);white-space:nowrap;background:var(--surface);position:sticky;top:0;z-index:1}
+td{padding:10px 12px;font-size:14px;border-bottom:.5px solid var(--sep);white-space:nowrap;vertical-align:middle}
+th.sort{cursor:pointer;user-select:none}
+th.sort:hover{color:var(--label-2)}
+th.asc,th.desc{color:var(--blue)}
+.si{margin-left:3px;opacity:.5;font-size:9px}
+th.asc .si,th.desc .si{opacity:1}
+td{font-size:.85rem}
+tbody tr{transition:background var(--transition)}
+tbody tr:hover{background:var(--bg-table-hover)}
+tbody tr:active{background:var(--bg-table-hover)}
+tbody tr{transition:background .1s}
+tbody tr:hover{background:var(--fill)}
+tbody tr:active{background:var(--fill-2)}
+tbody tr:last-child td{border-bottom:none}
+.tld{display:inline-block;font-size:12px;font-weight:600;padding:2px 7px;border-radius:5px}
+.tld-se{background:var(--blue-t);color:var(--tld-se)}
+.tld-nu{background:var(--green-t);color:var(--tld-nu)}
+.pill{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:20px;font-size:12px;font-weight:500}
+.pill-g{background:var(--green-t);color:var(--green)}
+.pill-r{background:var(--red-t);color:var(--red)}
+.pill-m{background:var(--fill);color:var(--label-3)}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-blue{background:var(--blue-t);color:var(--blue)}
+.badge-muted{background:var(--fill);color:var(--label-3)}
+.btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    padding:9px 18px;border-radius:20px;border:none;
+    font:600 14px/1 -apple-system,sans-serif;cursor:pointer;
+    transition:opacity .15s,transform .1s;text-decoration:none;white-space:nowrap;
+}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{opacity:.88}
+.btn-ghost{background:var(--fill);color:var(--label-2)}
+.btn-ghost:hover{background:var(--fill-2);color:var(--label)}
+.btn-tinted{background:var(--blue-t);color:var(--blue)}
+.btn-tinted:hover{opacity:.8}
+.chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{
+    display:inline-flex;align-items:center;gap:4px;
+    padding:5px 12px;background:var(--fill);color:var(--label-2);
+    border:none;border-radius:20px;font:500 13px/1 inherit;
+    cursor:pointer;transition:background .15s,color .15s;white-space:nowrap;
+}
+.chip:hover{background:var(--fill-2);color:var(--label)}
+.chip.on{background:var(--blue);color:#fff}
+.chip .n{font-size:11px;opacity:.75}
+.chip.on .n{opacity:.85}
+.search-wrap{position:relative;margin-bottom:12px}
+.search-input{
+    width:100%;padding:10px 36px;background:var(--fill);border:none;border-radius:10px;
+    font:15px/1.4 inherit;color:var(--label);-webkit-appearance:none;appearance:none;outline:none;
+    transition:background .15s,box-shadow .15s;
+}
+.search-input::placeholder{color:var(--label-3)}
+.search-input:focus{background:var(--fill-2);box-shadow:0 0 0 3px var(--blue-t)}
+.search-clear{
+    position:absolute;right:8px;top:50%;transform:translateY(-50%);
+    background:var(--label-3);border:none;border-radius:50%;width:18px;height:18px;
+    display:none;align-items:center;justify-content:center;
+    cursor:pointer;color:var(--surface);font-size:10px;transition:background .15s;
+}
+.search-clear.on{display:flex}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.rcount{font-size:12px;color:var(--label-3)}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--label-2);margin-bottom:16px}
+.breadcrumb a{color:var(--blue);text-decoration:none}
+.report-list{list-style:none}
+.report-list li+li{border-top:.5px solid var(--sep)}
+.report-list a{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 0;color:var(--label);text-decoration:none;gap:8px;
+}
+.report-list a:hover .rd{color:var(--blue)}
+.rd{font-size:15px;font-weight:500;transition:color .15s}
+.rc{color:var(--label-3);font-size:12px;flex-shrink:0}
+.empty{text-align:center;padding:48px 24px;color:var(--label-2)}
+.empty .ei{font-size:40px;margin-bottom:12px;opacity:.4}
+.empty p{font-size:15px;margin-bottom:16px}
+.footer{border-top:.5px solid var(--sep);padding:20px 0;margin-top:32px}
+.footer-content{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:13px;color:var(--label-2)}
+.footer a{color:var(--blue);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fup{animation:fadeUp .3s ease forwards}
+@media(min-width:700px){
+    .nav-links{display:flex}
+    main{padding:32px 24px 56px}
+    .stats{grid-template-columns:repeat(4,1fr)}
+    .stat-value{font-size:32px}
+    .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+}
+::-webkit-scrollbar{height:4px;width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
+.row-highlight td{background:var(--blue-t)}
+.row-highlight:hover td{background:rgba(0,113,227,0.15)}
+[data-theme="dark"] .row-highlight td{background:rgba(10,132,255,0.12)}
+[data-theme="dark"] .row-highlight:hover td{background:rgba(10,132,255,0.18)}
+.highlight-legend{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--label-2);margin-left:12px}
+.highlight-swatch{width:12px;height:12px;border-radius:3px;background:var(--blue-t);border:1px solid var(--blue)}
+@media(display-mode:standalone){
+    .header{padding-top:calc(1rem + var(--safe-top))}
+    .footer{padding-bottom:calc(1.25rem + var(--safe-bottom))}
+}
+
+.prose{max-width:760px;margin:0 auto;color:var(--label);line-height:1.65;font-size:16px;}
+.prose h1{font-size:34px;font-weight:700;letter-spacing:-.02em;margin:32px 0 12px;}
+.prose h2{font-size:24px;font-weight:700;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px;border-top:1px solid var(--sep);}
+.prose h3{font-size:18px;font-weight:600;margin:24px 0 8px;}
+.prose p{margin:0 0 14px;}
+.prose ul,.prose ol{margin:0 0 14px;padding-left:22px;}
+.prose li{margin:4px 0;}
+.prose code{background:var(--fill);padding:1px 6px;border-radius:5px;font-size:0.92em;}
+.prose pre{background:var(--fill);padding:14px;border-radius:8px;overflow:auto;}
+.prose a{color:var(--blue);text-decoration:none;}
+.prose a:hover{text-decoration:underline;}
+.prose hr{border:0;border-top:1px solid var(--sep);margin:32px 0;}
+.prose blockquote{border-left:3px solid var(--blue);padding:4px 14px;margin:14px 0;color:var(--label-2);}
+.prose table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+.prose th,.prose td{border-bottom:1px solid var(--sep);padding:8px 10px;text-align:left;vertical-align:top;}
+.prose th{font-weight:600;color:var(--label-2);}
+.prose strong{font-weight:600;}
+.prd-meta{color:var(--label-2);font-size:13px;margin-bottom:24px;}
+</style>
+</head>
+<body>
+<header class="navbar">
+    <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+            <img src="favicon.svg" class="navbar-logo" alt="DropScan">
+            <span class="navbar-title">DropScan</span>
+        </a>
+        <nav class="nav-links" aria-label="Main">
+            <a href="index.html" class="">Latest</a>
+            <a href="expiring.html" class="">Expiring</a>
+            <a href="#reports-section" class="">History</a>
+            <a href="roadmap.html" class="on">Roadmap</a>
+        </nav>
+        <div>
+            <button class="btn-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <span id="theme-ico">☀️</span>
+            </button>
+        </div>
+    </div>
+</header>
+<main>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Latest</a> <span>/</span> <span>Roadmap</span></nav>
+<article class="prose">
+<h1 id="product-requirements-document-dropscan">Product Requirements Document: DropScan</h1>
+<p><strong>Owner:</strong> TBD
+<strong>Status:</strong> Draft v1
+<strong>Last updated:</strong> 2026-05-18
+<strong>Codename:</strong> DropScan (current product surface name)</p>
+<hr>
+<h2 id="1-summary">1. Summary</h2>
+<p>DropScan is a daily scanner that lists every <code>.se</code> and <code>.nu</code> domain releasing back into the registry pool, enriched with signals that indicate which ones are worth re‑registering. Today it produces a flat list with one weak signal (Wayback archived page count). This PRD describes the work needed to turn it from a "raw drop list" into a decision tool that a domainer, SEO, or brand‑protection user can rely on to pre‑select targets within minutes each morning.</p>
+<h2 id="2-problem">2. Problem</h2>
+<p>When a <code>.se</code>/<code>.nu</code> domain expires it goes through quarantine and drops at <strong>04:00 UTC</strong>. The IIS bulk drop list is public, but on a typical day it contains <strong>600–800 domains</strong>. A user who wants to grab the valuable ones has to:</p>
+<ol>
+<li>Pull the drop list themselves.</li>
+<li>For each domain, decide whether it's worth registering.</li>
+<li>Race to the registrar at the drop moment.</li>
+</ol>
+<p>Steps 1 and 3 are mechanical. <strong>Step 2 is the real work</strong> and is what the product must do well. Today DropScan only completes step 1, dumps a CSV, and renders an empty "Expiring" page because the only value signal is broken in practice (see §11).</p>
+<h2 id="3-goals-nongoals">3. Goals &amp; non‑goals</h2>
+<h3 id="goals">Goals</h3>
+<ul>
+<li>Surface the <strong>top ~5%</strong> of each day's drop list in priority order, with enough context to make a register/skip decision in &lt; 10 seconds per domain.</li>
+<li>Be <strong>trustworthy</strong>: every signal shown must be reproducible from a public source linked from the row.</li>
+<li>Be <strong>fast</strong>: full daily scan &lt; 10 min, page load &lt; 1 s on cold cache.</li>
+<li>Be <strong>passive</strong>: a returning user should be able to set a watchlist + alerts and never need to log in unless they want to.</li>
+</ul>
+<h3 id="nongoals">Non‑goals</h3>
+<ul>
+<li>Auto‑registration / sniping at the registrar. Out of scope legally and operationally.</li>
+<li>TLDs other than <code>.se</code> and <code>.nu</code>. Different drop mechanics, different audience.</li>
+<li>Current‑Whois lookups. IIS rate‑limits hard and the data is also stale for our use case.</li>
+<li>User accounts with passwords. Use email‑only magic link or anonymous device IDs.</li>
+</ul>
+<h2 id="4-target-users">4. Target users</h2>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>What they want</th>
+<th>How they measure success</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Domainer</strong></td>
+<td>Resellable names with traffic history</td>
+<td>$ per drop‑day, registration ROI</td>
+</tr>
+<tr>
+<td><strong>SEO operator</strong></td>
+<td>Aged domains with backlinks for PBNs / 301s</td>
+<td>Referring domains, archived page count, age</td>
+</tr>
+<tr>
+<td><strong>Brand owner</strong></td>
+<td>Catch lookalikes/typos of own brand before squatters</td>
+<td>Daily alert hit rate, false positives</td>
+</tr>
+<tr>
+<td><strong>Researcher / journalist</strong></td>
+<td>Spot patterns (mass corp failure, sector trends)</td>
+<td>Bulk export, history depth</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>SEO operator</strong> and <strong>brand owner</strong> drive most of the active engagement; the <strong>domainer</strong> drives most of the conversion intent.</p>
+<h2 id="5-current-state-audit">5. Current state audit</h2>
+<p>What works:
+- IIS fetch for <code>.se</code> and <code>.nu</code> (<code>src/fetcher.py</code>) is solid and handles network errors.
+- Daily GitHub Action commits CSV + JSON to <code>reports/</code> and republishes static site under <code>docs/</code>.
+- Flask app and static site render the same data model and share filter primitives.
+- Reports are append‑only and form a usable historical dataset.</p>
+<p>What's broken or weak:
+- <strong>Wayback index check returned 0 for every domain</strong> since 2026‑02‑28 due to a malformed CDX query. Fixed in PR #12 — re‑validate once a fresh report lands.
+- <strong>DNS availability</strong> check (<code>src/availability.py</code>) reports <code>available=True</code> for every row in recent reports, which is implausible — most expiring domains still have NS records pointing at the registrar. Needs investigation (§11.2).
+- <strong>Single weak signal</strong>. Wayback page count is a coarse proxy. No backlink data, no age, no name‑quality score, no historical title/snippet.
+- <strong>Serial enrichment</strong>. With <code>SCAN_DELAY_SECONDS=2.5</code> and ~700 domains, the index step alone takes ~30 minutes.
+- <strong>No persistence beyond JSON files</strong>. Trend queries ("show me domains with 50+ pages that have dropped in the last 30 days") require scanning every report.
+- <strong>No way to act</strong>. From the site there's no link out to a registrar, no copy‑button, no watchlist.
+- <strong>No alerting</strong>. Daily users have to actively visit the site each morning.
+- <strong>No analytics</strong>. We don't know which signals users actually look at.</p>
+<h2 id="6-roadmap">6. Roadmap</h2>
+<p>The work is split into four releases so each one is independently shippable and provides user‑visible value.</p>
+<h3 id="r1-trustworthy-signals-12-weeks">R1 — Trustworthy signals (1–2 weeks)</h3>
+<p>Make the existing "Expiring" page actually useful.</p>
+<ul>
+<li><strong>R1.1</strong> Re‑validate Wayback fix on real data. If hit rate is &lt; 3% of daily drops, something is still wrong.</li>
+<li><strong>R1.2</strong> Fix DNS availability (<code>§11.2</code>). At minimum, distinguish <code>NXDOMAIN</code>, <code>NoAnswer</code>, and <code>Timeout</code> in the output instead of collapsing them all to <code>True</code>.</li>
+<li><strong>R1.3</strong> Add <strong>first‑archived date</strong> and <strong>last‑archived date</strong> from Wayback as additional columns. Same CDX query, cheap to add (<code>from</code>/<code>to</code> fields).</li>
+<li><strong>R1.4</strong> Add <strong>name‑quality score</strong> (pure local computation, free): length, hyphen count, digit count, dictionary‑word match against a Swedish + English wordlist, vowel/consonant ratio. Combine into a 0–100 score.</li>
+<li><strong>R1.5</strong> Display a <strong>composite "value score"</strong> that's the user‑adjustable weighted sum of: archived pages (log‑scaled), archive age in years, name‑quality score, has‑MX in last archive. Default weights tuned on the first month of post‑fix data.</li>
+</ul>
+<p><strong>Done when:</strong> the Expiring page shows ≥ 20 ranked rows per day with each signal hyperlinked back to the underlying source.</p>
+<h3 id="r2-act-on-a-domain-1-week">R2 — Act on a domain (1 week)</h3>
+<p>Close the gap between "I want this" and "I'm at the registrar."</p>
+<ul>
+<li><strong>R2.1</strong> Per‑domain detail page (<code>/d/&lt;domain&gt;</code>): all signals, Wayback timeline strip, last‑known title from Wayback, similar names from same day's drop list.</li>
+<li><strong>R2.2</strong> "Register at" outbound links to the top 3 Swedish registrars (Loopia, Binero, Glesys) — clearly labeled as affiliate if monetized later.</li>
+<li><strong>R2.3</strong> One‑click copy of the bare domain name on every row.</li>
+<li><strong>R2.4</strong> <strong>Watchlist</strong>: anonymous device‑scoped (localStorage + signed cookie). No login. User can mark up to 100 domains; watchlist persists across visits.</li>
+</ul>
+<p><strong>Done when:</strong> Site Analytics shows ≥ 30% of users who land on <code>/expiring</code> either click a registrar link or add to watchlist.</p>
+<h3 id="r3-push-dont-pull-2-weeks">R3 — Push, don't pull (2 weeks)</h3>
+<p>Stop requiring users to visit the site daily.</p>
+<ul>
+<li><strong>R3.1</strong> <strong>Email digest</strong>: one email per day, sent at 07:30 UTC (just after the scan), with the top N domains and the user's watchlist matches. Magic‑link signup, one‑click unsubscribe.</li>
+<li><strong>R3.2</strong> <strong>RSS / Atom feed</strong> of the top N each day. Free, no signup. Best fit for power users.</li>
+<li><strong>R3.3</strong> <strong>Webhook integration</strong>: user supplies a Slack/Discord/generic webhook URL, receives a JSON payload after each scan.</li>
+<li><strong>R3.4</strong> <strong>Public read‑only API</strong> (<code>/api/v1/...</code>) with documented schemas. Rate‑limited per IP. Free tier sufficient for a hobbyist; gates premium history depth later.</li>
+</ul>
+<p><strong>Done when:</strong> ≥ 20% of weekly active users consume DropScan without loading the website.</p>
+<h3 id="r4-depth-34-weeks-can-run-in-parallel-with-r3">R4 — Depth (3–4 weeks, can run in parallel with R3)</h3>
+<p>Make the signals genuinely differentiated from anyone else who can also poll the IIS list.</p>
+<ul>
+<li><strong>R4.1</strong> <strong>Backlink proxy</strong> from Common Crawl. Pre‑compute referring‑host counts for every <code>.se</code>/<code>.nu</code> domain monthly, store in a small SQLite DB, join into the daily report.</li>
+<li><strong>R4.2</strong> <strong>Wayback screenshot thumbnails</strong> — fetch the rendered snapshot once per qualifying domain, cache in <code>static/thumbs/</code>. Only do this for domains above a "value score" threshold to keep scan time bounded.</li>
+<li><strong>R4.3</strong> <strong>Historical title + meta description</strong> extracted from the most recent Wayback snapshot. Often more informative than page count.</li>
+<li><strong>R4.4</strong> <strong>Trend dashboard</strong> (<code>/trends</code>): rolling 30‑/90‑day charts of drop volume, indexed‑rate, average value score. Powered by querying the JSON archive (or the SQLite mirror from R4.1).</li>
+</ul>
+<p><strong>Done when:</strong> A returning user can answer "is this a normal Tuesday, or unusually rich?" without manually comparing reports.</p>
+<h2 id="7-functional-requirements-r1-detail">7. Functional requirements (R1 detail)</h2>
+<p>This section is opinionated about R1 because it's the next thing to build. R2–R4 will be expanded into their own briefs before they're started.</p>
+<h3 id="71-signal-definitions">7.1 Signal definitions</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Source</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>archived_pages</code></td>
+<td>Wayback CDX, <code>len(rows)-1</code></td>
+<td>int ≥ 0</td>
+<td>Existing, post‑fix</td>
+</tr>
+<tr>
+<td><code>archive_first_seen</code></td>
+<td>Wayback CDX <code>from=</code> first row</td>
+<td>ISO date</td>
+<td>New</td>
+</tr>
+<tr>
+<td><code>archive_last_seen</code></td>
+<td>Wayback CDX last row timestamp</td>
+<td>ISO date</td>
+<td>New</td>
+</tr>
+<tr>
+<td><code>archive_age_years</code></td>
+<td><code>(today - first_seen) / 365.25</code></td>
+<td>float</td>
+<td>Derived</td>
+</tr>
+<tr>
+<td><code>name_length</code></td>
+<td><code>len(domain.split('.')[0])</code></td>
+<td>int</td>
+<td>Cheap</td>
+</tr>
+<tr>
+<td><code>name_hyphens</code></td>
+<td>count of <code>-</code> in label</td>
+<td>int</td>
+<td>Cheap</td>
+</tr>
+<tr>
+<td><code>name_digits</code></td>
+<td>count of <code>0–9</code> in label</td>
+<td>int</td>
+<td>Cheap</td>
+</tr>
+<tr>
+<td><code>name_dictionary_hits</code></td>
+<td>longest dict‑word substring match</td>
+<td>int</td>
+<td>Local wordlist</td>
+</tr>
+<tr>
+<td><code>name_quality_score</code></td>
+<td>weighted combination (0–100)</td>
+<td>int</td>
+<td>Reproducible formula in code</td>
+</tr>
+<tr>
+<td><code>value_score</code></td>
+<td>composite (0–100)</td>
+<td>int</td>
+<td>Default weights documented</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-display-rules">7.2 Display rules</h3>
+<ul>
+<li>Default sort on <code>/expiring</code>: <code>value_score</code> desc, tiebreak <code>archived_pages</code> desc.</li>
+<li>Hide rows with <code>value_score &lt; 20</code> behind a "show low‑value" toggle.</li>
+<li>Each numeric cell links to the underlying source (Wayback URL, IIS entry).</li>
+<li>Show the explicit <code>value_score</code> breakdown on hover.</li>
+</ul>
+<h3 id="73-backwards-compatibility">7.3 Backwards compatibility</h3>
+<ul>
+<li>The JSON report stays append‑only and additive. New fields are added, no field is renamed or removed in R1.</li>
+<li>The CSV gains new columns at the end — order preserved for existing consumers.</li>
+<li>Static site filter chips are unchanged; new "Quality" chip is additive.</li>
+</ul>
+<h2 id="8-nonfunctional-requirements">8. Non‑functional requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scan duration</strong></td>
+<td>&lt; 10 min P95 for the full daily run (currently ~30 min). Achieved by parallelizing Wayback queries with a bounded worker pool + per‑host concurrency cap.</td>
+</tr>
+<tr>
+<td><strong>Site load</strong></td>
+<td>First contentful paint &lt; 1 s on a cold cache (static site, already close).</td>
+</tr>
+<tr>
+<td><strong>Availability</strong></td>
+<td>99% — site is static on GitHub Pages, only the scanner can fail.</td>
+</tr>
+<tr>
+<td><strong>Reproducibility</strong></td>
+<td>Every signal must be regenerable from the raw IIS drop list + a stable code revision. Daily reports are immutable once committed.</td>
+</tr>
+<tr>
+<td><strong>Accessibility</strong></td>
+<td>WCAG 2.1 AA: keyboard navigation on the filter bar, focus rings, alt text on the new thumbnails.</td>
+</tr>
+<tr>
+<td><strong>Privacy</strong></td>
+<td>No PII collected pre‑R3. Watchlist is local‑only. Email digest stores <code>email + hashed_token + preferences</code>, nothing else.</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>$0 hosting through R3 (GitHub Pages + Actions). R3 email may need a transactional provider (~$10/mo for low volume). R4 backlink data may need ~$5/mo of object storage.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-technical-changes-implied">9. Technical changes implied</h2>
+<ul>
+<li>Move <code>reports/</code> history into a small SQLite mirror (built on the fly from JSON, kept in <code>docs/data.sqlite</code>) so the site can do range queries without shipping every JSON to the client.</li>
+<li>Introduce a <code>src/signals/</code> package, one module per signal, each with a <code>compute(domain) -&gt; dict</code> contract. Makes unit testing per signal trivial and lets parallel workers fan out cleanly.</li>
+<li>Replace the manual <code>time.sleep(SCAN_DELAY_SECONDS)</code> loop with a <code>concurrent.futures.ThreadPoolExecutor</code> + per‑host token bucket (10 rps to archive.org is well within their published limits).</li>
+<li>Add a thin <code>web/</code> module that's used by both the Flask app and <code>build_static_site.py</code> for shared row/filter rendering — avoid the current copy‑paste between <code>templates/</code> and <code>build_static_site.py</code>.</li>
+</ul>
+<h2 id="10-success-metrics">10. Success metrics</h2>
+<p>Tracked from R2 onward (we need analytics first).</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>R2 target</th>
+<th>R3 target</th>
+<th>R4 target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daily uniques</td>
+<td>50</td>
+<td>200</td>
+<td>500</td>
+</tr>
+<tr>
+<td>Click‑through to a registrar</td>
+<td>5%</td>
+<td>10%</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Watchlist adds per visitor</td>
+<td>0.3</td>
+<td>0.5</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Email digest open rate</td>
+<td>—</td>
+<td>35%</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>Median session time on <code>/expiring</code></td>
+<td>60 s</td>
+<td>90 s</td>
+<td>120 s</td>
+</tr>
+<tr>
+<td>Scanner P95 runtime</td>
+<td>10 min</td>
+<td>8 min</td>
+<td>6 min</td>
+</tr>
+<tr>
+<td>% of indexed drops registered within 7 days (proxy: NS comes back)</td>
+<td>baseline</td>
+<td>+20%</td>
+<td>+50%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-known-issues-open-questions">11. Known issues &amp; open questions</h2>
+<h3 id="111-wayback-hit-rate-after-the-fix">11.1 Wayback hit rate after the fix</h3>
+<p>PR #12 fixes the CDX URL format. We need one or two real daily reports under the new code before we can size R1.5's value‑score weights. If the hit rate is still suspiciously low (&lt; 3% of drops), something else is wrong (rate limit, IP block) and R1.1 becomes a blocker.</p>
+<h3 id="112-availability-check-always-returns-true">11.2 Availability check always returns True</h3>
+<p>Every recent report has <code>available=True</code> for every domain. Three possibilities, in order of likelihood:
+1. DNS lookups time out from GitHub Actions runners and the timeout path returns <code>available=True</code> (it currently does).
+2. Most pre‑drop domains have genuinely had their NS records pulled.
+3. The resolver is misconfigured.</p>
+<p>Investigation: run <code>is_available()</code> from a local machine against a sample of 50 domains from yesterday's report and compare to a Whois lookup. If (1), tighten the timeout semantics — a timeout is <em>unknown</em>, not <em>available</em>.</p>
+<h3 id="113-ds_store-committed">11.3 .DS_Store committed</h3>
+<p>Minor housekeeping but real — <code>.DS_Store</code> is in the repo. Add to <code>.gitignore</code> and delete.</p>
+<h3 id="114-monetization">11.4 Monetization</h3>
+<p>Affiliate links to registrars are the only path with zero user friction. Email digest is a natural place to upsell a "Pro" plan (deeper history, no rate limit, private watchlist sync). Defer the decision until R3 metrics exist.</p>
+<h3 id="115-legal">11.5 Legal</h3>
+<p>Showing third‑party Wayback thumbnails is fine under archive.org's terms. Showing the live current site of a still‑registered‑but‑expiring domain is <strong>not</strong>. Stick to historical snapshots only.</p>
+<h2 id="12-rollout-plan">12. Rollout plan</h2>
+<ul>
+<li><strong>R1</strong> ships behind no flag — it's strictly additive to existing reports and pages.</li>
+<li><strong>R2</strong> ships the detail page first, then watchlist behind a <code>localStorage</code> flag for a week of friends‑and‑family.</li>
+<li><strong>R3</strong> ships RSS first (no signup), then email (needs signup flow + double opt‑in).</li>
+<li><strong>R4</strong> ships the trend dashboard first, then thumbnails (slow, expensive), then backlinks (needs the SQLite mirror).</li>
+</ul>
+<p>Each release ends with: docs updated, a <code>CHANGELOG</code> entry, and one short blog post on the static site to drive returning traffic.</p>
+<hr>
+<p><strong>Next action:</strong> wait for PR #12 to land, then write the R1.1 + R1.2 issues and pick whichever has the higher signal‑per‑hour to start.</p>
+</article>
+
+</main>
+<footer class="footer">
+    <div class="footer-content">
+        <span>Data from <a href="https://www.internetstiftelsen.se" target="_blank" rel="noopener">Internetstiftelsen</a></span>
+        <span><a href="https://github.com/Caceras/se-domain-snapback" target="_blank" rel="noopener">GitHub</a></span>
+    </div>
+</footer>
+<script>/* Theme */
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var i=document.getElementById('theme-ico');if(i)i.textContent=t==='dark'?'🌙':'☀️';}
+function toggleTheme(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';applyTheme(n);localStorage.setItem('theme',n);}
+(function(){var s=localStorage.getItem('theme');if(s){applyTheme(s);return;}if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)applyTheme('dark');})();
+
+/* Sort */
+var _s={col:-1,asc:true};
+function sortBy(ci){
+    var t=document.getElementById('tbl');if(!t)return;
+    var tb=t.querySelector('tbody'),rows=Array.from(tb.querySelectorAll('tr')),ths=t.querySelectorAll('th');
+    if(_s.col===ci)_s.asc=!_s.asc;else{_s.col=ci;_s.asc=true;}
+    ths.forEach(function(h,i){
+        h.classList.remove('asc','desc');
+        var si=h.querySelector('.si');
+        if(i===ci){h.classList.add(_s.asc?'asc':'desc');if(si)si.textContent=_s.asc?'↑':'↓';}
+        else if(si)si.textContent='⇅';
+    });
+    rows.sort(function(a,b){var at=a.cells[ci]?a.cells[ci].textContent.trim():'',bt=b.cells[ci]?b.cells[ci].textContent.trim():'',an=parseFloat(at),bn=parseFloat(bt),r;if(!isNaN(an)&&!isNaN(bn))r=an-bn;else r=at.localeCompare(bt);return _s.asc?r:-r;});
+    rows.forEach(function(r){tb.appendChild(r);});
+}
+
+/* Filter & Search */
+var _tld='all';
+function setTLD(v,el){
+    _tld=v;document.querySelectorAll('.chip-row .chip').forEach(function(c){c.classList.remove('on');});el.classList.add('on');applyFilters();
+}
+function applyFilters(){
+    var t=document.getElementById('tbl');if(!t)return;
+    var rows=t.querySelectorAll('tbody tr'),si=document.getElementById('search'),term=si?si.value.toLowerCase():'',n=0;
+    rows.forEach(function(r){
+        var tld=r.getAttribute('data-tld'),indexed=r.getAttribute('data-indexed'),txt=r.textContent.toLowerCase();
+        var m=(_tld==='all'||(_tld==='indexed'&&indexed==='yes')||tld===_tld)&&(!term||txt.includes(term));
+        r.style.display=m?'':'none';if(m)n++;
+    });
+    var rc=document.getElementById('rcount');if(rc)rc.textContent=n+' domains';
+}
+function clearSearch(){
+    var si=document.getElementById('search'),cb=document.getElementById('search-clear');
+    if(si){si.value='';if(cb)cb.classList.remove('on');applyFilters();si.focus();}
+}
+document.addEventListener('DOMContentLoaded',function(){
+    var si=document.getElementById('search'),cb=document.getElementById('search-clear');
+    if(si)si.addEventListener('input',function(e){if(cb)cb.classList.toggle('on',e.target.value.length>0);applyFilters();});
+    document.querySelectorAll('.stat-card,.card').forEach(function(el,i){el.classList.add('fup');el.style.animationDelay=(i*.04)+'s';});
+});
+
+/* Service Worker */
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+</script>
+</body>
+</html>
