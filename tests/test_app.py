@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.main import main
 from src.fetcher import fetch_drop_list, fetch_all_dropping_on_date
 from src.reporter import generate_report, generate_summary
+from src.index_checker import check_wayback_index
 from app import app
 
 
@@ -103,6 +104,57 @@ class TestMainFunction(unittest.TestCase):
         captured = StringIO()
         with patch('sys.stdout', captured):
             main(target_date="2026-01-11", dry_run=True)
+
+
+class TestWaybackIndexChecker(unittest.TestCase):
+    """Tests for the Wayback Machine CDX index check."""
+
+    @patch('src.index_checker.requests.get')
+    def test_queries_bare_domain_not_wildcard(self, mock_get):
+        """CDX must be queried with bare domain — '*.domain' breaks matchType=domain."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = [["urlkey"]]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        check_wayback_index("example.se")
+
+        sent_params = mock_get.call_args.kwargs["params"]
+        self.assertEqual(sent_params["url"], "example.se")
+        self.assertEqual(sent_params["matchType"], "domain")
+        self.assertNotIn("*", sent_params["url"])
+
+    @patch('src.index_checker.requests.get')
+    def test_counts_archived_pages(self, mock_get):
+        """Each row beyond the header is one archived page."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = [
+            ["urlkey"],
+            ["se,example)/"],
+            ["se,example)/about"],
+            ["se,example)/contact"],
+        ]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        result = check_wayback_index("example.se")
+
+        self.assertTrue(result["indexed"])
+        self.assertEqual(result["estimated_pages"], 3)
+        self.assertEqual(result["source"], "wayback")
+
+    @patch('src.index_checker.requests.get')
+    def test_no_archived_pages(self, mock_get):
+        """Header-only response means no archived pages."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = [["urlkey"]]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        result = check_wayback_index("example.se")
+
+        self.assertFalse(result["indexed"])
+        self.assertEqual(result["estimated_pages"], 0)
 
 
 class TestReporter(unittest.TestCase):
