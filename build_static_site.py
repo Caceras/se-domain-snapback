@@ -226,6 +226,35 @@ tbody tr:last-child td{border-bottom:none}
     .stat-value{font-size:32px}
     .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 }
+/* Mobile bottom tab bar — fills the gap where .nav-links is hidden below 700px */
+.tabbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:200;
+    display:flex;justify-content:space-around;align-items:stretch;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-top:.5px solid var(--sep);
+    padding-bottom:var(--safe-bot);
+}
+[data-theme="dark"] .tabbar{background:rgba(28,28,30,.92);}
+.tabbar a{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    padding:8px 4px;text-decoration:none;color:var(--label-2);
+    font-size:10px;font-weight:600;letter-spacing:.02em;min-height:52px;
+}
+.tabbar a.on{color:var(--blue);}
+.tabbar svg{width:22px;height:22px;}
+@media(min-width:700px){.tabbar{display:none}}
+@media(max-width:699px){body{padding-bottom:calc(52px + var(--safe-bot) + 8px);}}
+/* Banners (delta and stale) */
+.banner{
+    max-width:1100px;margin:12px auto 0;padding:10px 14px;border-radius:var(--r);
+    font-size:14px;display:flex;align-items:center;gap:8px;
+}
+.banner-info{background:var(--blue-t);color:var(--label);}
+.banner-warn{background:var(--red-t);color:var(--label);}
+.banner-info::before{content:"\\2197";font-weight:700;color:var(--blue);}
+.banner-warn::before{content:"\\26A0";color:var(--red);}
+.banner.delta-down::before{content:"\\2198";color:var(--label-2);}
 ::-webkit-scrollbar{height:4px;width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
@@ -293,6 +322,26 @@ document.addEventListener('DOMContentLoaded',function(){
 
 /* Service Worker */
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+
+/* Stale-data banner: shows if the latest report is older than 36 hours.
+   Reads the date from <body data-latest-date="YYYY-MM-DD">. */
+(function(){
+    var d=document.body&&document.body.getAttribute('data-latest-date');
+    if(!d)return;
+    var t=Date.parse(d+'T07:00:00Z');
+    if(isNaN(t))return;
+    var ageHours=(Date.now()-t)/3.6e6;
+    if(ageHours<=36)return;
+    var b=document.createElement('div');
+    b.className='banner banner-warn';
+    b.setAttribute('role','status');
+    var days=Math.floor(ageHours/24);
+    b.appendChild(document.createTextNode(
+        'Latest scan is '+days+' day'+(days===1?'':'s')+' old — daily scanner may be down.'
+    ));
+    var m=document.querySelector('main');
+    if(m)m.parentNode.insertBefore(b,m);
+})();
 """
 
 
@@ -308,7 +357,7 @@ def json_ld(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>'
 
 
-def html_head(title=SITE_NAME, description=SITE_DESCRIPTION, extra_ld=None):
+def html_head(title=SITE_NAME, description=SITE_DESCRIPTION, extra_ld=None, latest_date=None):
     """Generate <head> with meta tags, favicon, PWA, structured data."""
     ld_blocks = [json_ld({
         "@context": "https://schema.org",
@@ -349,11 +398,13 @@ def html_head(title=SITE_NAME, description=SITE_DESCRIPTION, extra_ld=None):
     {''.join(ld_blocks)}
     <style>{SHARED_CSS}</style>
 </head>
-<body>"""
+<body{f' data-latest-date="{escape_html(latest_date)}"' if latest_date else ''}>"""
 
 
 def html_site_header(active="latest"):
-    """Generate the frosted glass navbar."""
+    """Generate the frosted glass navbar plus mobile bottom tab bar."""
+    def cls(name):
+        return "on" if active == name else ""
     return f"""
 <header class="navbar">
     <div class="navbar-inner">
@@ -362,10 +413,10 @@ def html_site_header(active="latest"):
             <span class="navbar-title">DropScan</span>
         </a>
         <nav class="nav-links" aria-label="Main">
-            <a href="index.html" class="{'on' if active=='latest' else ''}">Latest</a>
-            <a href="expiring.html" class="{'on' if active=='expiring' else ''}">Expiring</a>
-            <a href="#reports-section" class="{'on' if active=='reports' else ''}">History</a>
-            <a href="roadmap.html" class="{'on' if active=='roadmap' else ''}">Roadmap</a>
+            <a href="index.html" class="{cls('latest')}">Latest</a>
+            <a href="expiring.html" class="{cls('expiring')}">Expiring</a>
+            <a href="#reports-section" class="{cls('reports')}">History</a>
+            <a href="roadmap.html" class="{cls('roadmap')}">Roadmap</a>
         </nav>
         <div>
             <button class="btn-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
@@ -373,7 +424,21 @@ def html_site_header(active="latest"):
             </button>
         </div>
     </div>
-</header>"""
+</header>
+<nav class="tabbar" aria-label="Mobile navigation">
+    <a href="index.html" class="{cls('latest')}" aria-label="Latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>
+        <span>Latest</span>
+    </a>
+    <a href="expiring.html" class="{cls('expiring')}" aria-label="Expiring">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
+        <span>Expiring</span>
+    </a>
+    <a href="roadmap.html" class="{cls('roadmap')}" aria-label="Roadmap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h12M3 18h18"/></svg>
+        <span>Roadmap</span>
+    </a>
+</nav>"""
 
 
 def html_footer():
@@ -472,10 +537,31 @@ def generate_report_list(reports, current_date=None):
 
 # ── Page Generators ───────────────────────────────────────────────────────────
 
+def generate_delta_banner(latest_data, prev_data):
+    """Show 'X more/fewer indexed drops than yesterday' on the homepage."""
+    if not latest_data or not prev_data:
+        return ''
+    today_idx = sum(1 for d in latest_data.get('domains', []) if d.get('indexed'))
+    prev_idx = sum(1 for d in prev_data.get('domains', []) if d.get('indexed'))
+    delta = today_idx - prev_idx
+    if delta == 0:
+        return ''
+    if delta > 0:
+        msg = f'{delta} more indexed drop{"s" if delta != 1 else ""} than yesterday ({today_idx} vs {prev_idx}).'
+        cls = 'banner banner-info'
+    else:
+        msg = f'{-delta} fewer indexed drop{"s" if -delta != 1 else ""} than yesterday ({today_idx} vs {prev_idx}).'
+        cls = 'banner banner-info delta-down'
+    return f'<div class="{cls}" role="status">{escape_html(msg)}</div>'
+
+
 def generate_index_page(reports):
     latest_data = None
+    prev_data = None
     if reports:
         latest_data = load_report(reports[0]['date'])
+        if len(reports) > 1:
+            prev_data = load_report(reports[1]['date'])
 
     description = SITE_DESCRIPTION
     extra_ld = []
@@ -491,8 +577,10 @@ def generate_index_page(reports):
             "creator": {"@type": "Organization", "name": SITE_NAME}
         })
 
-    html = html_head(title=SITE_NAME, description=description, extra_ld=extra_ld)
+    latest_date = reports[0]['date'] if reports else None
+    html = html_head(title=SITE_NAME, description=description, extra_ld=extra_ld, latest_date=latest_date)
     html += html_site_header(active="latest")
+    html += generate_delta_banner(latest_data, prev_data)
     html += '\n<main>\n'
 
     if latest_data and reports:
@@ -575,7 +663,7 @@ def generate_report_page(report_date, report_data, reports):
         }
     ]
 
-    html = html_head(title=title, description=description, extra_ld=extra_ld)
+    html = html_head(title=title, description=description, extra_ld=extra_ld, latest_date=reports[0]['date'] if reports else None)
     html += html_site_header(active="reports")
     html += '\n<main>\n'
 
@@ -667,7 +755,7 @@ def generate_expiring_page(reports):
     title = f"Expiring Soon - {SITE_NAME}"
     description = f"Curated list of {len(expiring_domains)} expiring .se/.nu domains with indexed pages. {highlighted_count} with 2+ archived pages."
 
-    html = html_head(title=title, description=description)
+    html = html_head(title=title, description=description, latest_date=report_date or None)
     html += html_site_header(active="expiring")
     html += '\n<main>\n'
 
@@ -749,7 +837,7 @@ PRD_PAGE_CSS = """
 """
 
 
-def generate_roadmap_page():
+def generate_roadmap_page(reports=None):
     """Render PRD.md as the published roadmap page."""
     if not PRD_PATH.exists():
         body_html = "<p>Roadmap not yet published.</p>"
@@ -764,7 +852,8 @@ def generate_roadmap_page():
     title = f"Roadmap — {SITE_NAME}"
     description = "Product roadmap and requirements for DropScan: trustworthy signals, action affordances, push channels, and depth data."
 
-    html = html_head(title=title, description=description)
+    latest_date = reports[0]['date'] if reports else None
+    html = html_head(title=title, description=description, latest_date=latest_date)
     # Inject prose CSS just for this page
     html = html.replace("</style>", PRD_PAGE_CSS + "</style>", 1)
     html += html_site_header(active="roadmap")
@@ -800,7 +889,7 @@ def main():
 
     print("Generating roadmap.html...")
     with open(OUTPUT_DIR / "roadmap.html", 'w') as f:
-        f.write(generate_roadmap_page())
+        f.write(generate_roadmap_page(reports))
 
     for report in reports:
         print(f"Generating report-{report['date']}.html...")

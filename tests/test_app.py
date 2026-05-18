@@ -256,6 +256,31 @@ class TestExpiringTracker(unittest.TestCase):
 class TestBuildStaticSite(unittest.TestCase):
     """Test static site builder consistency."""
 
+    def test_delta_banner_positive(self):
+        from build_static_site import generate_delta_banner
+        html = generate_delta_banner(
+            {'domains': [{'indexed': True}] * 5},
+            {'domains': [{'indexed': True}] * 2},
+        )
+        self.assertIn('3 more', html)
+        self.assertIn('banner-info', html)
+        self.assertNotIn('delta-down', html)
+
+    def test_delta_banner_negative(self):
+        from build_static_site import generate_delta_banner
+        html = generate_delta_banner(
+            {'domains': [{'indexed': True}]},
+            {'domains': [{'indexed': True}] * 4},
+        )
+        self.assertIn('3 fewer', html)
+        self.assertIn('delta-down', html)
+
+    def test_delta_banner_zero_and_missing(self):
+        from build_static_site import generate_delta_banner
+        self.assertEqual(generate_delta_banner({'domains': []}, {'domains': []}), '')
+        self.assertEqual(generate_delta_banner(None, None), '')
+        self.assertEqual(generate_delta_banner({'domains': []}, None), '')
+
     def test_generated_html_has_6_column_table(self):
         """Static site should generate 6-column tables matching Flask templates."""
         from build_static_site import generate_domains_table

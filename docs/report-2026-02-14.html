@@ -191,6 +191,35 @@ tbody tr:last-child td{border-bottom:none}
     .stat-value{font-size:32px}
     .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 }
+/* Mobile bottom tab bar — fills the gap where .nav-links is hidden below 700px */
+.tabbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:200;
+    display:flex;justify-content:space-around;align-items:stretch;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-top:.5px solid var(--sep);
+    padding-bottom:var(--safe-bot);
+}
+[data-theme="dark"] .tabbar{background:rgba(28,28,30,.92);}
+.tabbar a{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    padding:8px 4px;text-decoration:none;color:var(--label-2);
+    font-size:10px;font-weight:600;letter-spacing:.02em;min-height:52px;
+}
+.tabbar a.on{color:var(--blue);}
+.tabbar svg{width:22px;height:22px;}
+@media(min-width:700px){.tabbar{display:none}}
+@media(max-width:699px){body{padding-bottom:calc(52px + var(--safe-bot) + 8px);}}
+/* Banners (delta and stale) */
+.banner{
+    max-width:1100px;margin:12px auto 0;padding:10px 14px;border-radius:var(--r);
+    font-size:14px;display:flex;align-items:center;gap:8px;
+}
+.banner-info{background:var(--blue-t);color:var(--label);}
+.banner-warn{background:var(--red-t);color:var(--label);}
+.banner-info::before{content:"\2197";font-weight:700;color:var(--blue);}
+.banner-warn::before{content:"\26A0";color:var(--red);}
+.banner.delta-down::before{content:"\2198";color:var(--label-2);}
 ::-webkit-scrollbar{height:4px;width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
@@ -206,7 +235,7 @@ tbody tr:last-child td{border-bottom:none}
 }
 </style>
 </head>
-<body>
+<body data-latest-date="2026-05-18">
 <header class="navbar">
     <div class="navbar-inner">
         <a href="index.html" class="navbar-brand">
@@ -226,6 +255,20 @@ tbody tr:last-child td{border-bottom:none}
         </div>
     </div>
 </header>
+<nav class="tabbar" aria-label="Mobile navigation">
+    <a href="index.html" class="" aria-label="Latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>
+        <span>Latest</span>
+    </a>
+    <a href="expiring.html" class="" aria-label="Expiring">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
+        <span>Expiring</span>
+    </a>
+    <a href="roadmap.html" class="" aria-label="Roadmap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h12M3 18h18"/></svg>
+        <span>Roadmap</span>
+    </a>
+</nav>
 <main>
 <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Latest</a> <span>/</span> <span>Report 2026-02-14</span></nav>
 <p class="page-title">Report: 2026-02-14</p>
@@ -522,6 +565,26 @@ document.addEventListener('DOMContentLoaded',function(){
 
 /* Service Worker */
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+
+/* Stale-data banner: shows if the latest report is older than 36 hours.
+   Reads the date from <body data-latest-date="YYYY-MM-DD">. */
+(function(){
+    var d=document.body&&document.body.getAttribute('data-latest-date');
+    if(!d)return;
+    var t=Date.parse(d+'T07:00:00Z');
+    if(isNaN(t))return;
+    var ageHours=(Date.now()-t)/3.6e6;
+    if(ageHours<=36)return;
+    var b=document.createElement('div');
+    b.className='banner banner-warn';
+    b.setAttribute('role','status');
+    var days=Math.floor(ageHours/24);
+    b.appendChild(document.createTextNode(
+        'Latest scan is '+days+' day'+(days===1?'':'s')+' old — daily scanner may be down.'
+    ));
+    var m=document.querySelector('main');
+    if(m)m.parentNode.insertBefore(b,m);
+})();
 </script>
 </body>
 </html>
