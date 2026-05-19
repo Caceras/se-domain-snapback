@@ -109,6 +109,18 @@ class TestMainFunction(unittest.TestCase):
 class TestWaybackIndexChecker(unittest.TestCase):
     """Tests for the Wayback Machine CDX index check."""
 
+    @staticmethod
+    def _get_kwarg(call, name):
+        """Return a keyword arg by name, tolerating positional refactors."""
+        if name in call.kwargs:
+            return call.kwargs[name]
+        # requests.get(url, params, ...) signature: (url, params, **kwargs)
+        positional = {"url": 0, "params": 1}
+        idx = positional.get(name)
+        if idx is not None and len(call.args) > idx:
+            return call.args[idx]
+        raise KeyError(name)
+
     @patch('src.index_checker.requests.get')
     def test_queries_bare_domain_not_wildcard(self, mock_get):
         """CDX must be queried with bare domain — '*.domain' breaks matchType=domain."""
@@ -119,10 +131,24 @@ class TestWaybackIndexChecker(unittest.TestCase):
 
         check_wayback_index("example.se")
 
-        sent_params = mock_get.call_args.kwargs["params"]
+        sent_params = self._get_kwarg(mock_get.call_args, "params")
         self.assertEqual(sent_params["url"], "example.se")
         self.assertEqual(sent_params["matchType"], "domain")
         self.assertNotIn("*", sent_params["url"])
+
+    @patch('src.index_checker.requests.get')
+    def test_sends_user_agent_header(self, mock_get):
+        """A User-Agent header must be sent so archive.org doesn't throttle the bare requests UA."""
+        from config import USER_AGENT
+        mock_response = MagicMock()
+        mock_response.json.return_value = [["urlkey"]]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        check_wayback_index("example.se")
+
+        sent_headers = self._get_kwarg(mock_get.call_args, "headers")
+        self.assertEqual(sent_headers.get("User-Agent"), USER_AGENT)
 
     @patch('src.index_checker.requests.get')
     def test_counts_archived_pages(self, mock_get):
