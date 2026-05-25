@@ -9,7 +9,7 @@ import time
 
 import sys
 sys.path.insert(0, str(__file__).rsplit("/", 2)[0])
-from config import SCAN_DELAY_SECONDS
+from config import SCAN_DELAY_SECONDS, USER_AGENT
 
 
 def check_wayback_index(domain: str) -> dict:
@@ -28,8 +28,11 @@ def check_wayback_index(domain: str) -> dict:
         'source' ("wayback")
     """
     url = "http://web.archive.org/cdx/search/cdx"
+    # matchType=domain already includes the domain and all its subdomains.
+    # Sending "*.example.se" together with matchType=domain makes the CDX server
+    # look for a literal hostname starting with "*." and always returns empty.
     params = {
-        "url": f"*.{domain}",
+        "url": domain,
         "matchType": "domain",
         "output": "json",
         "fl": "urlkey",
@@ -38,7 +41,12 @@ def check_wayback_index(domain: str) -> dict:
     }
 
     try:
-        response = requests.get(url, params=params, timeout=20)
+        response = requests.get(
+            url,
+            params=params,
+            timeout=20,
+            headers={"User-Agent": USER_AGENT},
+        )
         response.raise_for_status()
         data = response.json()
 

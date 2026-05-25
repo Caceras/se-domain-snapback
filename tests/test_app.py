@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.main import main
 from src.fetcher import fetch_drop_list, fetch_all_dropping_on_date
 from src.reporter import generate_report, generate_summary
+from src.index_checker import check_wayback_index
 from app import app
 
 
@@ -103,6 +104,83 @@ class TestMainFunction(unittest.TestCase):
         captured = StringIO()
         with patch('sys.stdout', captured):
             main(target_date="2026-01-11", dry_run=True)
+
+
+class TestWaybackIndexChecker(unittest.TestCase):
+    """Tests for the Wayback Machine CDX index check."""
+
+    @staticmethod
+    def _get_kwarg(call, name):
+        """Return a keyword arg by name, tolerating positional refactors."""
+        if name in call.kwargs:
+            return call.kwargs[name]
+        # requests.get(url, params, ...) signature: (url, params, **kwargs)
+        positional = {"url": 0, "params": 1}
+        idx = positional.get(name)
+        if idx is not None and len(call.args) > idx:
+            return call.args[idx]
+        raise KeyError(name)
+
+    @patch('src.index_checker.requests.get')
+    def test_queries_bare_domain_not_wildcard(self, mock_get):
+        """CDX must be queried with bare domain — '*.domain' breaks matchType=domain."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = [["urlkey"]]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        check_wayback_index("example.se")
+
+        sent_params = self._get_kwarg(mock_get.call_args, "params")
+        self.assertEqual(sent_params["url"], "example.se")
+        self.assertEqual(sent_params["matchType"], "domain")
+        self.assertNotIn("*", sent_params["url"])
+
+    @patch('src.index_checker.requests.get')
+    def test_sends_user_agent_header(self, mock_get):
+        """A User-Agent header must be sent so archive.org doesn't throttle the bare requests UA."""
+        from config import USER_AGENT
+        mock_response = MagicMock()
+        mock_response.json.return_value = [["urlkey"]]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        check_wayback_index("example.se")
+
+        sent_headers = self._get_kwarg(mock_get.call_args, "headers")
+        self.assertEqual(sent_headers.get("User-Agent"), USER_AGENT)
+
+    @patch('src.index_checker.requests.get')
+    def test_counts_archived_pages(self, mock_get):
+        """Each row beyond the header is one archived page."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = [
+            ["urlkey"],
+            ["se,example)/"],
+            ["se,example)/about"],
+            ["se,example)/contact"],
+        ]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        result = check_wayback_index("example.se")
+
+        self.assertTrue(result["indexed"])
+        self.assertEqual(result["estimated_pages"], 3)
+        self.assertEqual(result["source"], "wayback")
+
+    @patch('src.index_checker.requests.get')
+    def test_no_archived_pages(self, mock_get):
+        """Header-only response means no archived pages."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = [["urlkey"]]
+        mock_response.raise_for_status = MagicMock()
+        mock_get.return_value = mock_response
+
+        result = check_wayback_index("example.se")
+
+        self.assertFalse(result["indexed"])
+        self.assertEqual(result["estimated_pages"], 0)
 
 
 class TestReporter(unittest.TestCase):
@@ -203,6 +281,31 @@ class TestExpiringTracker(unittest.TestCase):
 
 class TestBuildStaticSite(unittest.TestCase):
     """Test static site builder consistency."""
+
+    def test_delta_banner_positive(self):
+        from build_static_site import generate_delta_banner
+        html = generate_delta_banner(
+            {'domains': [{'indexed': True}] * 5},
+            {'domains': [{'indexed': True}] * 2},
+        )
+        self.assertIn('3 more', html)
+        self.assertIn('banner-info', html)
+        self.assertNotIn('delta-down', html)
+
+    def test_delta_banner_negative(self):
+        from build_static_site import generate_delta_banner
+        html = generate_delta_banner(
+            {'domains': [{'indexed': True}]},
+            {'domains': [{'indexed': True}] * 4},
+        )
+        self.assertIn('3 fewer', html)
+        self.assertIn('delta-down', html)
+
+    def test_delta_banner_zero_and_missing(self):
+        from build_static_site import generate_delta_banner
+        self.assertEqual(generate_delta_banner({'domains': []}, {'domains': []}), '')
+        self.assertEqual(generate_delta_banner(None, None), '')
+        self.assertEqual(generate_delta_banner({'domains': []}, None), '')
 
     def test_generated_html_has_6_column_table(self):
         """Static site should generate 6-column tables matching Flask templates."""
