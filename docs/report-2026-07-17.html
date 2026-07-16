@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Report 2026-07-17 - DropScan — .SE/.NU Domain Scanner</title>
+    <meta name="description" content="ALL 425 .se/.nu domains releasing on 2026-07-17.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Report 2026-07-17 - DropScan — .SE/.NU Domain Scanner">
+    <meta property="og:description" content="ALL 425 .se/.nu domains releasing on 2026-07-17.">
+    <meta property="og:site_name" content="DropScan">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme:light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme:dark)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="DropScan">
+    <meta name="mobile-web-app-capable" content="yes">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "DropScan — .SE/.NU Domain Scanner", "description": "Find valuable expiring .se and .nu domains before they drop. Daily snapback scanner with Wayback Machine data.", "url": "index.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "DropScan — .SE/.NU Domain Scanner"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "SE/NU Domain Release List - 2026-07-17", "description": "ALL 425 .se/.nu domains releasing on 2026-07-17.", "temporalCoverage": "2026-07-17", "datePublished": "2026-07-16T08:37:15.204261+00:00", "creator": {"@type": "Organization", "name": "DropScan — .SE/.NU Domain Scanner"}, "variableMeasured": [{"@type": "PropertyValue", "name": "Total Domains", "value": "425"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "index.html"}, {"@type": "ListItem", "position": 2, "name": "Report 2026-07-17", "item": "report-2026-07-17.html"}]}</script>
+    <style>:root{
+    --bg:#F5F5F7;--surface:#fff;--surface-2:#F5F5F7;--surface-3:#E8E8ED;
+    --label:#1D1D1F;--label-2:#6E6E73;--label-3:#AEAEB2;
+    --sep:rgba(0,0,0,0.08);--fill:rgba(0,0,0,0.04);--fill-2:rgba(0,0,0,0.08);
+    --blue:#0071E3;--blue-h:#0077ED;--blue-t:rgba(0,113,227,0.1);
+    --green:#28CD41;--green-t:rgba(40,205,65,0.1);
+    --red:#FF3B30;--red-t:rgba(255,59,48,0.1);
+    --tld-se:#0071E3;--tld-nu:#28CD41;
+    --r:12px;--r-sm:8px;--r-lg:18px;
+    --shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.06);
+    --shadow-sm:0 1px 2px rgba(0,0,0,0.04);
+    --nav-h:52px;--safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
+}
+[data-theme="dark"]{
+    --bg:#000;--surface:#1C1C1E;--surface-2:#2C2C2E;--surface-3:#3A3A3C;
+    --label:#fff;--label-2:#98989D;--label-3:#636366;
+    --sep:rgba(255,255,255,0.1);--fill:rgba(255,255,255,0.06);--fill-2:rgba(255,255,255,0.12);
+    --blue:#0A84FF;--blue-h:#1A8FFF;--blue-t:rgba(10,132,255,0.15);
+    --green:#30D158;--green-t:rgba(48,209,88,0.15);
+    --red:#FF453A;--red-t:rgba(255,69,58,0.15);
+    --tld-se:#0A84FF;--tld-nu:#30D158;
+    --shadow:0 1px 3px rgba(0,0,0,0.3),0 4px 16px rgba(0,0,0,0.4);
+    --shadow-sm:0 1px 2px rgba(0,0,0,0.3);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",sans-serif;
+    font-size:15px;line-height:1.5;color:var(--label);background:var(--bg);
+    -webkit-tap-highlight-color:transparent;overscroll-behavior-y:none;
+    padding-top:calc(var(--nav-h) + var(--safe-top));
+    transition:background .2s,color .2s;
+}
+.navbar{
+    position:fixed;top:0;left:0;right:0;z-index:200;
+    height:calc(var(--nav-h) + var(--safe-top));padding-top:var(--safe-top);
+    background:rgba(255,255,255,.85);
+    backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:.5px solid var(--sep);
+}
+[data-theme="dark"] .navbar{background:rgba(28,28,30,.85);}
+.navbar-inner{
+    max-width:1100px;margin:0 auto;padding:0 20px;height:var(--nav-h);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.navbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--label);}
+.navbar-logo{width:28px;height:28px;border-radius:7px;}
+.navbar-title{font-size:17px;font-weight:700;letter-spacing:-.03em;}
+.nav-links{display:none;align-items:center;gap:4px;}
+.nav-links a{
+    font-size:14px;font-weight:500;color:var(--label-2);
+    text-decoration:none;padding:6px 12px;border-radius:var(--r-sm);
+    transition:color .15s,background .15s;
+}
+.nav-links a:hover{color:var(--label);background:var(--fill);}
+.nav-links a.on{color:var(--blue);}
+.btn-theme{
+    width:36px;height:36px;border-radius:50%;background:var(--fill);border:none;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-size:15px;color:var(--label-2);transition:background .15s;
+}
+.btn-theme:hover{background:var(--fill-2);}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 40px;}
+.page-title{font-size:26px;font-weight:700;letter-spacing:-.04em;margin-bottom:4px;}
+.page-subtitle{font-size:14px;color:var(--label-2);margin-bottom:20px;}
+.card{background:var(--surface);border-radius:var(--r-lg);padding:20px;margin-bottom:16px;box-shadow:var(--shadow);}
+.card-title{font-size:17px;font-weight:600;letter-spacing:-.02em;margin-bottom:14px;}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;}
+.stat-card{
+    background:var(--surface);border-radius:var(--r);padding:14px 16px;
+    box-shadow:var(--shadow-sm);transition:transform .15s;
+}
+.stat-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent);border-radius:4px 0 0 4px}
+.stat-card:active{transform:scale(.97)}
+.stat-value{font-size:28px;font-weight:700;letter-spacing:-.04em;line-height:1.1}
+.stat-label{font-size:11px;font-weight:600;color:var(--label-2);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th{padding:8px 12px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--label-3);border-bottom:.5px solid var(--sep);white-space:nowrap;background:var(--surface);position:sticky;top:0;z-index:1}
+td{padding:10px 12px;font-size:14px;border-bottom:.5px solid var(--sep);white-space:nowrap;vertical-align:middle}
+th.sort{cursor:pointer;user-select:none}
+th.sort:hover{color:var(--label-2)}
+th.asc,th.desc{color:var(--blue)}
+.si{margin-left:3px;opacity:.5;font-size:9px}
+th.asc .si,th.desc .si{opacity:1}
+td{font-size:.85rem}
+tbody tr{transition:background var(--transition)}
+tbody tr:hover{background:var(--bg-table-hover)}
+tbody tr:active{background:var(--bg-table-hover)}
+tbody tr{transition:background .1s}
+tbody tr:hover{background:var(--fill)}
+tbody tr:active{background:var(--fill-2)}
+tbody tr:last-child td{border-bottom:none}
+.tld{display:inline-block;font-size:12px;font-weight:600;padding:2px 7px;border-radius:5px}
+.tld-se{background:var(--blue-t);color:var(--tld-se)}
+.tld-nu{background:var(--green-t);color:var(--tld-nu)}
+.pill{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:20px;font-size:12px;font-weight:500}
+.pill-g{background:var(--green-t);color:var(--green)}
+.pill-r{background:var(--red-t);color:var(--red)}
+.pill-m{background:var(--fill);color:var(--label-3)}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-blue{background:var(--blue-t);color:var(--blue)}
+.badge-muted{background:var(--fill);color:var(--label-3)}
+.btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    padding:9px 18px;border-radius:20px;border:none;
+    font:600 14px/1 -apple-system,sans-serif;cursor:pointer;
+    transition:opacity .15s,transform .1s;text-decoration:none;white-space:nowrap;
+}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{opacity:.88}
+.btn-ghost{background:var(--fill);color:var(--label-2)}
+.btn-ghost:hover{background:var(--fill-2);color:var(--label)}
+.btn-tinted{background:var(--blue-t);color:var(--blue)}
+.btn-tinted:hover{opacity:.8}
+.chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{
+    display:inline-flex;align-items:center;gap:4px;
+    padding:5px 12px;background:var(--fill);color:var(--label-2);
+    border:none;border-radius:20px;font:500 13px/1 inherit;
+    cursor:pointer;transition:background .15s,color .15s;white-space:nowrap;
+}
+.chip:hover{background:var(--fill-2);color:var(--label)}
+.chip.on{background:var(--blue);color:#fff}
+.chip .n{font-size:11px;opacity:.75}
+.chip.on .n{opacity:.85}
+.search-wrap{position:relative;margin-bottom:12px}
+.search-input{
+    width:100%;padding:10px 36px;background:var(--fill);border:none;border-radius:10px;
+    font:15px/1.4 inherit;color:var(--label);-webkit-appearance:none;appearance:none;outline:none;
+    transition:background .15s,box-shadow .15s;
+}
+.search-input::placeholder{color:var(--label-3)}
+.search-input:focus{background:var(--fill-2);box-shadow:0 0 0 3px var(--blue-t)}
+.search-clear{
+    position:absolute;right:8px;top:50%;transform:translateY(-50%);
+    background:var(--label-3);border:none;border-radius:50%;width:18px;height:18px;
+    display:none;align-items:center;justify-content:center;
+    cursor:pointer;color:var(--surface);font-size:10px;transition:background .15s;
+}
+.search-clear.on{display:flex}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.rcount{font-size:12px;color:var(--label-3)}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--label-2);margin-bottom:16px}
+.breadcrumb a{color:var(--blue);text-decoration:none}
+.report-list{list-style:none}
+.report-list li+li{border-top:.5px solid var(--sep)}
+.report-list a{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 0;color:var(--label);text-decoration:none;gap:8px;
+}
+.report-list a:hover .rd{color:var(--blue)}
+.rd{font-size:15px;font-weight:500;transition:color .15s}
+.rc{color:var(--label-3);font-size:12px;flex-shrink:0}
+.empty{text-align:center;padding:48px 24px;color:var(--label-2)}
+.empty .ei{font-size:40px;margin-bottom:12px;opacity:.4}
+.empty p{font-size:15px;margin-bottom:16px}
+.footer{border-top:.5px solid var(--sep);padding:20px 0;margin-top:32px}
+.footer-content{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:13px;color:var(--label-2)}
+.footer a{color:var(--blue);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fup{animation:fadeUp .3s ease forwards}
+@media(min-width:700px){
+    .nav-links{display:flex}
+    main{padding:32px 24px 56px}
+    .stats{grid-template-columns:repeat(4,1fr)}
+    .stat-value{font-size:32px}
+    .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+}
+/* Mobile bottom tab bar — fills the gap where .nav-links is hidden below 700px */
+.tabbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:200;
+    display:flex;justify-content:space-around;align-items:stretch;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-top:.5px solid var(--sep);
+    padding-bottom:var(--safe-bot);
+}
+[data-theme="dark"] .tabbar{background:rgba(28,28,30,.92);}
+.tabbar a{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    padding:8px 4px;text-decoration:none;color:var(--label-2);
+    font-size:10px;font-weight:600;letter-spacing:.02em;min-height:52px;
+}
+.tabbar a.on{color:var(--blue);}
+.tabbar svg{width:22px;height:22px;}
+@media(min-width:700px){.tabbar{display:none}}
+@media(max-width:699px){body{padding-bottom:calc(52px + var(--safe-bot) + 8px);}}
+/* Banners (delta and stale) */
+.banner{
+    max-width:1100px;margin:12px auto 0;padding:10px 14px;border-radius:var(--r);
+    font-size:14px;display:flex;align-items:center;gap:8px;
+}
+.banner-info{background:var(--blue-t);color:var(--label);}
+.banner-warn{background:var(--red-t);color:var(--label);}
+.banner-info::before{content:"\2197";font-weight:700;color:var(--blue);}
+.banner-warn::before{content:"\26A0";color:var(--red);}
+.banner.delta-down::before{content:"\2198";color:var(--label-2);}
+::-webkit-scrollbar{height:4px;width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:2px}
+.row-highlight td{background:var(--blue-t)}
+.row-highlight:hover td{background:rgba(0,113,227,0.15)}
+[data-theme="dark"] .row-highlight td{background:rgba(10,132,255,0.12)}
+[data-theme="dark"] .row-highlight:hover td{background:rgba(10,132,255,0.18)}
+.highlight-legend{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--label-2);margin-left:12px}
+.highlight-swatch{width:12px;height:12px;border-radius:3px;background:var(--blue-t);border:1px solid var(--blue)}
+@media(display-mode:standalone){
+    .header{padding-top:calc(1rem + var(--safe-top))}
+    .footer{padding-bottom:calc(1.25rem + var(--safe-bottom))}
+}
+</style>
+</head>
+<body data-latest-date="2026-07-17">
+<header class="navbar">
+    <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+            <img src="favicon.svg" class="navbar-logo" alt="DropScan">
+            <span class="navbar-title">DropScan</span>
+        </a>
+        <nav class="nav-links" aria-label="Main">
+            <a href="index.html" class="">Latest</a>
+            <a href="expiring.html" class="">Expiring</a>
+            <a href="#reports-section" class="on">History</a>
+            <a href="roadmap.html" class="">Roadmap</a>
+        </nav>
+        <div>
+            <button class="btn-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <span id="theme-ico">☀️</span>
+            </button>
+        </div>
+    </div>
+</header>
+<nav class="tabbar" aria-label="Mobile navigation">
+    <a href="index.html" class="" aria-label="Latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>
+        <span>Latest</span>
+    </a>
+    <a href="expiring.html" class="" aria-label="Expiring">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
+        <span>Expiring</span>
+    </a>
+    <a href="roadmap.html" class="" aria-label="Roadmap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h12M3 18h18"/></svg>
+        <span>Roadmap</span>
+    </a>
+</nav>
+<main>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Latest</a> <span>/</span> <span>Report 2026-07-17</span></nav>
+<p class="page-title">Report: 2026-07-17</p>
+<p class="page-subtitle">425 domains &middot; 380 .se &middot; 45 .nu &middot; 186 indexed</p>
+<div class="stats fup">
+<div class="stat-card"><div class="stat-value">425</div><div class="stat-label">Total</div></div>
+<div class="stat-card"><div class="stat-value">380</div><div class="stat-label">.se</div></div>
+<div class="stat-card"><div class="stat-value">45</div><div class="stat-label">.nu</div></div>
+<div class="stat-card"><div class="stat-value">186</div><div class="stat-label">Indexed</div></div>
+</div>
+<div class="toolbar fup" style="margin-bottom:16px">
+  <div style="display:flex;gap:8px;align-items:center">
+  <a href="report-2026-07-16.html" class="btn btn-ghost" style="font-size:13px;padding:7px 14px">&larr; 2026-07-16</a>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center">
+  <a href="../reports/2026-07-17.json" download class="btn btn-ghost" style="font-size:13px;padding:7px 14px">JSON</a>
+  <a href="../reports/2026-07-17.csv" download class="btn btn-ghost" style="font-size:13px;padding:7px 14px">CSV</a>
+  </div>
+</div>
+<div class="card fup">
+<p class="card-title">Domains</p>
+<p style="color:var(--label-3);font-size:12px;margin-bottom:12px">Generated: 2026-07-16T08:37:15.204261+00:00</p>
+<div class="search-wrap">
+    <input class="search-input" id="search" type="text" placeholder="Search domains…" autocomplete="off">
+    <button class="search-clear" id="search-clear" onclick="clearSearch()">&#10005;</button>
+</div>
+<div class="chip-row">
+    <button class="chip on" onclick="setTLD('all',this)">All <span class="n">425</span></button>
+    <button class="chip" onclick="setTLD('se',this)">.se <span class="n">380</span></button>
+    <button class="chip" onclick="setTLD('nu',this)">.nu <span class="n">45</span></button>
+    <button class="chip" onclick="setTLD('indexed',this)">Indexed <span class="n">186</span></button>
+</div>
+<div class="toolbar"><span class="rcount" id="rcount">425 domains</span></div><div class="table-wrap"><table id="tbl"><thead><tr><th class="sort" onclick="sortBy(0)">Domain <span class="si">&#8645;</span></th><th class="sort" onclick="sortBy(1)">TLD <span class="si">&#8645;</span></th><th class="sort" onclick="sortBy(2)">Release <span class="si">&#8645;</span></th><th class="sort" onclick="sortBy(3)">Avail <span class="si">&#8645;</span></th><th class="sort" onclick="sortBy(4)">Indexed <span class="si">&#8645;</span></th><th class="sort" onclick="sortBy(5)">Pages <span class="si">&#8645;</span></th></tr></thead><tbody><tr data-tld="se" data-indexed="yes"><td><strong>brabilligmat.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>connectskane.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>damm.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>formelrenault.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>itsecurity.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>madsengarden.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>summeradde.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sundbyvikgolf.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>takespace.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>tradgardsriket.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">500</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mats-solskydd.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">472</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>ankies.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">429</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>dos.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">393</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>dialine.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">379</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>agnetabrundin.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">343</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>vagestorpskennel.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">333</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>comfyslippers.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">315</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>btn.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">310</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>semesterhuset.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">279</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>abracadabra.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">260</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>modicken.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">260</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>fiadvastgoed.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">259</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>skinfashionclinic.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">252</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>vinterflod.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">193</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>circify.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">156</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sartorius.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">151</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>bildelslagret-returen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">128</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>xn--hstsport-0za.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">124</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>nwe.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">121</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>databehandling.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">119</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>strongeryou.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">119</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>sandstone.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">118</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>koksflakt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">117</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>eaze-footwear.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">112</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>thuiskoken.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">108</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>zada.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">89</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>kanslokraft.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">76</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>training.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">71</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>wallmanderstd.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">68</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>kommunalekonomiskaprocesser.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">67</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>borgent.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">63</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>stockholmpadelklubb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">61</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>roulettecasino.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">60</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mfskylt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">59</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>annamoilanen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">51</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>xn--plnka-nra.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">50</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>ecopod.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">48</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>swedenpumpen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">47</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>365e5.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">46</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>pdk.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">46</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mnbokforing.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">45</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>duaashop.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">44</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>valutaomvandlarna.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">44</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>anlaegsarbejde.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">41</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>digitaloak.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">40</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>zac.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">36</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>friavidderforlag.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">34</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>gratisspelen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">33</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>echtscheidingen.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">28</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>prakt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">28</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>skogstorpstrollens.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">27</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>xn--orustveterinrpraktik-mzb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">27</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>agilehealth.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">24</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>dominant.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">23</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mfps.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">23</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>feffes.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">22</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>newcoder.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">21</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>lindforssweden.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">20</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>invezt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">19</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mamman.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">19</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>storecontainer.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">18</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>subjuice.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">18</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>anlog.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">17</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>jnbmusic.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">14</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>arcticdesigns.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">13</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>idder.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">13</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>ljunghedensbi.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">12</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>orustvet.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">12</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>semestertider.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">12</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>jakobrubenson.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">11</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>nfit.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">11</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>feedbackpro.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">10</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>leadsgroup.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">10</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mcformedlingimark.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">10</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>xn--selmahallstrm-tmb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">10</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>lumiestetik.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">9</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sleepnoi.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">9</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>wpblogg.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">9</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>partytalts.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">8</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>boytoy.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>driverswanted.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>ekdalagruppen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>goldqube.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>invenia.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>jonasberger.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>tandlakarhusetspanga.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>zet.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">7</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>conceptaudio.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">6</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>aldohelsingborg.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>arbetsledarutbildning.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>coffeebyfredrik.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>goldcube.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>leadingagile.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sdgscandinavia.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>seedsofindependence.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>swedspjall.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">5</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>blomsterlupin.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>boka24x7.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>elines.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>geretti.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>invasivavaxter.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>jattebalsamin.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>omvaluta.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>parkslideexperten.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sarabarnmorska.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>vabadus.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">4</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>anilabygg.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>comfygo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>digitalstyling.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>djsverige.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>eldriftsexpo.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>eldriftsexpo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>eyewear.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>floreo.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>forsaljningforetag.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>frakthub.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>grus-direkte.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>ithai.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>jennuine.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>jennyine.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>karma-yoga.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>konkursnett.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>lavenderblue.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>matvakt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>meettheswedes.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>ns2.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>nurseweb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>prisonmuseum.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>publicspaceinfo.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>qilife.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>rktsyd.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sapehair.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>seethrough.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>trailtamers.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>tvattranna.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>xn--knslokraft-q5a.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>xn--stockholmstdfirma-0qb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>xn--tvttrnna-1zad.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">3</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>elektamr-linac.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>elektamrlinac.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>elektamrt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>elektaunity.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>lydens.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>metagamer.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mrilinac.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sefficare.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>seffiline.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>seffiller.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>sellingkicksonline.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>techsupporten.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>unitymrlinac.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>xn--hjtryksrenser-bnb.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">2</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>3axismachine.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>almashi-grill.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>beitelbeiruty.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>bergsecure.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>crimesweden.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>dinpsykiater.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>drinkfabriken.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>feromonparfym.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="nu" data-indexed="yes"><td><strong>flowdesign.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>fotbollnu.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>heatgreener.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>husforsemestern.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>introsale.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>kmj-consulting.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>mrduck.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>naturdahl.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>nawras.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>oddfilms.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>oscardyren.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>ramsmark.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>service-link.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>vasshudiksvall.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>wrexhamafc.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="yes"><td><strong>wrinklepatches.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-g">&#10003; Yes</span></td><td><span style="color:var(--label-2)">1</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>alhumidi.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>alicekrog.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>alivabostad.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>alivacapital.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>alivafinans.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>alivahomes.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>alltforcamping.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>arenapizza.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>arttoheart.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ashthom.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>assistansjuristen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>astoe.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>atthantera.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>axhldesign.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>azitechperformance.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>badgyal.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bakatochgott.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>balsamin.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>barrio.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>basilis.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bausparkas.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>beachball.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>beatbrass.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>betongfestivalen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>blienbrachef.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>blombudalingsas.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>blomsterlupin.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bloommedia.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>blueelectrix.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bluesupercell.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bokjohan.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>boodesign.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>boostbusiness.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>boostyourbusinesssverige.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>boostyourbusinesssweden.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>branchrapport.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>branoc.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>brfludvigsbergsundsvall.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>brunnsbodendesign.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>builtbycarlberg.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bundlfleet.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bunkibeauty.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bunneys.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>byfredrik.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>byggare-i-halmstad.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bykiki.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>bytebits.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>calculus.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>cameba.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>campingfabriken.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>casaronneby.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ceceridesign.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>cl-brakes.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>colorpages.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>contactronjaholmkvist.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>costaskaffe.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>daniel-hechter.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>degedachtenpauze.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>dermapatches.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>diskosweden.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>djaktiebolag.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>docadee.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>documedapp.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>domaincheck.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>domaninfo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>dpagarage.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ecomsense.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>edvinochebba.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ekocompagniet.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>elavtalsval.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>elin-stockholm.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>emksnickeri.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>enbodihamnen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>equiwellness.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>erotiska.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ezenti.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>farjorinfo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>fartfylld.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>fasadexperten.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>fastpacking.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>favn.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>fc-talent.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>financierme.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>genesisai.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>givable.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>gr8resources.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>grannasrestaurang.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>grapejuice.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>greenomy.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>grillgo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>growingpains.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>grus-direkte.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>hastirorelse.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>hobyhandelsmagasin.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>hollondaywear.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>husdjursbandet.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>ikwilmeerklanten.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>individualtest.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>invasiva.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>invirae.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>jaghartappatminplanbok.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>jattebalsamin.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>jeannot.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>jonastheteacher.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>karlskronahamn.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>karlskronahamnskydd.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>kokskrabban.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>kranspetsstyrning.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>lagpriskungen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>lansforsakringarna.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>lanthem.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>larkin.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>lavouir.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ledarskapsliv.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>lish.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>livpc.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>livstrivsel.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>losmus.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>lovpeng.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>lssinspektion.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>lssinspektion.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>luminasoul.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>maddo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>magic-clean.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>matanga1.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>meetake.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>meetpasta.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>mgkonsulterna.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>microquartz.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>millasmatlagning.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>miniminnen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>minvardagligamat.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>missadedubitcoin.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>misse.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>mlouiart.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>mymac.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>nattatarstudenten.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>naturplank.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>nianuo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>nodeaudio.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>nordsell.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ns1.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>oakleafab.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ogonfransforlangningar.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>oikospodden.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>olah.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>olaoko.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>omdet.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>optigrowth.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>osgoodschlatter.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ottesenconsulting.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>parkslide.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>pawspa.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>phiprod.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>praktinvest.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>prod46.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>rallybilden.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>redbeds.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>ronnythoresson.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>rustanconsulting.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>scandisweets.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>scanditreats.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>seseo.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>shopinhales.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>simsonsprastgard.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>singhathai.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>sixtens.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>sjoholms.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>skildaliv.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>slippingout.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>snabbtfix.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>snickare-i-halmstad.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>snusbua.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>solgardenshvb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>sooperbusse.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>sooperse.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>sparvalet.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>spolbiljour.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>sportskytte-sm.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>starskills.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>stoecker.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>stonefallingmedia.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>strandstudio.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>sueneroth.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>svampdroppar.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>swedish-food.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>swedishknit.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tachyonlabs.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>taxifair.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>taxifare.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>telelish.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>telesat.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>testosteronboost.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>thuisgekookt.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tinfoil.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tjenatjena.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tommysbyggochgolv.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>toptre.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tornlundsbygg.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>traumamedvetendoula.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>trii.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tryggvvsservice.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tryggwebb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>turdustech.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>tuxsecure.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>unishops.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>unriddle.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>upwise.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>vaniljpressen.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>verktygssamling.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>vetgruppen.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>vextorai.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>viaopta.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>villasolceller.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>vinoliab.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>vinovus.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>visitbrela.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>vodia.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>wattawsushi.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>welcomesystems.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>widmarkcreate.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>wijcks.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>wilddelights-swedishfood.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>wilddeligt.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>wildelight.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>xn--alltfrcamping-mmb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>xn--fnsterhantverkare-zzb.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>xn--fnsterrenovering-mwb.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>xn--jaghartappatminplnbok-82b.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>xn--mlare-i-halmstad-dob.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>xn--plattsttare-i-halmstad-54b.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>xn--plsglans-0za.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>xn--zgn-rna6a.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>yadomsweden.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>yestryck.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>youre.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>yourhotsip.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">&mdash;</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="se" data-indexed="no"><td><strong>zevensai.se</strong></td><td><span class="tld tld-se">.se</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr>
+<tr data-tld="nu" data-indexed="no"><td><strong>zininzeilen.nu</strong></td><td><span class="tld tld-nu">.nu</span></td><td style="color:var(--label-2)">2026-07-17</td><td><span class="pill pill-g">&#10003; Free</span></td><td><span class="pill pill-m">No</span></td><td><span style="color:var(--label-3)">&mdash;</span></td></tr></tbody></table></div></div>
+<div class="card fup"><p class="card-title">Other Reports</p>
+<ul class="report-list">
+<li><a href="report-2026-07-17.html"><span class="rd">2026-07-17 <span class="badge badge-blue">Current</span></span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-16.html"><span class="rd">2026-07-16</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-15.html"><span class="rd">2026-07-15</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-14.html"><span class="rd">2026-07-14</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-13.html"><span class="rd">2026-07-13</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-05.html"><span class="rd">2026-07-05</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-04.html"><span class="rd">2026-07-04</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-03.html"><span class="rd">2026-07-03</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-02.html"><span class="rd">2026-07-02</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-07-01.html"><span class="rd">2026-07-01</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-30.html"><span class="rd">2026-06-30</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-29.html"><span class="rd">2026-06-29</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-28.html"><span class="rd">2026-06-28</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-27.html"><span class="rd">2026-06-27</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-26.html"><span class="rd">2026-06-26</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-25.html"><span class="rd">2026-06-25</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-24.html"><span class="rd">2026-06-24</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-23.html"><span class="rd">2026-06-23</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-22.html"><span class="rd">2026-06-22</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-21.html"><span class="rd">2026-06-21</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-20.html"><span class="rd">2026-06-20</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-19.html"><span class="rd">2026-06-19</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-17.html"><span class="rd">2026-06-17</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-16.html"><span class="rd">2026-06-16</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-15.html"><span class="rd">2026-06-15</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-14.html"><span class="rd">2026-06-14</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-13.html"><span class="rd">2026-06-13</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-12.html"><span class="rd">2026-06-12</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-11.html"><span class="rd">2026-06-11</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-10.html"><span class="rd">2026-06-10</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-09.html"><span class="rd">2026-06-09</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-08.html"><span class="rd">2026-06-08</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-07.html"><span class="rd">2026-06-07</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-06.html"><span class="rd">2026-06-06</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-05.html"><span class="rd">2026-06-05</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-04.html"><span class="rd">2026-06-04</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-03.html"><span class="rd">2026-06-03</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-02.html"><span class="rd">2026-06-02</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-06-01.html"><span class="rd">2026-06-01</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-31.html"><span class="rd">2026-05-31</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-30.html"><span class="rd">2026-05-30</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-29.html"><span class="rd">2026-05-29</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-28.html"><span class="rd">2026-05-28</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-27.html"><span class="rd">2026-05-27</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-26.html"><span class="rd">2026-05-26</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-25.html"><span class="rd">2026-05-25</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-24.html"><span class="rd">2026-05-24</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-23.html"><span class="rd">2026-05-23</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-22.html"><span class="rd">2026-05-22</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-21.html"><span class="rd">2026-05-21</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-20.html"><span class="rd">2026-05-20</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-19.html"><span class="rd">2026-05-19</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-18.html"><span class="rd">2026-05-18</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-17.html"><span class="rd">2026-05-17</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-16.html"><span class="rd">2026-05-16</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-15.html"><span class="rd">2026-05-15</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-14.html"><span class="rd">2026-05-14</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-13.html"><span class="rd">2026-05-13</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-12.html"><span class="rd">2026-05-12</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-11.html"><span class="rd">2026-05-11</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-10.html"><span class="rd">2026-05-10</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-09.html"><span class="rd">2026-05-09</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-08.html"><span class="rd">2026-05-08</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-07.html"><span class="rd">2026-05-07</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-06.html"><span class="rd">2026-05-06</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-05.html"><span class="rd">2026-05-05</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-04.html"><span class="rd">2026-05-04</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-03.html"><span class="rd">2026-05-03</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-02.html"><span class="rd">2026-05-02</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-05-01.html"><span class="rd">2026-05-01</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-30.html"><span class="rd">2026-04-30</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-29.html"><span class="rd">2026-04-29</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-28.html"><span class="rd">2026-04-28</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-27.html"><span class="rd">2026-04-27</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-26.html"><span class="rd">2026-04-26</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-25.html"><span class="rd">2026-04-25</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-24.html"><span class="rd">2026-04-24</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-23.html"><span class="rd">2026-04-23</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-22.html"><span class="rd">2026-04-22</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-21.html"><span class="rd">2026-04-21</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-20.html"><span class="rd">2026-04-20</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-19.html"><span class="rd">2026-04-19</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-18.html"><span class="rd">2026-04-18</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-17.html"><span class="rd">2026-04-17</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-16.html"><span class="rd">2026-04-16</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-15.html"><span class="rd">2026-04-15</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-14.html"><span class="rd">2026-04-14</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-13.html"><span class="rd">2026-04-13</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-12.html"><span class="rd">2026-04-12</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-11.html"><span class="rd">2026-04-11</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-10.html"><span class="rd">2026-04-10</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-09.html"><span class="rd">2026-04-09</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-08.html"><span class="rd">2026-04-08</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-07.html"><span class="rd">2026-04-07</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-06.html"><span class="rd">2026-04-06</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-05.html"><span class="rd">2026-04-05</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-04.html"><span class="rd">2026-04-04</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-03.html"><span class="rd">2026-04-03</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-02.html"><span class="rd">2026-04-02</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-04-01.html"><span class="rd">2026-04-01</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-31.html"><span class="rd">2026-03-31</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-30.html"><span class="rd">2026-03-30</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-29.html"><span class="rd">2026-03-29</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-28.html"><span class="rd">2026-03-28</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-27.html"><span class="rd">2026-03-27</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-26.html"><span class="rd">2026-03-26</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-25.html"><span class="rd">2026-03-25</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-24.html"><span class="rd">2026-03-24</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-23.html"><span class="rd">2026-03-23</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-22.html"><span class="rd">2026-03-22</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-21.html"><span class="rd">2026-03-21</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-20.html"><span class="rd">2026-03-20</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-19.html"><span class="rd">2026-03-19</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-18.html"><span class="rd">2026-03-18</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-17.html"><span class="rd">2026-03-17</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-16.html"><span class="rd">2026-03-16</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-15.html"><span class="rd">2026-03-15</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-14.html"><span class="rd">2026-03-14</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-13.html"><span class="rd">2026-03-13</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-12.html"><span class="rd">2026-03-12</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-11.html"><span class="rd">2026-03-11</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-10.html"><span class="rd">2026-03-10</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-09.html"><span class="rd">2026-03-09</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-08.html"><span class="rd">2026-03-08</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-07.html"><span class="rd">2026-03-07</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-06.html"><span class="rd">2026-03-06</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-05.html"><span class="rd">2026-03-05</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-04.html"><span class="rd">2026-03-04</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-03.html"><span class="rd">2026-03-03</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-02.html"><span class="rd">2026-03-02</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-03-01.html"><span class="rd">2026-03-01</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-28.html"><span class="rd">2026-02-28</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-26.html"><span class="rd">2026-02-26</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-25.html"><span class="rd">2026-02-25</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-24.html"><span class="rd">2026-02-24</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-23.html"><span class="rd">2026-02-23</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-22.html"><span class="rd">2026-02-22</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-21.html"><span class="rd">2026-02-21</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-20.html"><span class="rd">2026-02-20</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-19.html"><span class="rd">2026-02-19</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-18.html"><span class="rd">2026-02-18</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-17.html"><span class="rd">2026-02-17</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-16.html"><span class="rd">2026-02-16</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-15.html"><span class="rd">2026-02-15</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-14.html"><span class="rd">2026-02-14</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-13.html"><span class="rd">2026-02-13</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-12.html"><span class="rd">2026-02-12</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-11.html"><span class="rd">2026-02-11</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-10.html"><span class="rd">2026-02-10</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-09.html"><span class="rd">2026-02-09</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-08.html"><span class="rd">2026-02-08</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-07.html"><span class="rd">2026-02-07</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-06.html"><span class="rd">2026-02-06</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-05.html"><span class="rd">2026-02-05</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-04.html"><span class="rd">2026-02-04</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-03.html"><span class="rd">2026-02-03</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-02.html"><span class="rd">2026-02-02</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-02-01.html"><span class="rd">2026-02-01</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-31.html"><span class="rd">2026-01-31</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-30.html"><span class="rd">2026-01-30</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-29.html"><span class="rd">2026-01-29</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-28.html"><span class="rd">2026-01-28</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-27.html"><span class="rd">2026-01-27</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-26.html"><span class="rd">2026-01-26</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-25.html"><span class="rd">2026-01-25</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-24.html"><span class="rd">2026-01-24</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-23.html"><span class="rd">2026-01-23</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-22.html"><span class="rd">2026-01-22</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-21.html"><span class="rd">2026-01-21</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-20.html"><span class="rd">2026-01-20</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-19.html"><span class="rd">2026-01-19</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-18.html"><span class="rd">2026-01-18</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-17.html"><span class="rd">2026-01-17</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-16.html"><span class="rd">2026-01-16</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-15.html"><span class="rd">2026-01-15</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-14.html"><span class="rd">2026-01-14</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-13.html"><span class="rd">2026-01-13</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-12.html"><span class="rd">2026-01-12</span><span class="rc">&#8250;</span></a></li>
+<li><a href="report-2026-01-11.html"><span class="rd">2026-01-11</span><span class="rc">&#8250;</span></a></li>
+</ul>
+</div>
+</main>
+<footer class="footer">
+    <div class="footer-content">
+        <span>Data from <a href="https://www.internetstiftelsen.se" target="_blank" rel="noopener">Internetstiftelsen</a></span>
+        <span><a href="https://github.com/Caceras/se-domain-snapback" target="_blank" rel="noopener">GitHub</a></span>
+    </div>
+</footer>
+<script>/* Theme */
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var i=document.getElementById('theme-ico');if(i)i.textContent=t==='dark'?'🌙':'☀️';}
+function toggleTheme(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';applyTheme(n);localStorage.setItem('theme',n);}
+(function(){var s=localStorage.getItem('theme');if(s){applyTheme(s);return;}if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)applyTheme('dark');})();
+
+/* Sort */
+var _s={col:-1,asc:true};
+function sortBy(ci){
+    var t=document.getElementById('tbl');if(!t)return;
+    var tb=t.querySelector('tbody'),rows=Array.from(tb.querySelectorAll('tr')),ths=t.querySelectorAll('th');
+    if(_s.col===ci)_s.asc=!_s.asc;else{_s.col=ci;_s.asc=true;}
+    ths.forEach(function(h,i){
+        h.classList.remove('asc','desc');
+        var si=h.querySelector('.si');
+        if(i===ci){h.classList.add(_s.asc?'asc':'desc');if(si)si.textContent=_s.asc?'↑':'↓';}
+        else if(si)si.textContent='⇅';
+    });
+    rows.sort(function(a,b){var at=a.cells[ci]?a.cells[ci].textContent.trim():'',bt=b.cells[ci]?b.cells[ci].textContent.trim():'',an=parseFloat(at),bn=parseFloat(bt),r;if(!isNaN(an)&&!isNaN(bn))r=an-bn;else r=at.localeCompare(bt);return _s.asc?r:-r;});
+    rows.forEach(function(r){tb.appendChild(r);});
+}
+
+/* Filter & Search */
+var _tld='all';
+function setTLD(v,el){
+    _tld=v;document.querySelectorAll('.chip-row .chip').forEach(function(c){c.classList.remove('on');});el.classList.add('on');applyFilters();
+}
+function applyFilters(){
+    var t=document.getElementById('tbl');if(!t)return;
+    var rows=t.querySelectorAll('tbody tr'),si=document.getElementById('search'),term=si?si.value.toLowerCase():'',n=0;
+    rows.forEach(function(r){
+        var tld=r.getAttribute('data-tld'),indexed=r.getAttribute('data-indexed'),txt=r.textContent.toLowerCase();
+        var m=(_tld==='all'||(_tld==='indexed'&&indexed==='yes')||tld===_tld)&&(!term||txt.includes(term));
+        r.style.display=m?'':'none';if(m)n++;
+    });
+    var rc=document.getElementById('rcount');if(rc)rc.textContent=n+' domains';
+}
+function clearSearch(){
+    var si=document.getElementById('search'),cb=document.getElementById('search-clear');
+    if(si){si.value='';if(cb)cb.classList.remove('on');applyFilters();si.focus();}
+}
+document.addEventListener('DOMContentLoaded',function(){
+    var si=document.getElementById('search'),cb=document.getElementById('search-clear');
+    if(si)si.addEventListener('input',function(e){if(cb)cb.classList.toggle('on',e.target.value.length>0);applyFilters();});
+    document.querySelectorAll('.stat-card,.card').forEach(function(el,i){el.classList.add('fup');el.style.animationDelay=(i*.04)+'s';});
+});
+
+/* Service Worker */
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
+
+/* Stale-data banner: shows if the latest report is older than 36 hours.
+   Reads the date from <body data-latest-date="YYYY-MM-DD">. */
+(function(){
+    var d=document.body&&document.body.getAttribute('data-latest-date');
+    if(!d)return;
+    var t=Date.parse(d+'T07:00:00Z');
+    if(isNaN(t))return;
+    var ageHours=(Date.now()-t)/3.6e6;
+    if(ageHours<=36)return;
+    var b=document.createElement('div');
+    b.className='banner banner-warn';
+    b.setAttribute('role','status');
+    var days=Math.floor(ageHours/24);
+    b.appendChild(document.createTextNode(
+        'Latest scan is '+days+' day'+(days===1?'':'s')+' old — daily scanner may be down.'
+    ));
+    var m=document.querySelector('main');
+    if(m)m.parentNode.insertBefore(b,m);
+})();
+</script>
+</body>
+</html>
