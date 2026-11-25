@@ -1,3 +1,29 @@
+<!-- repo-card:start -->
+<p align="center"><img src=".github/repo-card/cover.jpg" alt="DropScan: every .se and .nu domain released tonight, scanned daily" width="100%"></p>
+
+<h2><img src=".github/repo-card/logo.png" width="34" height="34" align="absmiddle" alt=""> DropScan</h2>
+
+**A scanner that runs every day and lists every .se and .nu domain that expires and becomes free to register again that night. It checks which ones still have pages in the Internet Archive (a sign of past traffic) and publishes the list with history.**
+
+**Vision:** turn the raw daily drop list (600 to 800 domains) into a decision tool, so a domain buyer, SEO or brand owner can pick the few domains worth grabbing in minutes each morning, with a watchlist and alerts (from `PRD.md`).
+
+| | |
+|---|---|
+| **Status** | Runs daily on GitHub Actions and commits each day's report. The [GitHub Pages address](https://caceras.github.io/se-domain-snapback/) currently shows this README, not the DropScan site built in `docs/` |
+| **Code quality** | ★★★☆☆ 3/5. Working automated pipeline on a real public data source; one test file, not run in CI |
+| **Size** | About 2,800 lines of own code, 1 test file, plus daily reports since Jan 2026 |
+| **Stack** | Python 3.12, requests, dnspython, Flask, Jinja templates, GitHub Actions and Pages |
+| **What works** | Daily drop-list fetch from Internetstiftelsen, archive page counts, DNS free check, daily CSV and JSON reports, static site with search and filters, local Flask web app with export, installable as an app |
+| **Worth reusing** | `src/fetcher.py` .se/.nu drop-list client; `src/index_checker.py` archive history check for a domain; `.github/workflows/daily-scan.yml` scan, commit and publish pattern |
+
+<p align="center">
+<img src=".github/repo-card/screenshot.jpg" width="72%" alt="DropScan on desktop"> <img src=".github/repo-card/screenshot-mobile.jpg" width="22%" alt="DropScan on a phone">
+</p>
+<p align="center"><sub>Running locally from this repo's code (the built site in docs/, with real data from 25 Nov 2026)</sub></p>
+<!-- repo-card:end -->
+
+---
+
 # SE/NU Domain Snapback Scanner
 
 Lists ALL .se and .nu domains that will be released tonight.
